@@ -11,13 +11,15 @@
 
 ### Properties
 
-* `name` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="name"></a> `name` | {string} |
 
 ***
 
 ## `addUsage`
 
-> **addUsage**: {object}
+> **addUsage**: {(state: ParserState, symbol: null|TopLevelSymbol, usage: Usage) => void}
 
 * `state` {ParserState}
 * `symbol` {null|TopLevelSymbol}
@@ -28,7 +30,7 @@
 
 ## `addVariableUsage`
 
-> **addVariableUsage**: {object}
+> **addVariableUsage**: {(parser: JavascriptParser, name: string, usage: Usage) => void}
 
 * `parser` {JavascriptParser}
 * `name` {string}
@@ -39,7 +41,7 @@
 
 ## `bailout`
 
-> **bailout**: {object}
+> **bailout**: {(parserState: ParserState) => void}
 
 * `parserState` {ParserState}
 * Returns: {void}
@@ -48,7 +50,7 @@
 
 ## `enable`
 
-> **enable**: {object}
+> **enable**: {(parserState: ParserState) => void}
 
 * `parserState` {ParserState}
 * Returns: {void}
@@ -57,18 +59,18 @@
 
 ## `getDependencyUsedByExportsCondition`
 
-> **getDependencyUsedByExportsCondition**: {object}
+> **getDependencyUsedByExportsCondition**: {(dependency: Dependency, usedByExports: undefined|boolean|Set<string>, moduleGraph: ModuleGraph) => null|false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 * `dependency` {Dependency}
 * `usedByExports` {undefined|boolean|Set<string>}
 * `moduleGraph` {ModuleGraph}
-* Returns: {null|false|object}
+* Returns: {null|false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 ***
 
 ## `getTopLevelSymbol`
 
-> **getTopLevelSymbol**: {object}
+> **getTopLevelSymbol**: {(state: ParserState) => void|TopLevelSymbol}
 
 * `state` {ParserState}
 * Returns: {void|TopLevelSymbol}
@@ -77,7 +79,7 @@
 
 ## `inferDependencyUsage`
 
-> **inferDependencyUsage**: {object}
+> **inferDependencyUsage**: {(state: ParserState) => void}
 
 * `state` {ParserState}
 * Returns: {void}
@@ -86,7 +88,7 @@
 
 ## `isDependencyUsedByExports`
 
-> **isDependencyUsedByExports**: {object}
+> **isDependencyUsedByExports**: {(dependency: Dependency, usedByExports: undefined|boolean|Set<string>, moduleGraph: ModuleGraph, runtime: RuntimeSpec) => boolean}
 
 * `dependency` {Dependency}
 * `usedByExports` {undefined|boolean|Set<string>}
@@ -98,7 +100,7 @@
 
 ## `isEnabled`
 
-> **isEnabled**: {object}
+> **isEnabled**: {(parserState: ParserState) => boolean}
 
 * `parserState` {ParserState}
 * Returns: {boolean}
@@ -107,17 +109,17 @@
 
 ## `onUsage`
 
-> **onUsage**: {object}
+> **onUsage**: {(state: ParserState, onUsageCallback: (value?: boolean|Set<string>) => void) => void}
 
 * `state` {ParserState}
-* `onUsageCallback` {object}
+* `onUsageCallback` {(value?: boolean|Set<string>) => void}
 * Returns: {void}
 
 ***
 
 ## `setTopLevelSymbol`
 
-> **setTopLevelSymbol**: {object}
+> **setTopLevelSymbol**: {(state: ParserState, symbol?: TopLevelSymbol) => void}
 
 * `state` {ParserState}
 * `symbol` {TopLevelSymbol}
@@ -127,7 +129,7 @@
 
 ## `tagTopLevelSymbol`
 
-> **tagTopLevelSymbol**: {object}
+> **tagTopLevelSymbol**: {(parser: JavascriptParser, name: string) => undefined|TopLevelSymbol}
 
 * `parser` {JavascriptParser}
 * `name` {string}

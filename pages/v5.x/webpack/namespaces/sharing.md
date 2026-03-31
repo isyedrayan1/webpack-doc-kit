@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {ConsumeSharedPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {ConsumeSharedPluginOptions} |
 
 ### Methods
 
@@ -35,7 +37,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {ProvideSharedPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {ProvideSharedPluginOptions} |
 
 ### Methods
 
@@ -70,11 +74,9 @@ Apply the plugin
 
 ## `scope`
 
-> `const` **scope**: {object}
+> `const` **scope**: {<T>(scope: string, options: ContainerOptionsFormat<T>) => Record<string, string|string[]|T>}
 
-#### T
-
-`T`
+* `T`
 * `scope` {string}
 * `options` {ContainerOptionsFormat<T>}
 * Returns: {Record<string, string|string[]|T>}

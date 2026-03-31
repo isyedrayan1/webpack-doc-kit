@@ -4,23 +4,21 @@
 
 ### Type Parameters
 
-#### T
-
-`T`
+* `T`
 
 ### Constructors
 
 #### `new AbstractLibraryPlugin(__namedParameters)`
 
-###### T
-
-`T`
+* `T`
 * `__namedParameters` {AbstractLibraryPluginOptions}
 * Returns: {AbstractLibraryPlugin<T>}
 
 ### Properties
 
-* `COMMON_LIBRARY_NAME_MESSAGE` {string}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="common-library-name-message"></a> `COMMON_LIBRARY_NAME_MESSAGE` | `static` | {string} |
 
 ### Methods
 
@@ -108,8 +106,10 @@ Apply the plugin
 
 ### Properties
 
-* `options` {EnableLibraryPluginOptions}
-* `type` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {EnableLibraryPluginOptions} |
+| <a id="type"></a> `type` | {string} |
 
 ### Methods
 

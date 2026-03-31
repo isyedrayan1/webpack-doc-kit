@@ -11,23 +11,21 @@
 
 ### Type Parameters
 
-#### T
-
-`T`
+* `T`
 
 ### Constructors
 
 #### `new LazySet([iterable])`
 
-###### T
-
-`T`
+* `T`
 * `iterable` {Iterable<T>}
 * Returns: {LazySet<T>}
 
 ### Properties
 
-* `size` {number}
+| Property | Type |
+| ------ | ------ |
+| <a id="size"></a> `size` | {number} |
 
 ### Methods
 
@@ -60,10 +58,8 @@
 
 #### `forEach(callbackFn, thisArg)`
 
-###### K
-
-`K`
-* `callbackFn` {object}
+* `K`
+* `callbackFn` {(value: T, value2: T, set: Set<T>) => void}
 * `thisArg` {K}
 * Returns: {void}
 
@@ -87,9 +83,7 @@
 
 #### Static method: `deserialize(__namedParameters)`
 
-###### T
-
-`T`
+* `T`
 * `__namedParameters` {ObjectDeserializerContext}
 * Returns: {LazySet<T>}
 
@@ -97,24 +91,19 @@
 
 ## `cleverMerge`
 
-> `const` **cleverMerge**: {object}
+> `const` **cleverMerge**: {<T, O>(first?: null|T, second?: null|O) => T|O|T&O}
 
-#### T
-
-`T`
-
-#### O
-
-`O`
+* `T`
+* `O`
 * `first` {null|T}
 * `second` {null|O}
-* Returns: {T|O|T|O}
+* Returns: {T|O|T&O}
 
 ***
 
 ## `createHash`
 
-> `const` **createHash**: {object}
+> `const` **createHash**: {(algorithm: HashFunction) => Hash}
 
 * `algorithm` {HashFunction}
 * Returns: {Hash}
@@ -124,4 +113,4 @@
 ## `compileBooleanMatcher(map)`
 
 * `map` {Record<string|number, boolean>}
-* Returns: {boolean|object}
+* Returns: {boolean|(value: string) => string}

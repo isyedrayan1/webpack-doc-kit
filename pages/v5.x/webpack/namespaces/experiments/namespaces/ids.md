@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {SyncModuleIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {SyncModuleIdsPluginOptions} |
 
 ### Methods
 

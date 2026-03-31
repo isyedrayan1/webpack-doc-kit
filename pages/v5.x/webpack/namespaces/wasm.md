@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {AsyncWebAssemblyModulesPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {AsyncWebAssemblyModulesPluginOptions} |
 
 ### Methods
 
@@ -47,7 +49,9 @@ Apply the plugin
 
 ### Properties
 
-* `type` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="type"></a> `type` | {string} |
 
 ### Methods
 

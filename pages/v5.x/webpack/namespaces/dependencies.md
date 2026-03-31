@@ -17,20 +17,22 @@
 
 ### Properties
 
-* `category` {string}
-* `disconnect` {any}
-* `expression` {string}
-* `loc` {DependencyLocation}
-* `module` {any}
-* `optional` {boolean}
-* `range` {number|Tuple<number, number>}
-* `runtimeRequirements` {Set<string>}
-* `type` {string}
-* `weak` {boolean}
-* `EXPORTS_OBJECT_REFERENCED` {string[][]}
-* `NO_EXPORTS_REFERENCED` {string[][]}
-* `Template` {ConstDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+| Property | Modifier | Type | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="category"></a> `category` | `public` | {string} | - | [`NullDependency`](#nulldependency).[`category`](#category) |
+| <a id="disconnect"></a> `disconnect` | `public` | {any} | - | [`NullDependency`](#nulldependency).[`disconnect`](#disconnect) |
+| <a id="expression"></a> `expression` | `public` | {string} | - | - |
+| <a id="loc"></a> `loc` | `public` | {DependencyLocation} | - | [`NullDependency`](#nulldependency).[`loc`](#loc) |
+| <a id="module"></a> `module` | `public` | {any} | - | [`NullDependency`](#nulldependency).[`module`](#module) |
+| <a id="optional"></a> `optional?` | `public` | {boolean} | - | [`NullDependency`](#nulldependency).[`optional`](#optional) |
+| <a id="range"></a> `range` | `public` | {number|Tuple<number, number>} | - | - |
+| <a id="runtimerequirements"></a> `runtimeRequirements` | `public` | {Set<string>} | - | - |
+| <a id="type"></a> `type` | `public` | {string} | - | [`NullDependency`](#nulldependency).[`type`](#type) |
+| <a id="weak"></a> `weak` | `public` | {boolean} | - | [`NullDependency`](#nulldependency).[`weak`](#weak) |
+| <a id="exports-object-referenced"></a> `EXPORTS_OBJECT_REFERENCED` | `static` | {string[][]} | [`NullDependency`](#nulldependency).[`EXPORTS_OBJECT_REFERENCED`](#exports-object-referenced) | - |
+| <a id="no-exports-referenced"></a> `NO_EXPORTS_REFERENCED` | `static` | {string[][]} | [`NullDependency`](#nulldependency).[`NO_EXPORTS_REFERENCED`](#no-exports-referenced) | - |
+| <a id="template"></a> `Template` | `static` | {ConstDependencyTemplate} | [`NullDependency`](#nulldependency).[`Template`](#template) | - |
+| <a id="transitive"></a> `TRANSITIVE` | `static` | {TRANSITIVE} | [`NullDependency`](#nulldependency).[`TRANSITIVE`](#transitive) | - |
 
 ### Methods
 
@@ -51,7 +53,7 @@
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
-* Returns: {false|object}
+* Returns: {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 #### `getContext()`
 
@@ -156,25 +158,33 @@ Update the hash
 
 ### Properties
 
-* `attributes` {ImportAttributes}
-* `category` {string}
-* `disconnect` {any}
-* `loc` {DependencyLocation}
-* `module` {any}
-* `optional` {boolean}
-* `phase` {ImportPhaseType}
-* `range` {Tuple<number, number>}
-* `request` {string}
-* `sourceOrder` {number}
-* `type` {string}
-* `userRequest` {string}
-* `weak` {boolean}
-* `ExportPresenceModes` {object}
-* `EXPORTS_OBJECT_REFERENCED` {string[][]}
-* `getNonOptionalPart` {object}
-* `NO_EXPORTS_REFERENCED` {string[][]}
-* `Template` {HarmonyImportDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+| Property | Modifier | Type | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="attributes"></a> `attributes?` | `public` | {ImportAttributes} | - | - |
+| <a id="category"></a> `category` | `public` | {string} | - | [`ModuleDependency`](#moduledependency).[`category`](#category) |
+| <a id="disconnect"></a> `disconnect` | `public` | {any} | - | [`ModuleDependency`](#moduledependency).[`disconnect`](#disconnect) |
+| <a id="loc"></a> `loc` | `public` | {DependencyLocation} | - | [`ModuleDependency`](#moduledependency).[`loc`](#loc) |
+| <a id="module"></a> `module` | `public` | {any} | - | [`ModuleDependency`](#moduledependency).[`module`](#module) |
+| <a id="optional"></a> `optional?` | `public` | {boolean} | - | [`ModuleDependency`](#moduledependency).[`optional`](#optional) |
+| <a id="phase"></a> `phase` | `public` | {ImportPhaseType} | - | - |
+| <a id="range"></a> `range?` | `public` | {Tuple<number, number>} | - | [`ModuleDependency`](#moduledependency).[`range`](#range) |
+| <a id="request"></a> `request` | `public` | {string} | - | [`ModuleDependency`](#moduledependency).[`request`](#request) |
+| <a id="sourceorder"></a> `sourceOrder?` | `public` | {number} | - | [`ModuleDependency`](#moduledependency).[`sourceOrder`](#sourceorder) |
+| <a id="type"></a> `type` | `public` | {string} | - | [`ModuleDependency`](#moduledependency).[`type`](#type) |
+| <a id="userrequest"></a> `userRequest` | `public` | {string} | - | [`ModuleDependency`](#moduledependency).[`userRequest`](#userrequest) |
+| <a id="weak"></a> `weak` | `public` | {boolean} | - | [`ModuleDependency`](#moduledependency).[`weak`](#weak) |
+| <a id="exportpresencemodes"></a> `ExportPresenceModes` | `static` | {{ AUTO: ExportPresenceMode; ERROR: ExportPresenceMode; NONE: ExportPresenceMode; ... }} | - | - |
+| `ExportPresenceModes.AUTO` | `public` | {ExportPresenceMode} | - | - |
+| `ExportPresenceModes.ERROR` | `public` | {ExportPresenceMode} | - | - |
+| `ExportPresenceModes.NONE` | `public` | {ExportPresenceMode} | - | - |
+| `ExportPresenceModes.WARN` | `public` | {ExportPresenceMode} | - | - |
+| `ExportPresenceModes.fromUserOption` | `public` | {ExportPresenceMode} | - | - |
+| `ExportPresenceModes.resolveFromOptions` | `public` | {ExportPresenceMode} | - | - |
+| <a id="exports-object-referenced"></a> `EXPORTS_OBJECT_REFERENCED` | `static` | {string[][]} | [`ModuleDependency`](#moduledependency).[`EXPORTS_OBJECT_REFERENCED`](#exports-object-referenced) | - |
+| <a id="getnonoptionalpart"></a> `getNonOptionalPart` | `static` | {(members: string[], membersOptionals: boolean[]) => string[]} | - | - |
+| <a id="no-exports-referenced"></a> `NO_EXPORTS_REFERENCED` | `static` | {string[][]} | [`ModuleDependency`](#moduledependency).[`NO_EXPORTS_REFERENCED`](#no-exports-referenced) | - |
+| <a id="template"></a> `Template` | `static` | {HarmonyImportDependencyTemplate} | [`ModuleDependency`](#moduledependency).[`Template`](#template) | - |
+| <a id="transitive"></a> `TRANSITIVE` | `static` | {TRANSITIVE} | [`ModuleDependency`](#moduledependency).[`TRANSITIVE`](#transitive) | - |
 
 ### Methods
 
@@ -195,7 +205,7 @@ Update the hash
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
-* Returns: {false|object}
+* Returns: {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 #### `getContext()`
 
@@ -325,21 +335,23 @@ Update the hash
 
 ### Properties
 
-* `category` {string}
-* `disconnect` {any}
-* `loc` {DependencyLocation}
-* `module` {any}
-* `optional` {boolean}
-* `range` {Tuple<number, number>}
-* `request` {string}
-* `sourceOrder` {number}
-* `type` {string}
-* `userRequest` {string}
-* `weak` {boolean}
-* `EXPORTS_OBJECT_REFERENCED` {string[][]}
-* `NO_EXPORTS_REFERENCED` {string[][]}
-* `Template` {DependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+| Property | Modifier | Type | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="category"></a> `category` | `public` | {string} | - | [`Dependency`](../../globals.md#dependency).[`category`](../../globals.md#category) |
+| <a id="disconnect"></a> `disconnect` | `public` | {any} | - | [`Dependency`](../../globals.md#dependency).[`disconnect`](../../globals.md#disconnect) |
+| <a id="loc"></a> `loc` | `public` | {DependencyLocation} | - | [`Dependency`](../../globals.md#dependency).[`loc`](../../globals.md#loc) |
+| <a id="module"></a> `module` | `public` | {any} | - | [`Dependency`](../../globals.md#dependency).[`module`](../../globals.md#module) |
+| <a id="optional"></a> `optional?` | `public` | {boolean} | - | [`Dependency`](../../globals.md#dependency).[`optional`](../../globals.md#optional) |
+| <a id="range"></a> `range?` | `public` | {Tuple<number, number>} | - | - |
+| <a id="request"></a> `request` | `public` | {string} | - | - |
+| <a id="sourceorder"></a> `sourceOrder?` | `public` | {number} | - | - |
+| <a id="type"></a> `type` | `public` | {string} | - | [`Dependency`](../../globals.md#dependency).[`type`](../../globals.md#type) |
+| <a id="userrequest"></a> `userRequest` | `public` | {string} | - | - |
+| <a id="weak"></a> `weak` | `public` | {boolean} | - | [`Dependency`](../../globals.md#dependency).[`weak`](../../globals.md#weak) |
+| <a id="exports-object-referenced"></a> `EXPORTS_OBJECT_REFERENCED` | `static` | {string[][]} | [`Dependency`](../../globals.md#dependency).[`EXPORTS_OBJECT_REFERENCED`](../../globals.md#exports-object-referenced) | - |
+| <a id="no-exports-referenced"></a> `NO_EXPORTS_REFERENCED` | `static` | {string[][]} | [`Dependency`](../../globals.md#dependency).[`NO_EXPORTS_REFERENCED`](../../globals.md#no-exports-referenced) | - |
+| <a id="template"></a> `Template` | `static` | {DependencyTemplate} | - | - |
+| <a id="transitive"></a> `TRANSITIVE` | `static` | {TRANSITIVE} | [`Dependency`](../../globals.md#dependency).[`TRANSITIVE`](../../globals.md#transitive) | - |
 
 ### Methods
 
@@ -360,7 +372,7 @@ Update the hash
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
-* Returns: {false|object}
+* Returns: {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 #### `getContext()`
 
@@ -465,17 +477,19 @@ Update the hash
 
 ### Properties
 
-* `category` {string}
-* `disconnect` {any}
-* `loc` {DependencyLocation}
-* `module` {any}
-* `optional` {boolean}
-* `type` {string}
-* `weak` {boolean}
-* `EXPORTS_OBJECT_REFERENCED` {string[][]}
-* `NO_EXPORTS_REFERENCED` {string[][]}
-* `Template` {NullDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+| Property | Modifier | Type | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="category"></a> `category` | `public` | {string} | - | [`Dependency`](../../globals.md#dependency).[`category`](../../globals.md#category) |
+| <a id="disconnect"></a> `disconnect` | `public` | {any} | - | [`Dependency`](../../globals.md#dependency).[`disconnect`](../../globals.md#disconnect) |
+| <a id="loc"></a> `loc` | `public` | {DependencyLocation} | - | [`Dependency`](../../globals.md#dependency).[`loc`](../../globals.md#loc) |
+| <a id="module"></a> `module` | `public` | {any} | - | [`Dependency`](../../globals.md#dependency).[`module`](../../globals.md#module) |
+| <a id="optional"></a> `optional?` | `public` | {boolean} | - | [`Dependency`](../../globals.md#dependency).[`optional`](../../globals.md#optional) |
+| <a id="type"></a> `type` | `public` | {string} | - | [`Dependency`](../../globals.md#dependency).[`type`](../../globals.md#type) |
+| <a id="weak"></a> `weak` | `public` | {boolean} | - | [`Dependency`](../../globals.md#dependency).[`weak`](../../globals.md#weak) |
+| <a id="exports-object-referenced"></a> `EXPORTS_OBJECT_REFERENCED` | `static` | {string[][]} | [`Dependency`](../../globals.md#dependency).[`EXPORTS_OBJECT_REFERENCED`](../../globals.md#exports-object-referenced) | - |
+| <a id="no-exports-referenced"></a> `NO_EXPORTS_REFERENCED` | `static` | {string[][]} | [`Dependency`](../../globals.md#dependency).[`NO_EXPORTS_REFERENCED`](../../globals.md#no-exports-referenced) | - |
+| <a id="template"></a> `Template` | `static` | {NullDependencyTemplate} | - | - |
+| <a id="transitive"></a> `TRANSITIVE` | `static` | {TRANSITIVE} | [`Dependency`](../../globals.md#dependency).[`TRANSITIVE`](../../globals.md#transitive) | - |
 
 ### Methods
 
@@ -496,7 +510,7 @@ Update the hash
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
-* Returns: {false|object}
+* Returns: {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 #### `getContext()`
 

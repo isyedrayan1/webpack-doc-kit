@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {NodeEnvironmentPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {NodeEnvironmentPluginOptions} |
 
 ### Methods
 
@@ -54,7 +56,9 @@ Apply the plugin
 
 ### Properties
 
-* `type` {ExternalsType}
+| Property | Type |
+| ------ | ------ |
+| <a id="type"></a> `type` | {ExternalsType} |
 
 ### Methods
 
@@ -118,7 +122,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {ReadFileCompileWasmPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {ReadFileCompileWasmPluginOptions} |
 
 ### Methods
 

@@ -15,53 +15,55 @@
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunk` {Chunk}
-* `chunkGraph` {ChunkGraph}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `compilation` {Compilation}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `dependentHash` {boolean}
-* `depth` {number}
-* `errors` {any}
-* `exportsArgument` {string}
-* `factoryMeta` {FactoryMeta}
-* `fullHash` {boolean}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `moduleArgument` {string}
-* `name` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `renderedHash` {string}
-* `resolveOptions` {ResolveOptions}
-* `stage` {number}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
-* `STAGE_ATTACH` {number} Runtime modules which attach to handlers of other runtime modules
-* `STAGE_BASIC` {number} Runtime modules with simple dependencies on other runtime modules
-* `STAGE_NORMAL` {number} Runtime modules without any dependencies to other runtime modules
-* `STAGE_TRIGGER` {number} Runtime modules which trigger actions on bootstrap
+| Property | Modifier | Type | Description | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | `public` | {AsyncDependenciesBlock[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`blocks`](../../globals.md#blocks) |
+| <a id="buildinfo"></a> `buildInfo?` | `public` | {BuildInfo} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`buildInfo`](../../globals.md#buildinfo) |
+| <a id="buildmeta"></a> `buildMeta?` | `public` | {BuildMeta} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`buildMeta`](../../globals.md#buildmeta) |
+| <a id="chunk"></a> `chunk?` | `public` | {Chunk} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunk`](../../globals.md#chunk) |
+| <a id="chunkgraph"></a> `chunkGraph?` | `public` | {ChunkGraph} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunkGraph`](../../globals.md#chunkgraph) |
+| <a id="chunksiterable"></a> `chunksIterable` | `public` | {Iterable<Chunk>} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunksIterable`](../../globals.md#chunksiterable) |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`codeGenerationDependencies`](../../globals.md#codegenerationdependencies) |
+| <a id="compilation"></a> `compilation?` | `public` | {Compilation} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`compilation`](../../globals.md#compilation) |
+| <a id="context"></a> `context` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`context`](../../globals.md#context) |
+| <a id="debugid"></a> `debugId` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`debugId`](../../globals.md#debugid) |
+| <a id="dependencies"></a> `dependencies` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`dependencies`](../../globals.md#dependencies) |
+| <a id="dependenthash"></a> `dependentHash` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`dependentHash`](../../globals.md#dependenthash) |
+| <a id="depth"></a> `depth` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`depth`](../../globals.md#depth) |
+| <a id="errors"></a> `errors` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`errors`](../../globals.md#errors) |
+| <a id="exportsargument"></a> `exportsArgument` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`exportsArgument`](../../globals.md#exportsargument) |
+| <a id="factorymeta"></a> `factoryMeta?` | `public` | {FactoryMeta} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`factoryMeta`](../../globals.md#factorymeta) |
+| <a id="fullhash"></a> `fullHash` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`fullHash`](../../globals.md#fullhash) |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hasEqualsChunks`](../../globals.md#hasequalschunks) |
+| <a id="hash"></a> `hash` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hash`](../../globals.md#hash) |
+| <a id="hot"></a> `hot` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hot`](../../globals.md#hot) |
+| <a id="id"></a> ~~`id`~~ | `public` | {string|number} | **Deprecated** | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`id`](../../globals.md#id) |
+| <a id="index"></a> `index` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`index`](../../globals.md#index) |
+| <a id="index2"></a> `index2` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`index2`](../../globals.md#index2) |
+| <a id="issuer"></a> `issuer?` | `public` | {Module} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`issuer`](../../globals.md#issuer) |
+| <a id="isused"></a> `isUsed` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`isUsed`](../../globals.md#isused) |
+| <a id="layer"></a> `layer` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`layer`](../../globals.md#layer) |
+| <a id="moduleargument"></a> `moduleArgument` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`moduleArgument`](../../globals.md#moduleargument) |
+| <a id="name"></a> `name` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`name`](../../globals.md#name) |
+| <a id="needid"></a> `needId` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`needId`](../../globals.md#needid) |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | `public` | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`optimizationBailout`](../../globals.md#optimizationbailout) |
+| <a id="optional"></a> `optional` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`optional`](../../globals.md#optional) |
+| <a id="parent"></a> `parent?` | `public` | {DependenciesBlock} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`parent`](../../globals.md#parent) |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`presentationalDependencies`](../../globals.md#presentationaldependencies) |
+| <a id="profile"></a> `profile?` | `public` | {ModuleProfile} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`profile`](../../globals.md#profile) |
+| <a id="renderedhash"></a> `renderedHash` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`renderedHash`](../../globals.md#renderedhash) |
+| <a id="resolveoptions"></a> `resolveOptions?` | `public` | {ResolveOptions} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`resolveOptions`](../../globals.md#resolveoptions) |
+| <a id="stage"></a> `stage` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`stage`](../../globals.md#stage) |
+| <a id="type"></a> `type` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`type`](../../globals.md#type) |
+| <a id="used"></a> `used` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`used`](../../globals.md#used) |
+| <a id="usedexports"></a> `usedExports` | `public` | {boolean|SortableSet<string>} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`usedExports`](../../globals.md#usedexports) |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`useSimpleSourceMap`](../../globals.md#usesimplesourcemap) |
+| <a id="usesourcemap"></a> `useSourceMap` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`useSourceMap`](../../globals.md#usesourcemap) |
+| <a id="warnings"></a> `warnings` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`warnings`](../../globals.md#warnings) |
+| <a id="stage-attach"></a> `STAGE_ATTACH` | `static` | {number} | Runtime modules which attach to handlers of other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_ATTACH`](../../globals.md#stage-attach) | - |
+| <a id="stage-basic"></a> `STAGE_BASIC` | `static` | {number} | Runtime modules with simple dependencies on other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_BASIC`](../../globals.md#stage-basic) | - |
+| <a id="stage-normal"></a> `STAGE_NORMAL` | `static` | {number} | Runtime modules without any dependencies to other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_NORMAL`](../../globals.md#stage-normal) | - |
+| <a id="stage-trigger"></a> `STAGE_TRIGGER` | `static` | {number} | Runtime modules which trigger actions on bootstrap | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_TRIGGER`](../../globals.md#stage-trigger) | - |
 
 ### Methods
 
@@ -124,7 +126,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -304,7 +306,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`
@@ -422,7 +424,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {FetchCompileWasmPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {FetchCompileWasmPluginOptions} |
 
 ### Methods
 
@@ -450,53 +454,55 @@ Apply the plugin
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunk` {Chunk}
-* `chunkGraph` {ChunkGraph}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `compilation` {Compilation}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `dependentHash` {boolean}
-* `depth` {number}
-* `errors` {any}
-* `exportsArgument` {string}
-* `factoryMeta` {FactoryMeta}
-* `fullHash` {boolean}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `moduleArgument` {string}
-* `name` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `renderedHash` {string}
-* `resolveOptions` {ResolveOptions}
-* `stage` {number}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
-* `STAGE_ATTACH` {number} Runtime modules which attach to handlers of other runtime modules
-* `STAGE_BASIC` {number} Runtime modules with simple dependencies on other runtime modules
-* `STAGE_NORMAL` {number} Runtime modules without any dependencies to other runtime modules
-* `STAGE_TRIGGER` {number} Runtime modules which trigger actions on bootstrap
+| Property | Modifier | Type | Description | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | `public` | {AsyncDependenciesBlock[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`blocks`](../../globals.md#blocks) |
+| <a id="buildinfo"></a> `buildInfo?` | `public` | {BuildInfo} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`buildInfo`](../../globals.md#buildinfo) |
+| <a id="buildmeta"></a> `buildMeta?` | `public` | {BuildMeta} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`buildMeta`](../../globals.md#buildmeta) |
+| <a id="chunk"></a> `chunk?` | `public` | {Chunk} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunk`](../../globals.md#chunk) |
+| <a id="chunkgraph"></a> `chunkGraph?` | `public` | {ChunkGraph} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunkGraph`](../../globals.md#chunkgraph) |
+| <a id="chunksiterable"></a> `chunksIterable` | `public` | {Iterable<Chunk>} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`chunksIterable`](../../globals.md#chunksiterable) |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`codeGenerationDependencies`](../../globals.md#codegenerationdependencies) |
+| <a id="compilation"></a> `compilation?` | `public` | {Compilation} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`compilation`](../../globals.md#compilation) |
+| <a id="context"></a> `context` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`context`](../../globals.md#context) |
+| <a id="debugid"></a> `debugId` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`debugId`](../../globals.md#debugid) |
+| <a id="dependencies"></a> `dependencies` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`dependencies`](../../globals.md#dependencies) |
+| <a id="dependenthash"></a> `dependentHash` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`dependentHash`](../../globals.md#dependenthash) |
+| <a id="depth"></a> `depth` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`depth`](../../globals.md#depth) |
+| <a id="errors"></a> `errors` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`errors`](../../globals.md#errors) |
+| <a id="exportsargument"></a> `exportsArgument` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`exportsArgument`](../../globals.md#exportsargument) |
+| <a id="factorymeta"></a> `factoryMeta?` | `public` | {FactoryMeta} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`factoryMeta`](../../globals.md#factorymeta) |
+| <a id="fullhash"></a> `fullHash` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`fullHash`](../../globals.md#fullhash) |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hasEqualsChunks`](../../globals.md#hasequalschunks) |
+| <a id="hash"></a> `hash` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hash`](../../globals.md#hash) |
+| <a id="hot"></a> `hot` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`hot`](../../globals.md#hot) |
+| <a id="id"></a> ~~`id`~~ | `public` | {string|number} | **Deprecated** | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`id`](../../globals.md#id) |
+| <a id="index"></a> `index` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`index`](../../globals.md#index) |
+| <a id="index2"></a> `index2` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`index2`](../../globals.md#index2) |
+| <a id="issuer"></a> `issuer?` | `public` | {Module} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`issuer`](../../globals.md#issuer) |
+| <a id="isused"></a> `isUsed` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`isUsed`](../../globals.md#isused) |
+| <a id="layer"></a> `layer` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`layer`](../../globals.md#layer) |
+| <a id="moduleargument"></a> `moduleArgument` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`moduleArgument`](../../globals.md#moduleargument) |
+| <a id="name"></a> `name` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`name`](../../globals.md#name) |
+| <a id="needid"></a> `needId` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`needId`](../../globals.md#needid) |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | `public` | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`optimizationBailout`](../../globals.md#optimizationbailout) |
+| <a id="optional"></a> `optional` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`optional`](../../globals.md#optional) |
+| <a id="parent"></a> `parent?` | `public` | {DependenciesBlock} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`parent`](../../globals.md#parent) |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | `public` | {Dependency[]} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`presentationalDependencies`](../../globals.md#presentationaldependencies) |
+| <a id="profile"></a> `profile?` | `public` | {ModuleProfile} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`profile`](../../globals.md#profile) |
+| <a id="renderedhash"></a> `renderedHash` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`renderedHash`](../../globals.md#renderedhash) |
+| <a id="resolveoptions"></a> `resolveOptions?` | `public` | {ResolveOptions} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`resolveOptions`](../../globals.md#resolveoptions) |
+| <a id="stage"></a> `stage` | `public` | {number} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`stage`](../../globals.md#stage) |
+| <a id="type"></a> `type` | `public` | {string} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`type`](../../globals.md#type) |
+| <a id="used"></a> `used` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`used`](../../globals.md#used) |
+| <a id="usedexports"></a> `usedExports` | `public` | {boolean|SortableSet<string>} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`usedExports`](../../globals.md#usedexports) |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`useSimpleSourceMap`](../../globals.md#usesimplesourcemap) |
+| <a id="usesourcemap"></a> `useSourceMap` | `public` | {boolean} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`useSourceMap`](../../globals.md#usesourcemap) |
+| <a id="warnings"></a> `warnings` | `public` | {any} | - | - | [`RuntimeModule`](../../globals.md#runtimemodule).[`warnings`](../../globals.md#warnings) |
+| <a id="stage-attach"></a> `STAGE_ATTACH` | `static` | {number} | Runtime modules which attach to handlers of other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_ATTACH`](../../globals.md#stage-attach) | - |
+| <a id="stage-basic"></a> `STAGE_BASIC` | `static` | {number} | Runtime modules with simple dependencies on other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_BASIC`](../../globals.md#stage-basic) | - |
+| <a id="stage-normal"></a> `STAGE_NORMAL` | `static` | {number} | Runtime modules without any dependencies to other runtime modules | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_NORMAL`](../../globals.md#stage-normal) | - |
+| <a id="stage-trigger"></a> `STAGE_TRIGGER` | `static` | {number} | Runtime modules which trigger actions on bootstrap | [`RuntimeModule`](../../globals.md#runtimemodule).[`STAGE_TRIGGER`](../../globals.md#stage-trigger) | - |
 
 ### Methods
 
@@ -559,7 +565,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -739,7 +745,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`

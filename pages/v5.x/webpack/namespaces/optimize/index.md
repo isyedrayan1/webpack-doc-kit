@@ -15,7 +15,9 @@
 
 ### Properties
 
-* `options` {AggressiveMergingPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {AggressiveMergingPluginOptions} |
 
 ### Methods
 
@@ -39,7 +41,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {AggressiveSplittingPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {AggressiveSplittingPluginOptions} |
 
 ### Methods
 
@@ -68,7 +72,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {LimitChunkCountPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {LimitChunkCountPluginOptions} |
 
 ### Methods
 
@@ -90,7 +96,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {MergeDuplicateChunksPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {MergeDuplicateChunksPluginOptions} |
 
 ### Methods
 
@@ -112,7 +120,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {MinChunkSizePluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {MinChunkSizePluginOptions} |
 
 ### Methods
 
@@ -175,12 +185,15 @@ Apply the plugin
 
 #### `new RuntimeChunkPlugin([options])`
 
-* `options` {object}
+* `options` {{ name: (entrypoint: { name: string }) => string }}
 * Returns: {RuntimeChunkPlugin}
 
 ### Properties
 
-* `options` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {{ name: string|(entrypoint: { name: string }) => string }} |
+| `options.name` | {string|(entrypoint: { name: string }) => string} |
 
 ### Methods
 
@@ -231,7 +244,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {SplitChunksOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {SplitChunksOptions} |
 
 ### Methods
 

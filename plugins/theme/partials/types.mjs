@@ -1,6 +1,59 @@
 const union = (arr, sep = '|') =>
   arr?.length ? arr.map(resolve).join(sep) : 'unknown';
 
+const MAX_REFLECTION_CHILDREN = 3;
+
+const stringifyParameters = (params = []) =>
+  params
+    .map(({ name, type, flags }) => {
+      const optional = flags?.isOptional ? '?' : '';
+      return `${name}${optional}: ${resolve(type)}`;
+    })
+    .join(', ');
+
+const stringifyTypeParameters = (typeParameters = []) => {
+  if (!typeParameters.length) return '';
+
+  return `<${typeParameters
+    .map(param => {
+      const constraint = param.type ? ` extends ${resolve(param.type)}` : '';
+      const defaultType = param.default ? ` = ${resolve(param.default)}` : '';
+      return `${param.name}${constraint}${defaultType}`;
+    })
+    .join(', ')}>`;
+};
+
+const stringifySignature = signature => {
+  const params = stringifyParameters(signature?.parameters);
+  const returns = resolve(signature?.type);
+  const typeParams = stringifyTypeParameters(signature?.typeParameters);
+
+  return `${typeParams}(${params}) => ${returns}`;
+};
+
+const stringifyIndexSignatures = declaration =>
+  declaration.indexSignatures
+    .map(signature => {
+      const key = signature.parameters?.[0];
+      const keyName = key?.name ?? 'index';
+      const keyType = resolve(key?.type);
+      const valueType = resolve(signature.type);
+      return `[${keyName}: ${keyType}]: ${valueType}`;
+    })
+    .join('; ');
+
+const stringifyChildrenPreview = declaration => {
+  const preview = declaration.children
+    .slice(0, MAX_REFLECTION_CHILDREN)
+    .map(child => `${child.name}: ${resolve(child.type)}`)
+    .join('; ');
+
+  const suffix =
+    declaration.children.length > MAX_REFLECTION_CHILDREN ? '; ...' : '';
+
+  return `{ ${preview}${suffix} }`;
+};
+
 const resolve = type => {
   if (!type) return 'unknown';
 
@@ -25,8 +78,10 @@ const resolve = type => {
       return `Tuple<${union(type.elements, ', ')}>`;
 
     case 'union':
+      return union(type.types, '|');
+
     case 'intersection':
-      return union(type.types);
+      return union(type.types, '&');
 
     case 'optional':
     case 'indexedAccess':
@@ -44,8 +99,23 @@ const resolve = type => {
     case 'named-tuple-member':
       return resolve(type.element);
 
-    case 'reflection':
+    case 'reflection': {
+      const declaration = type.declaration;
+
+      if (declaration?.signatures?.length) {
+        return stringifySignature(declaration.signatures[0]);
+      }
+
+      if (declaration?.indexSignatures?.length) {
+        return `{ ${stringifyIndexSignatures(declaration)} }`;
+      }
+
+      if (declaration?.children?.length) {
+        return stringifyChildrenPreview(declaration);
+      }
+
       return 'object';
+    }
 
     case 'inferred':
     case 'unknown':
@@ -75,5 +145,5 @@ export const arrayType = someType,
   unionType = someType,
   unknownType = someType;
 
-export const declarationType = () => '{object}';
-export const functionType = () => '{Function}';
+export const declarationType = someType;
+export const functionType = model => `{${stringifySignature(model)}}`;

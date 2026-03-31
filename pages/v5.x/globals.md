@@ -46,15 +46,17 @@
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `chunkName` {string}
-* `circular` {boolean}
-* `dependencies` {Dependency[]}
-* `groupOptions` {GroupOptionsAsyncDependenciesBlock}
-* `loc` {SyntheticDependencyLocation|RealDependencyLocation}
-* `module` {any}
-* `parent` {DependenciesBlock}
-* `request` {string}
+| Property | Type | Inherited from |
+| ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | {AsyncDependenciesBlock[]} | `DependenciesBlock.blocks` |
+| <a id="chunkname"></a> `chunkName?` | {string} | - |
+| <a id="circular"></a> `circular` | {boolean} | - |
+| <a id="dependencies"></a> `dependencies` | {Dependency[]} | `DependenciesBlock.dependencies` |
+| <a id="groupoptions"></a> `groupOptions` | {GroupOptionsAsyncDependenciesBlock} | - |
+| <a id="loc"></a> `loc?` | {SyntheticDependencyLocation|RealDependencyLocation} | - |
+| <a id="module"></a> `module` | {any} | - |
+| <a id="parent"></a> `parent?` | {DependenciesBlock} | `DependenciesBlock.parent` |
+| <a id="request"></a> `request?` | {string} | - |
 
 ### Methods
 
@@ -134,8 +136,10 @@ Apply the plugin
 
 ### Properties
 
-* `banner` {object}
-* `options` {BannerPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="banner"></a> `banner` | {(data: { chunk: Chunk; filename: string; hash: string }) => string} |
+| <a id="options"></a> `options` | {BannerPluginOptions} |
 
 ### Methods
 
@@ -158,11 +162,19 @@ Apply the plugin
 
 ### Properties
 
-* `hooks` {object}
-* `STAGE_DEFAULT` {number}
-* `STAGE_DISK` {number}
-* `STAGE_MEMORY` {number}
-* `STAGE_NETWORK` {number}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="hooks"></a> `hooks` | `public` | {{ beginIdle: SyncHook<Tuple<unknown>>; endIdle: AsyncParallelHook<Tuple<unknown>>; get: AsyncSeriesBailHook<Tuple<string, Etag, GotHandler<any>[]>, any>; ... }} |
+| `hooks.beginIdle` | `public` | {SyncHook<Tuple<unknown>>} |
+| `hooks.endIdle` | `public` | {AsyncParallelHook<Tuple<unknown>>} |
+| `hooks.get` | `public` | {AsyncSeriesBailHook<Tuple<string, Etag, GotHandler<any>[]>, any>} |
+| `hooks.shutdown` | `public` | {AsyncParallelHook<Tuple<unknown>>} |
+| `hooks.store` | `public` | {AsyncParallelHook<Tuple<string, Etag, any>>} |
+| `hooks.storeBuildDependencies` | `public` | {AsyncParallelHook<Tuple<Iterable<string, any, any>>>} |
+| <a id="stage-default"></a> `STAGE_DEFAULT` | `static` | {number} |
+| <a id="stage-disk"></a> `STAGE_DISK` | `static` | {number} |
+| <a id="stage-memory"></a> `STAGE_MEMORY` | `static` | {number} |
+| <a id="stage-network"></a> `STAGE_NETWORK` | `static` | {number} |
 
 ### Methods
 
@@ -177,9 +189,7 @@ Apply the plugin
 
 #### `get(identifier, etag, callback)`
 
-###### T
-
-`T`
+* `T`
 * `identifier` {string}
 * `etag` {Etag}
 * `callback` {CallbackCacheCache<T>}
@@ -192,9 +202,7 @@ Apply the plugin
 
 #### `store(identifier, etag, data, callback)`
 
-###### T
-
-`T`
+* `T`
 * `identifier` {string}
 * `etag` {Etag}
 * `data` {T}
@@ -227,26 +235,28 @@ After this method has succeeded the cache can only be restored when build depend
 
 ### Properties
 
-* `auxiliaryFiles` {Set<string>}
-* `chunkReason` {string}
-* `contentHash` {Record<string, string>}
-* `cssFilenameTemplate` {string|object}
-* `debugId` {number}
-* `entryModule` {Module} 
-* `extraAsync` {boolean}
-* `filenameTemplate` {string|object}
-* `files` {Set<string>}
-* `groupsIterable` {SortableSet<ChunkGroup>}
-* `hash` {string}
-* `id` {string|number}
-* `idNameHints` {SortableSet<string>}
-* `ids` {ChunkId[]}
-* `modulesIterable` {Iterable<Module>}
-* `name` {string}
-* `preventIntegration` {boolean}
-* `rendered` {boolean}
-* `renderedHash` {string}
-* `runtime` {RuntimeSpec}
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="auxiliaryfiles"></a> `auxiliaryFiles` | {Set<string>} | - |
+| <a id="chunkreason"></a> `chunkReason?` | {string} | - |
+| <a id="contenthash"></a> `contentHash` | {Record<string, string>} | - |
+| <a id="cssfilenametemplate"></a> `cssFilenameTemplate?` | {string|(pathData: PathData, assetInfo?: AssetInfo) => string} | - |
+| <a id="debugid"></a> `debugId` | {number} | - |
+| <a id="entrymodule"></a> ~~`entryModule`~~ | {Module} | **Deprecated** |
+| <a id="extraasync"></a> `extraAsync` | {boolean} | - |
+| <a id="filenametemplate"></a> `filenameTemplate?` | {string|(pathData: PathData, assetInfo?: AssetInfo) => string} | - |
+| <a id="files"></a> `files` | {Set<string>} | - |
+| <a id="groupsiterable"></a> `groupsIterable` | {SortableSet<ChunkGroup>} | - |
+| <a id="hash"></a> `hash?` | {string} | - |
+| <a id="id"></a> `id` | {string|number} | - |
+| <a id="idnamehints"></a> `idNameHints` | {SortableSet<string>} | - |
+| <a id="ids"></a> `ids` | {ChunkId[]} | - |
+| <a id="modulesiterable"></a> `modulesIterable` | {Iterable<Module>} | - |
+| <a id="name"></a> `name?` | {string} | - |
+| <a id="preventintegration"></a> `preventIntegration` | {boolean} | - |
+| <a id="rendered"></a> `rendered` | {boolean} | - |
+| <a id="renderedhash"></a> `renderedHash?` | {string} | - |
+| <a id="runtime"></a> `runtime` | {RuntimeSpec} | - |
 
 ### Methods
 
@@ -302,14 +312,14 @@ After this method has succeeded the cache can only be restored when build depend
 #### `getChildIdsByOrders(chunkGraph[, filterFn])`
 
 * `chunkGraph` {ChunkGraph}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {Record<string, ChunkId[]>}
 
 #### `getChildIdsByOrdersMap(chunkGraph[, includeDirectChildren][, filterFn])`
 
 * `chunkGraph` {ChunkGraph}
 * `includeDirectChildren` {boolean}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {ChunkChildIdsByOrdersMapByData}
 
 #### `getChildrenOfTypeInOrder(chunkGraph, type)`
@@ -327,7 +337,7 @@ After this method has succeeded the cache can only be restored when build depend
 
 #### `getChunkModuleMaps(filterFn)`
 
-* `filterFn` {object}
+* `filterFn` {(m: Module) => boolean}
 * Returns: {ChunkModuleMaps}
 
 #### `getEntryOptions()`
@@ -355,7 +365,7 @@ After this method has succeeded the cache can only be restored when build depend
 * `chunkGraph` {ChunkGraph}
 * `type` {string}
 * `includeDirectChildren` {boolean}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {boolean}
 
 #### `hasEntryModule()`
@@ -364,8 +374,8 @@ After this method has succeeded the cache can only be restored when build depend
 
 #### `hasModuleInGraph(filterFn[, filterChunkFn])`
 
-* `filterFn` {object}
-* `filterChunkFn` {object}
+* `filterFn` {(m: Module) => boolean}
+* `filterChunkFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {boolean}
 
 #### `hasRuntime()`
@@ -450,7 +460,9 @@ After this method has succeeded the cache can only be restored when build depend
 
 ### Properties
 
-* `moduleGraph` {ModuleGraph}
+| Property | Type |
+| ------ | ------ |
+| <a id="modulegraph"></a> `moduleGraph` | {ModuleGraph} |
 
 ### Methods
 
@@ -593,7 +605,7 @@ After this method has succeeded the cache can only be restored when build depend
 #### `getChunkConditionMap(chunk, filterFn)`
 
 * `chunk` {Chunk}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {ChunkConditionMap}
 
 #### `getChunkDependentHashModulesIterable(chunk)`
@@ -629,14 +641,14 @@ After this method has succeeded the cache can only be restored when build depend
 #### `getChunkModuleIdMap(chunk, filterFn[, includeAllChunks])`
 
 * `chunk` {Chunk}
-* `filterFn` {object}
+* `filterFn` {(m: Module) => boolean}
 * `includeAllChunks` {boolean}
 * Returns: {ChunkModuleIdMapEs5Alias_2}
 
 #### `getChunkModuleRenderedHashMap(chunk, filterFn[, hashLength][, includeAllChunks])`
 
 * `chunk` {Chunk}
-* `filterFn` {object}
+* `filterFn` {(m: Module) => boolean}
 * `hashLength` {number}
 * `includeAllChunks` {boolean}
 * Returns: {ChunkModuleHashMap}
@@ -785,26 +797,26 @@ After this method has succeeded the cache can only be restored when build depend
 #### `getOrderedChunkModules(chunk, comparator)`
 
 * `chunk` {Chunk}
-* `comparator` {object}
+* `comparator` {(a: Module, b: Module) => -1|0|1}
 * Returns: {Module[]}
 
 #### `getOrderedChunkModulesIterable(chunk, comparator)`
 
 * `chunk` {Chunk}
-* `comparator` {object}
+* `comparator` {(a: Module, b: Module) => -1|0|1}
 * Returns: {Iterable<Module>}
 
 #### `getOrderedChunkModulesIterableBySourceType(chunk, sourceType, comparator)`
 
 * `chunk` {Chunk}
 * `sourceType` {string}
-* `comparator` {object}
+* `comparator` {(a: Module, b: Module) => -1|0|1}
 * Returns: {Iterable<Module, any, any>}
 
 #### `getOrderedModuleChunksIterable(module, sortFn)`
 
 * `module` {Module}
-* `sortFn` {object}
+* `sortFn` {(a: Chunk, b: Chunk) => -1|0|1}
 * Returns: {Iterable<Chunk>}
 
 #### `getRenderedModuleHash(module, runtime)`
@@ -842,8 +854,8 @@ After this method has succeeded the cache can only be restored when build depend
 #### `hasModuleInGraph(chunk, filterFn[, filterChunkFn])`
 
 * `chunk` {Chunk}
-* `filterFn` {object}
-* `filterChunkFn` {object}
+* `filterFn` {(m: Module) => boolean}
+* `filterChunkFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {boolean}
 
 #### `integrateChunks(chunkA, chunkB)`
@@ -977,21 +989,22 @@ After this method has succeeded the cache can only be restored when build depend
 
 ### Properties
 
-* `asyncEntrypointsIterable` {SortableSet<ChunkGroup>}
-* `blocksIterable` {Iterable<AsyncDependenciesBlock>}
-* `childrenIterable` {SortableSet<ChunkGroup>}
-* `chunks` {Chunk[]}
-* `debugId` {string} get a uniqueId for ChunkGroup, made up of its member Chunk debugId's
-* `getModuleIndex` {object}
-* `getModuleIndex2` {object}
-* `groupDebugId` {number}
-* `id` {string} get a unique id for ChunkGroup, made up of its member Chunk id's
-* `index` {number}
-* `name` {string} returns the name of current ChunkGroup
-sets a new name for current ChunkGroup
-* `options` {ChunkGroupOptions}
-* `origins` {OriginRecord[]}
-* `parentsIterable` {SortableSet<ChunkGroup>}
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="asyncentrypointsiterable"></a> `asyncEntrypointsIterable` | {SortableSet<ChunkGroup>} | - |
+| <a id="blocksiterable"></a> `blocksIterable` | {Iterable<AsyncDependenciesBlock>} | - |
+| <a id="childreniterable"></a> `childrenIterable` | {SortableSet<ChunkGroup>} | - |
+| <a id="chunks"></a> `chunks` | {Chunk[]} | - |
+| <a id="debugid"></a> `debugId` | {string} | get a uniqueId for ChunkGroup, made up of its member Chunk debugId's |
+| <a id="getmoduleindex"></a> `getModuleIndex` | {(module: Module) => number} | - |
+| <a id="getmoduleindex2"></a> `getModuleIndex2` | {(module: Module) => number} | - |
+| <a id="groupdebugid"></a> `groupDebugId` | {number} | - |
+| <a id="id"></a> `id` | {string} | get a unique id for ChunkGroup, made up of its member Chunk id's |
+| <a id="index"></a> `index?` | {number} | - |
+| <a id="name"></a> `name?` | {string} | returns the name of current ChunkGroup sets a new name for current ChunkGroup |
+| <a id="options"></a> `options` | {ChunkGroupOptions} | - |
+| <a id="origins"></a> `origins` | {OriginRecord[]} | - |
+| <a id="parentsiterable"></a> `parentsIterable` | {SortableSet<ChunkGroup>} | - |
 
 ### Methods
 
@@ -1184,7 +1197,9 @@ Performs an unshift of a specific chunk
 
 ### Properties
 
-* `options` {CleanOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {CleanOptions} |
 
 ### Methods
 
@@ -1212,7 +1227,9 @@ Apply the plugin
 
 ### Properties
 
-* `map` {Map<Module, RuntimeSpecMap<CodeGenerationResult, CodeGenerationResult>>}
+| Property | Type |
+| ------ | ------ |
+| <a id="map"></a> `map` | {Map<Module, RuntimeSpecMap<CodeGenerationResult, CodeGenerationResult>>} |
 
 ### Methods
 
@@ -1277,96 +1294,91 @@ Creates an instance of Compilation.
 
 ### Properties
 
-* `additionalChunkAssets` {string[]}
-* `addModuleQueue` {AsyncQueue<Module, string, Module>}
-* `assets` {CompilationAssets}
-* `assetsInfo` {Map<string, AssetInfo>}
-* `asyncEntrypoints` {Entrypoint[]}
-* `bail` {boolean}
-* `buildDependencies` {LazySet<string>}
-* `buildQueue` {AsyncQueue<Module, Module, Module>}
-* `buildTimeExecutedModules` {WeakSet<Module>}
-* `builtModules` {WeakSet<Module>}
-* `children` {Compilation[]}
-* `childrenCounters` {Record<string, number>}
-* `chunkGraph` {ChunkGraph}
-* `chunkGroups` {ChunkGroup[]}
-* `chunks` {Set<Chunk>}
-* `chunkTemplate` {ChunkTemplate}
-* `codeGeneratedModules` {WeakSet<Module>}
-* `codeGenerationResults` {CodeGenerationResults}
-* `comparedForEmitAssets` {Set<string>}
-* `compilationDependencies` {object} 
-* `compiler` {Compiler}
-* `compilerPath` {string}
-* `contextDependencies` {LazySet<string>}
-* `creatingModuleDuringBuild` {WeakMap<Module, Set<Module>>} Modules in value are building during the build of Module in key.
-Means value blocking key from finishing.
-Needed to detect build cycles.
-* `dependencyFactories` {Map<DependencyConstructor, ModuleFactory>}
-* `dependencyTemplates` {DependencyTemplates}
-* `emittedAssets` {Set<string>}
-* `endTime` {number}
-* `entries` {Map<string, EntryData>}
-* `entrypoints` {Map<string, Entrypoint>}
-* `errors` {Error[]}
-* `factorizeQueue` {AsyncQueue<FactorizeModuleOptions, string, Module|ModuleFactoryResult>}
-* `fileDependencies` {LazySet<string>}
-* `fileSystemInfo` {FileSystemInfo}
-* `fullHash` {string}
-* `globalEntry` {EntryData}
-* `hash` {string}
-* `hooks` {Readonly<object>}
-* `inputFileSystem` {InputFileSystem}
-* `logger` {WebpackLogger}
-* `logging` {Map<string, LogEntry[]>}
-* `mainTemplate` {MainTemplate}
-* `missingDependencies` {LazySet<string>}
-* `moduleGraph` {ModuleGraph}
-* `moduleMemCaches` {Map<Module, WeakTupleMap<any[], any>>}
-* `moduleMemCaches2` {Map<Module, WeakTupleMap<any[], any>>}
-* `modules` {Set<Module>}
-* `moduleTemplates` {ModuleTemplates}
-* `name` {string}
-* `namedChunkGroups` {Map<string, ChunkGroup>}
-* `namedChunks` {Map<string, Chunk>}
-* `needAdditionalPass` {boolean}
-* `options` {WebpackOptionsNormalizedWithDefaults}
-* `outputOptions` {OutputNormalizedWithDefaults}
-* `params` {CompilationParams}
-* `processDependenciesQueue` {AsyncQueue<Module, Module, Module>}
-* `profile` {boolean}
-* `rebuildQueue` {AsyncQueue<Module, Module, Module>}
-* `records` {Records}
-* `requestShortener` {RequestShortener}
-* `resolverFactory` {ResolverFactory}
-* `runtimeTemplate` {RuntimeTemplate}
-* `startTime` {number}
-* `usedChunkIds` {Set<number>}
-* `usedModuleIds` {Set<number>}
-* `valueCacheVersions` {Map<string, ValueCacheVersion>}
-* `warnings` {Error[]}
-* `PROCESS_ASSETS_STAGE_ADDITIONAL` {number} Add additional assets to the compilation.
-* `PROCESS_ASSETS_STAGE_ADDITIONS` {number} Add additional sections to existing assets, like a banner or initialization code.
-* `PROCESS_ASSETS_STAGE_ANALYSE` {number} Analyse existing assets.
-* `PROCESS_ASSETS_STAGE_DERIVED` {number} Derive new assets from existing assets.
-Existing assets should not be treated as complete.
-* `PROCESS_ASSETS_STAGE_DEV_TOOLING` {number} Add development tooling to assets, e. g. by extracting a SourceMap.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE` {number} Optimize existing assets in a general way.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_COMPATIBILITY` {number} Optimize the compatibility of existing assets, e. g. add polyfills or vendor-prefixes.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_COUNT` {number} Optimize the count of existing assets, e. g. by merging them.
-Only assets of the same type should be merged.
-For assets of different types see PROCESS_ASSETS_STAGE_OPTIMIZE_INLINE.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_HASH` {number} Optimize the hashes of the assets, e. g. by generating real hashes of the asset content.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_INLINE` {number} Optimize the count of existing assets, e. g. by inlining assets of into other assets.
-Only assets of different types should be inlined.
-For assets of the same type see PROCESS_ASSETS_STAGE_OPTIMIZE_COUNT.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE` {number} Optimize the size of existing assets, e. g. by minimizing or omitting whitespace.
-* `PROCESS_ASSETS_STAGE_OPTIMIZE_TRANSFER` {number} Optimize the transfer of existing assets, e. g. by preparing a compressed (gzip) file as separate asset.
-* `PROCESS_ASSETS_STAGE_PRE_PROCESS` {number} Basic preprocessing of assets.
-* `PROCESS_ASSETS_STAGE_REPORT` {number} Creating assets for reporting purposes.
-* `PROCESS_ASSETS_STAGE_SUMMARIZE` {number} Summarize the list of existing assets
-e. g. creating an assets manifest of Service Workers.
+| Property | Modifier | Type | Description |
+| ------ | ------ | ------ | ------ |
+| <a id="additionalchunkassets"></a> `additionalChunkAssets` | `public` | {string[]} | - |
+| <a id="addmodulequeue"></a> `addModuleQueue` | `public` | {AsyncQueue<Module, string, Module>} | - |
+| <a id="assets"></a> `assets` | `public` | {CompilationAssets} | - |
+| <a id="assetsinfo"></a> `assetsInfo` | `public` | {Map<string, AssetInfo>} | - |
+| <a id="asyncentrypoints"></a> `asyncEntrypoints` | `public` | {Entrypoint[]} | - |
+| <a id="bail"></a> `bail` | `public` | {boolean} | - |
+| <a id="builddependencies"></a> `buildDependencies` | `public` | {LazySet<string>} | - |
+| <a id="buildqueue"></a> `buildQueue` | `public` | {AsyncQueue<Module, Module, Module>} | - |
+| <a id="buildtimeexecutedmodules"></a> `buildTimeExecutedModules` | `public` | {WeakSet<Module>} | - |
+| <a id="builtmodules"></a> `builtModules` | `public` | {WeakSet<Module>} | - |
+| <a id="children"></a> `children` | `public` | {Compilation[]} | - |
+| <a id="childrencounters"></a> `childrenCounters` | `public` | {Record<string, number>} | - |
+| <a id="chunkgraph"></a> `chunkGraph` | `public` | {ChunkGraph} | - |
+| <a id="chunkgroups"></a> `chunkGroups` | `public` | {ChunkGroup[]} | - |
+| <a id="chunks"></a> `chunks` | `public` | {Set<Chunk>} | - |
+| <a id="chunktemplate"></a> `chunkTemplate` | `public` | {ChunkTemplate} | - |
+| <a id="codegeneratedmodules"></a> `codeGeneratedModules` | `public` | {WeakSet<Module>} | - |
+| <a id="codegenerationresults"></a> `codeGenerationResults?` | `public` | {CodeGenerationResults} | - |
+| <a id="comparedforemitassets"></a> `comparedForEmitAssets` | `public` | {Set<string>} | - |
+| <a id="compilationdependencies"></a> ~~`compilationDependencies`~~ | `public` | {{ add: (item: string) => LazySet<string> }} | **Deprecated** |
+| `compilationDependencies.add` | `public` | {(item: string) => LazySet<string>} | - |
+| <a id="compiler"></a> `compiler` | `public` | {Compiler} | - |
+| <a id="compilerpath"></a> `compilerPath` | `public` | {string} | - |
+| <a id="contextdependencies"></a> `contextDependencies` | `public` | {LazySet<string>} | - |
+| <a id="creatingmoduleduringbuild"></a> `creatingModuleDuringBuild` | `public` | {WeakMap<Module, Set<Module>>} | Modules in value are building during the build of Module in key. Means value blocking key from finishing. Needed to detect build cycles. |
+| <a id="dependencyfactories"></a> `dependencyFactories` | `public` | {Map<DependencyConstructor, ModuleFactory>} | - |
+| <a id="dependencytemplates"></a> `dependencyTemplates` | `public` | {DependencyTemplates} | - |
+| <a id="emittedassets"></a> `emittedAssets` | `public` | {Set<string>} | - |
+| <a id="endtime"></a> `endTime?` | `public` | {number} | - |
+| <a id="entries"></a> `entries` | `public` | {Map<string, EntryData>} | - |
+| <a id="entrypoints"></a> `entrypoints` | `public` | {Map<string, Entrypoint>} | - |
+| <a id="errors"></a> `errors` | `public` | {Error[]} | - |
+| <a id="factorizequeue"></a> `factorizeQueue` | `public` | {AsyncQueue<FactorizeModuleOptions, string, Module|ModuleFactoryResult>} | - |
+| <a id="filedependencies"></a> `fileDependencies` | `public` | {LazySet<string>} | - |
+| <a id="filesysteminfo"></a> `fileSystemInfo` | `public` | {FileSystemInfo} | - |
+| <a id="fullhash"></a> `fullHash?` | `public` | {string} | - |
+| <a id="globalentry"></a> `globalEntry` | `public` | {EntryData} | - |
+| <a id="hash"></a> `hash?` | `public` | {string} | - |
+| <a id="hooks"></a> `hooks` | `public` | {Readonly<{ addEntry: SyncHook<Tuple<Dependency, EntryOptions>>; additionalAssets: FakeHook<Pick<AsyncSeriesHook<Tuple<unknown>>, "name"|"tap"|"tapAsync"|"tapPromise">>; additionalChunkAssets: FakeHook<Pick<AsyncSeriesHook<Tuple<Set<Chunk>>>, "name"|"tap"|"tapAsync"|"tapPromise">>; ... }>} | - |
+| <a id="inputfilesystem"></a> `inputFileSystem` | `public` | {InputFileSystem} | - |
+| <a id="logger"></a> `logger` | `public` | {WebpackLogger} | - |
+| <a id="logging"></a> `logging` | `public` | {Map<string, LogEntry[]>} | - |
+| <a id="maintemplate"></a> `mainTemplate` | `public` | {MainTemplate} | - |
+| <a id="missingdependencies"></a> `missingDependencies` | `public` | {LazySet<string>} | - |
+| <a id="modulegraph"></a> `moduleGraph` | `public` | {ModuleGraph} | - |
+| <a id="modulememcaches"></a> `moduleMemCaches?` | `public` | {Map<Module, WeakTupleMap<any[], any>>} | - |
+| <a id="modulememcaches2"></a> `moduleMemCaches2?` | `public` | {Map<Module, WeakTupleMap<any[], any>>} | - |
+| <a id="modules"></a> `modules` | `public` | {Set<Module>} | - |
+| <a id="moduletemplates"></a> `moduleTemplates` | `public` | {ModuleTemplates} | - |
+| <a id="name"></a> `name?` | `public` | {string} | - |
+| <a id="namedchunkgroups"></a> `namedChunkGroups` | `public` | {Map<string, ChunkGroup>} | - |
+| <a id="namedchunks"></a> `namedChunks` | `public` | {Map<string, Chunk>} | - |
+| <a id="needadditionalpass"></a> `needAdditionalPass` | `public` | {boolean} | - |
+| <a id="options"></a> `options` | `public` | {WebpackOptionsNormalizedWithDefaults} | - |
+| <a id="outputoptions"></a> `outputOptions` | `public` | {OutputNormalizedWithDefaults} | - |
+| <a id="params"></a> `params` | `public` | {CompilationParams} | - |
+| <a id="processdependenciesqueue"></a> `processDependenciesQueue` | `public` | {AsyncQueue<Module, Module, Module>} | - |
+| <a id="profile"></a> `profile` | `public` | {boolean} | - |
+| <a id="rebuildqueue"></a> `rebuildQueue` | `public` | {AsyncQueue<Module, Module, Module>} | - |
+| <a id="records"></a> `records` | `public` | {Records} | - |
+| <a id="requestshortener"></a> `requestShortener` | `public` | {RequestShortener} | - |
+| <a id="resolverfactory"></a> `resolverFactory` | `public` | {ResolverFactory} | - |
+| <a id="runtimetemplate"></a> `runtimeTemplate` | `public` | {RuntimeTemplate} | - |
+| <a id="starttime"></a> `startTime?` | `public` | {number} | - |
+| <a id="usedchunkids"></a> `usedChunkIds` | `public` | {Set<number>} | - |
+| <a id="usedmoduleids"></a> `usedModuleIds` | `public` | {Set<number>} | - |
+| <a id="valuecacheversions"></a> `valueCacheVersions` | `public` | {Map<string, ValueCacheVersion>} | - |
+| <a id="warnings"></a> `warnings` | `public` | {Error[]} | - |
+| <a id="process-assets-stage-additional"></a> `PROCESS_ASSETS_STAGE_ADDITIONAL` | `static` | {number} | Add additional assets to the compilation. |
+| <a id="process-assets-stage-additions"></a> `PROCESS_ASSETS_STAGE_ADDITIONS` | `static` | {number} | Add additional sections to existing assets, like a banner or initialization code. |
+| <a id="process-assets-stage-analyse"></a> `PROCESS_ASSETS_STAGE_ANALYSE` | `static` | {number} | Analyse existing assets. |
+| <a id="process-assets-stage-derived"></a> `PROCESS_ASSETS_STAGE_DERIVED` | `static` | {number} | Derive new assets from existing assets. Existing assets should not be treated as complete. |
+| <a id="process-assets-stage-dev-tooling"></a> `PROCESS_ASSETS_STAGE_DEV_TOOLING` | `static` | {number} | Add development tooling to assets, e. g. by extracting a SourceMap. |
+| <a id="process-assets-stage-optimize"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE` | `static` | {number} | Optimize existing assets in a general way. |
+| <a id="process-assets-stage-optimize-compatibility"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_COMPATIBILITY` | `static` | {number} | Optimize the compatibility of existing assets, e. g. add polyfills or vendor-prefixes. |
+| <a id="process-assets-stage-optimize-count"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_COUNT` | `static` | {number} | Optimize the count of existing assets, e. g. by merging them. Only assets of the same type should be merged. For assets of different types see PROCESS_ASSETS_STAGE_OPTIMIZE_INLINE. |
+| <a id="process-assets-stage-optimize-hash"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_HASH` | `static` | {number} | Optimize the hashes of the assets, e. g. by generating real hashes of the asset content. |
+| <a id="process-assets-stage-optimize-inline"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_INLINE` | `static` | {number} | Optimize the count of existing assets, e. g. by inlining assets of into other assets. Only assets of different types should be inlined. For assets of the same type see PROCESS_ASSETS_STAGE_OPTIMIZE_COUNT. |
+| <a id="process-assets-stage-optimize-size"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE` | `static` | {number} | Optimize the size of existing assets, e. g. by minimizing or omitting whitespace. |
+| <a id="process-assets-stage-optimize-transfer"></a> `PROCESS_ASSETS_STAGE_OPTIMIZE_TRANSFER` | `static` | {number} | Optimize the transfer of existing assets, e. g. by preparing a compressed (gzip) file as separate asset. |
+| <a id="process-assets-stage-pre-process"></a> `PROCESS_ASSETS_STAGE_PRE_PROCESS` | `static` | {number} | Basic preprocessing of assets. |
+| <a id="process-assets-stage-report"></a> `PROCESS_ASSETS_STAGE_REPORT` | `static` | {number} | Creating assets for reporting purposes. |
+| <a id="process-assets-stage-summarize"></a> `PROCESS_ASSETS_STAGE_SUMMARIZE` | `static` | {number} | Summarize the list of existing assets e. g. creating an assets manifest of Service Workers. |
 
 ### Methods
 
@@ -1401,7 +1413,7 @@ If `module` is passed, `loc` and `request` must also be passed.
 * `context` {string}
 * `entry` {Dependency}
 * `optionsOrName` {string|EntryOptions}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `addInclude(context, dependency, options, callback)`
@@ -1409,26 +1421,26 @@ If `module` is passed, `loc` and `request` must also be passed.
 * `context` {string}
 * `dependency` {Dependency}
 * `options` {EntryOptions}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `addModule(module, callback)`
 
 * `module` {Module}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `addModuleChain(context, dependency, callback)`
 
 * `context` {string}
 * `dependency` {Dependency}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `addModuleTree(__namedParameters, callback)`
 
-* `__namedParameters` {object}
-* `callback` {object}
+* `__namedParameters` {{ context: string; contextInfo: Partial<ModuleFactoryCreateDataContextInfo>; dependency: Dependency }}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `addRuntimeModule(chunk, module[, chunkGraph])`
@@ -1457,7 +1469,7 @@ If `module` is passed, `loc` and `request` must also be passed.
 #### `buildModule(module, callback)`
 
 * `module` {Module}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 Schedules a build of the module object
@@ -1472,14 +1484,14 @@ Schedules a build of the module object
 
 #### `codeGeneration(callback)`
 
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `createChildCompiler(name[, outputOptions][, plugins])`
 
 * `name` {string}
 * `outputOptions` {Partial<OutputNormalized>}
-* `plugins` {false|""|0|object|WebpackPluginInstance[]}
+* `plugins` {false|""|0|(this: Compiler, compiler: Compiler) => void|WebpackPluginInstance[]}
 * Returns: {Compiler}
 
 This function allows you to run another instance of webpack inside of webpack however as
@@ -1488,7 +1500,7 @@ from parent (or top level compiler) and creates a child Compilation
 
 #### `createChunkAssets(callback)`
 
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `createHash()`
@@ -1535,21 +1547,21 @@ from parent (or top level compiler) and creates a child Compilation
 
 * `module` {Module}
 * `options` {ExecuteModuleOptions}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: ExecuteModuleResult) => void}
 * Returns: {void}
 
 #### `factorizeModule(options, callback)`
 
 ##### Call Signature
 
-* `options` {FactorizeModuleOptions|object}
-* `callback` {object}
+* `options` {FactorizeModuleOptions&{ factoryResult: false }}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 ##### Call Signature
 
-* `options` {FactorizeModuleOptions|object}
-* `callback` {object}
+* `options` {FactorizeModuleOptions&{ factoryResult: true }}
+* `callback` {(err?: WebpackError, result?: ModuleFactoryResult) => void}
 * Returns: {void}
 
 #### `findModule(identifier)`
@@ -1561,7 +1573,7 @@ Attempts to search for a module by its identifier
 
 #### `finish(callback)`
 
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `getAsset(name)`
@@ -1602,7 +1614,7 @@ Attempts to search for a module by its identifier
 
 #### `getLogger(name)`
 
-* `name` {string|object}
+* `name` {string|() => string}
 * Returns: {WebpackLogger}
 
 #### `getModule(module)`
@@ -1640,7 +1652,7 @@ Fetches a module from a compilation by its identifier
 #### `handleModuleCreation(__namedParameters, callback)`
 
 * `__namedParameters` {HandleModuleCreationOptions}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `patchChunksAfterReasonRemoval(module, chunk)`
@@ -1652,7 +1664,7 @@ Fetches a module from a compilation by its identifier
 #### `processModuleDependencies(module, callback)`
 
 * `module` {Module}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `processModuleDependenciesNonRecursive(module)`
@@ -1662,13 +1674,13 @@ Fetches a module from a compilation by its identifier
 
 #### `processRuntimeRequirements([__namedParameters])`
 
-* `__namedParameters` {object}
+* `__namedParameters` {{ chunkGraph: ChunkGraph; chunkGraphEntries: Iterable<Chunk>; chunks: Iterable<Chunk>; ... }}
 * Returns: {void}
 
 #### `rebuildModule(module, callback)`
 
 * `module` {Module}
-* `callback` {object}
+* `callback` {(err?: WebpackError, result?: Module) => void}
 * Returns: {void}
 
 #### `removeChunkFromDependencies(block, chunk)`
@@ -1697,7 +1709,7 @@ Fetches a module from a compilation by its identifier
 
 #### `seal(callback)`
 
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `sortItemsWithChunkIds()`
@@ -1715,8 +1727,8 @@ Fetches a module from a compilation by its identifier
 #### `updateAsset(file, newSourceOrFunction[, assetInfoUpdateOrFunction])`
 
 * `file` {string}
-* `newSourceOrFunction` {Source|object}
-* `assetInfoUpdateOrFunction` {AssetInfo|object}
+* `newSourceOrFunction` {Source|(source: Source) => Source}
+* `assetInfoUpdateOrFunction` {AssetInfo|(assetInfo?: AssetInfo) => AssetInfo}
 * Returns: {void}
 
 ***
@@ -1733,46 +1745,48 @@ Fetches a module from a compilation by its identifier
 
 ### Properties
 
-* `cache` {CacheClass}
-* `compilerPath` {string}
-* `context` {string}
-* `contextTimestamps` {Map<string, "ignore"|EntryTypesIndex|OnlySafeTimeEntry|ExistenceOnlyTimeEntryTypesIndex>}
-* `fileTimestamps` {Map<string, "ignore"|EntryTypesIndex|OnlySafeTimeEntry|ExistenceOnlyTimeEntryTypesIndex>}
-* `fsStartTime` {number}
-* `hooks` {Readonly<object>}
-* `idle` {boolean}
-* `immutablePaths` {Set<string|RegExp>}
-* `infrastructureLogger` {object}
-* `inputFileSystem` {InputFileSystem}
-* `intermediateFileSystem` {IntermediateFileSystem}
-* `managedPaths` {Set<string|RegExp>}
-* `modifiedFiles` {ReadonlySet<string>}
-* `moduleMemCaches` {Map<Module, ModuleMemCachesItem>}
-* `name` {string}
-* `options` {WebpackOptionsNormalized}
-* `outputFileSystem` {OutputFileSystem}
-* `outputPath` {string}
-* `parentCompilation` {Compilation}
-* `platform` {Readonly<PlatformTargetProperties>}
-* `records` {Records}
-* `recordsInputPath` {string}
-* `recordsOutputPath` {string}
-* `removedFiles` {ReadonlySet<string>}
-* `requestShortener` {RequestShortener}
-* `resolverFactory` {ResolverFactory}
-* `root` {Compiler}
-* `running` {boolean}
-* `unmanagedPaths` {Set<string|RegExp>}
-* `watchFileSystem` {WatchFileSystem}
-* `watching` {Watching}
-* `watchMode` {boolean}
-* `webpack` {exports}
+| Property | Type |
+| ------ | ------ |
+| <a id="cache"></a> `cache` | {CacheClass} |
+| <a id="compilerpath"></a> `compilerPath` | {string} |
+| <a id="context"></a> `context` | {string} |
+| <a id="contexttimestamps"></a> `contextTimestamps?` | {Map<string, "ignore"|EntryTypesIndex|OnlySafeTimeEntry|ExistenceOnlyTimeEntryTypesIndex>} |
+| <a id="filetimestamps"></a> `fileTimestamps?` | {Map<string, "ignore"|EntryTypesIndex|OnlySafeTimeEntry|ExistenceOnlyTimeEntryTypesIndex>} |
+| <a id="fsstarttime"></a> `fsStartTime?` | {number} |
+| <a id="hooks"></a> `hooks` | {Readonly<{ additionalPass: AsyncSeriesHook<Tuple<unknown>>; afterCompile: AsyncSeriesHook<Tuple<Compilation>>; afterDone: SyncHook<Tuple<Stats>>; ... }>} |
+| <a id="idle"></a> `idle` | {boolean} |
+| <a id="immutablepaths"></a> `immutablePaths` | {Set<string|RegExp>} |
+| <a id="infrastructurelogger"></a> `infrastructureLogger?` | {(value: string, type: LogTypeEnum, args?: any[]) => void} |
+| <a id="inputfilesystem"></a> `inputFileSystem` | {InputFileSystem} |
+| <a id="intermediatefilesystem"></a> `intermediateFileSystem` | {IntermediateFileSystem} |
+| <a id="managedpaths"></a> `managedPaths` | {Set<string|RegExp>} |
+| <a id="modifiedfiles"></a> `modifiedFiles?` | {ReadonlySet<string>} |
+| <a id="modulememcaches"></a> `moduleMemCaches?` | {Map<Module, ModuleMemCachesItem>} |
+| <a id="name"></a> `name?` | {string} |
+| <a id="options"></a> `options` | {WebpackOptionsNormalized} |
+| <a id="outputfilesystem"></a> `outputFileSystem` | {OutputFileSystem} |
+| <a id="outputpath"></a> `outputPath` | {string} |
+| <a id="parentcompilation"></a> `parentCompilation?` | {Compilation} |
+| <a id="platform"></a> `platform` | {Readonly<PlatformTargetProperties>} |
+| <a id="records"></a> `records` | {Records} |
+| <a id="recordsinputpath"></a> `recordsInputPath` | {string} |
+| <a id="recordsoutputpath"></a> `recordsOutputPath` | {string} |
+| <a id="removedfiles"></a> `removedFiles?` | {ReadonlySet<string>} |
+| <a id="requestshortener"></a> `requestShortener` | {RequestShortener} |
+| <a id="resolverfactory"></a> `resolverFactory` | {ResolverFactory} |
+| <a id="root"></a> `root` | {Compiler} |
+| <a id="running"></a> `running` | {boolean} |
+| <a id="unmanagedpaths"></a> `unmanagedPaths` | {Set<string|RegExp>} |
+| <a id="watchfilesystem"></a> `watchFileSystem` | {WatchFileSystem} |
+| <a id="watching"></a> `watching?` | {Watching} |
+| <a id="watchmode"></a> `watchMode` | {boolean} |
+| <a id="webpack"></a> `webpack` | {exports} |
 
 ### Methods
 
 #### `close(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `compile(callback)`
@@ -1786,7 +1800,7 @@ Fetches a module from a compilation by its identifier
 * `compilerName` {string}
 * `compilerIndex` {number}
 * `outputOptions` {Partial<OutputNormalized>}
-* `plugins` {false|""|0|WebpackPluginInstance|object[]}
+* `plugins` {false|""|0|WebpackPluginInstance|(this: Compiler, compiler: Compiler) => void[]}
 * Returns: {Compiler}
 
 #### `createCompilation(params)`
@@ -1805,12 +1819,12 @@ Fetches a module from a compilation by its identifier
 #### `emitAssets(compilation, callback)`
 
 * `compilation` {Compilation}
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `emitRecords(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `getCache(name)`
@@ -1820,7 +1834,7 @@ Fetches a module from a compilation by its identifier
 
 #### `getInfrastructureLogger(name)`
 
-* `name` {string|object}
+* `name` {string|() => string}
 * Returns: {WebpackLogger}
 
 #### `isChild()`
@@ -1834,7 +1848,7 @@ Fetches a module from a compilation by its identifier
 
 #### `newCompilationParams()`
 
-* Returns: {object}
+* Returns: {{ contextModuleFactory: ContextModuleFactory; normalModuleFactory: NormalModuleFactory }}
 
 #### `purgeInputFileSystem()`
 
@@ -1842,7 +1856,7 @@ Fetches a module from a compilation by its identifier
 
 #### `readRecords(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `run(callback)`
@@ -1852,18 +1866,16 @@ Fetches a module from a compilation by its identifier
 
 #### `runAsChild(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, entries?: Chunk[], compilation?: Compilation) => void}
 * Returns: {void}
 
 #### `validate(schema, value[, options][, check])`
 
-###### T
-
-`T` *extends* {object|object[]} = {object}
-* `schema` {JSONSchema4|ExtendedSchema|JSONSchema6|ExtendedSchema|JSONSchema7|ExtendedSchema|object}
+* `T` *extends* {object|object[]} = {object}
+* `schema` {JSONSchema4&ExtendedSchema|JSONSchema6&ExtendedSchema|JSONSchema7&ExtendedSchema|() => Schema}
 * `value` {T}
 * `options` {ValidationErrorConfiguration}
-* `check` {object}
+* `check` {(value: T) => boolean}
 * Returns: {void}
 
 Schema validation function with optional pre-compiled check
@@ -1889,9 +1901,11 @@ Schema validation function with optional pre-compiled check
 
 ### Properties
 
-* `usedNames` {Set<string>}
-* `DEFAULT_EXPORT` {string}
-* `NAMESPACE_OBJECT_EXPORT` {string}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="usednames"></a> `usedNames` | `public` | {Set<string>} |
+| <a id="default-export"></a> `DEFAULT_EXPORT` | `static` | {string} |
+| <a id="namespace-object-export"></a> `NAMESPACE_OBJECT_EXPORT` | `static` | {string} |
 
 ### Methods
 
@@ -1942,7 +1956,7 @@ Schema validation function with optional pre-compiled check
 #### Static method: `matchModuleReference(name)`
 
 * `name` {string}
-* Returns: {ModuleReferenceOptions|object}
+* Returns: {ModuleReferenceOptions&{ index: number }}
 
 ***
 
@@ -1957,7 +1971,9 @@ Schema validation function with optional pre-compiled check
 
 ### Properties
 
-* `negativeMatcher` {RegExp}
+| Property | Type |
+| ------ | ------ |
+| <a id="negativematcher"></a> `negativeMatcher` | {RegExp} |
 
 ### Methods
 
@@ -1977,19 +1993,21 @@ Apply the plugin
 #### `new ContextReplacementPlugin(resourceRegExp[, newContentResource][, newContentRecursive][, newContentRegExp])`
 
 * `resourceRegExp` {RegExp}
-* `newContentResource` {string|boolean|RegExp|object}
+* `newContentResource` {string|boolean|RegExp|(context: BeforeContextResolveData|AfterContextResolveData) => void}
 * `newContentRecursive` {boolean|RegExp|NewContentCreateContextMap}
 * `newContentRegExp` {RegExp}
 * Returns: {ContextReplacementPlugin}
 
 ### Properties
 
-* `newContentCallback` {object}
-* `newContentCreateContextMap` {object}
-* `newContentRecursive` {boolean}
-* `newContentRegExp` {RegExp}
-* `newContentResource` {string}
-* `resourceRegExp` {RegExp}
+| Property | Type |
+| ------ | ------ |
+| <a id="newcontentcallback"></a> `newContentCallback?` | {(context: BeforeContextResolveData|AfterContextResolveData) => void} |
+| <a id="newcontentcreatecontextmap"></a> `newContentCreateContextMap?` | {(fs: InputFileSystem, callback: (err: Error, newContentRecursive: NewContentCreateContextMap) => void) => void} |
+| <a id="newcontentrecursive"></a> `newContentRecursive?` | {boolean} |
+| <a id="newcontentregexp"></a> `newContentRegExp?` | {RegExp} |
+| <a id="newcontentresource"></a> `newContentResource?` | {string} |
+| <a id="resourceregexp"></a> `resourceRegExp` | {RegExp} |
 
 ### Methods
 
@@ -2015,7 +2033,9 @@ Create a new define plugin
 
 ### Properties
 
-* `definitions` {Definitions}
+| Property | Type |
+| ------ | ------ |
+| <a id="definitions"></a> `definitions` | {Definitions} |
 
 ### Methods
 
@@ -2033,7 +2053,7 @@ Apply the plugin
 
 #### Static method: `runtimeValue(fn[, options])`
 
-* `fn` {object}
+* `fn` {(value: { key: string; module: NormalModule; version: ValueCacheVersion }) => CodeValuePrimitive}
 * `options` {true|string[]|RuntimeValueOptions}
 * Returns: {RuntimeValue}
 
@@ -2050,7 +2070,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {Options}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {Options} |
 
 ### Methods
 
@@ -2078,16 +2100,18 @@ Apply the plugin
 
 ### Properties
 
-* `category` {string}
-* `disconnect` {any}
-* `loc` {DependencyLocation}
-* `module` {any}
-* `optional` {boolean}
-* `type` {string}
-* `weak` {boolean}
-* `EXPORTS_OBJECT_REFERENCED` {string[][]}
-* `NO_EXPORTS_REFERENCED` {string[][]}
-* `TRANSITIVE` {TRANSITIVE}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="category"></a> `category` | `public` | {string} |
+| <a id="disconnect"></a> `disconnect` | `public` | {any} |
+| <a id="loc"></a> `loc` | `public` | {DependencyLocation} |
+| <a id="module"></a> `module` | `public` | {any} |
+| <a id="optional"></a> `optional?` | `public` | {boolean} |
+| <a id="type"></a> `type` | `public` | {string} |
+| <a id="weak"></a> `weak` | `public` | {boolean} |
+| <a id="exports-object-referenced"></a> `EXPORTS_OBJECT_REFERENCED` | `static` | {string[][]} |
+| <a id="no-exports-referenced"></a> `NO_EXPORTS_REFERENCED` | `static` | {string[][]} |
+| <a id="transitive"></a> `TRANSITIVE` | `static` | {TRANSITIVE} |
 
 ### Methods
 
@@ -2108,7 +2132,7 @@ Apply the plugin
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
-* Returns: {false|object}
+* Returns: {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 
 #### `getContext()`
 
@@ -2206,7 +2230,9 @@ Update the hash
 
 ### Properties
 
-* `options` {DllPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {DllPluginOptions} |
 
 ### Methods
 
@@ -2230,7 +2256,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {DllReferencePluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {DllReferencePluginOptions} |
 
 ### Methods
 
@@ -2254,7 +2282,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {DotenvPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {DotenvPluginOptions} |
 
 ### Methods
 
@@ -2272,13 +2302,15 @@ Apply the plugin
 #### `new DynamicEntryPlugin(context, entry)`
 
 * `context` {string}
-* `entry` {object}
+* `entry` {() => Promise<EntryStaticNormalized>}
 * Returns: {DynamicEntryPlugin}
 
 ### Properties
 
-* `context` {string}
-* `entry` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="context"></a> `context` | {string} |
+| <a id="entry"></a> `entry` | {() => Promise<EntryStaticNormalized>} |
 
 ### Methods
 
@@ -2337,9 +2369,11 @@ An entry plugin which will handle creation of the EntryDependency
 
 ### Properties
 
-* `context` {string}
-* `entry` {string}
-* `options` {string|EntryOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="context"></a> `context` | {string} |
+| <a id="entry"></a> `entry` | {string} |
+| <a id="options"></a> `options` | {string|EntryOptions} |
 
 ### Methods
 
@@ -2372,21 +2406,22 @@ Apply the plugin
 
 ### Properties
 
-* `asyncEntrypointsIterable` {SortableSet<ChunkGroup>}
-* `blocksIterable` {Iterable<AsyncDependenciesBlock>}
-* `childrenIterable` {SortableSet<ChunkGroup>}
-* `chunks` {Chunk[]}
-* `debugId` {string} get a uniqueId for ChunkGroup, made up of its member Chunk debugId's
-* `getModuleIndex` {object}
-* `getModuleIndex2` {object}
-* `groupDebugId` {number}
-* `id` {string} get a unique id for ChunkGroup, made up of its member Chunk id's
-* `index` {number}
-* `name` {string} returns the name of current ChunkGroup
-sets a new name for current ChunkGroup
-* `options` {ChunkGroupOptions}
-* `origins` {OriginRecord[]}
-* `parentsIterable` {SortableSet<ChunkGroup>}
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="asyncentrypointsiterable"></a> `asyncEntrypointsIterable` | {SortableSet<ChunkGroup>} | - | [`ChunkGroup`](#abstract-chunkgroup).[`asyncEntrypointsIterable`](#asyncentrypointsiterable) |
+| <a id="blocksiterable"></a> `blocksIterable` | {Iterable<AsyncDependenciesBlock>} | - | [`ChunkGroup`](#abstract-chunkgroup).[`blocksIterable`](#blocksiterable) |
+| <a id="childreniterable"></a> `childrenIterable` | {SortableSet<ChunkGroup>} | - | [`ChunkGroup`](#abstract-chunkgroup).[`childrenIterable`](#childreniterable) |
+| <a id="chunks"></a> `chunks` | {Chunk[]} | - | [`ChunkGroup`](#abstract-chunkgroup).[`chunks`](#chunks) |
+| <a id="debugid"></a> `debugId` | {string} | get a uniqueId for ChunkGroup, made up of its member Chunk debugId's | [`ChunkGroup`](#abstract-chunkgroup).[`debugId`](#debugid) |
+| <a id="getmoduleindex"></a> `getModuleIndex` | {(module: Module) => number} | - | [`ChunkGroup`](#abstract-chunkgroup).[`getModuleIndex`](#getmoduleindex) |
+| <a id="getmoduleindex2"></a> `getModuleIndex2` | {(module: Module) => number} | - | [`ChunkGroup`](#abstract-chunkgroup).[`getModuleIndex2`](#getmoduleindex2) |
+| <a id="groupdebugid"></a> `groupDebugId` | {number} | - | [`ChunkGroup`](#abstract-chunkgroup).[`groupDebugId`](#groupdebugid) |
+| <a id="id"></a> `id` | {string} | get a unique id for ChunkGroup, made up of its member Chunk id's | [`ChunkGroup`](#abstract-chunkgroup).[`id`](#id) |
+| <a id="index"></a> `index?` | {number} | - | [`ChunkGroup`](#abstract-chunkgroup).[`index`](#index) |
+| <a id="name"></a> `name?` | {string} | returns the name of current ChunkGroup sets a new name for current ChunkGroup | [`ChunkGroup`](#abstract-chunkgroup).[`name`](#name) |
+| <a id="options"></a> `options` | {ChunkGroupOptions} | - | [`ChunkGroup`](#abstract-chunkgroup).[`options`](#options) |
+| <a id="origins"></a> `origins` | {OriginRecord[]} | - | [`ChunkGroup`](#abstract-chunkgroup).[`origins`](#origins) |
+| <a id="parentsiterable"></a> `parentsIterable` | {SortableSet<ChunkGroup>} | - | [`ChunkGroup`](#abstract-chunkgroup).[`parentsIterable`](#parentsiterable) |
 
 ### Methods
 
@@ -2616,8 +2651,10 @@ Performs an unshift of a specific chunk
 
 ### Properties
 
-* `defaultValues` {Record<string, any>}
-* `keys` {string[]}
+| Property | Type |
+| ------ | ------ |
+| <a id="defaultvalues"></a> `defaultValues` | {Record<string, any>} |
+| <a id="keys"></a> `keys` | {string[]} |
 
 ### Methods
 
@@ -2641,9 +2678,11 @@ Apply the plugin
 
 ### Properties
 
-* `moduleFilenameTemplate` {DevtoolModuleFilenameTemplate}
-* `namespace` {string}
-* `sourceUrlComment` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="modulefilenametemplate"></a> `moduleFilenameTemplate` | {DevtoolModuleFilenameTemplate} |
+| <a id="namespace"></a> `namespace` | {string} |
+| <a id="sourceurlcomment"></a> `sourceUrlComment` | {string} |
 
 ### Methods
 
@@ -2667,10 +2706,12 @@ Apply the plugin
 
 ### Properties
 
-* `moduleFilenameTemplate` {DevtoolModuleFilenameTemplate}
-* `namespace` {string}
-* `options` {SourceMapDevToolPluginOptions}
-* `sourceMapComment` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="modulefilenametemplate"></a> `moduleFilenameTemplate` | {DevtoolModuleFilenameTemplate} |
+| <a id="namespace"></a> `namespace` | {string} |
+| <a id="options"></a> `options` | {SourceMapDevToolPluginOptions} |
+| <a id="sourcemapcomment"></a> `sourceMapComment` | {string} |
 
 ### Methods
 
@@ -2701,48 +2742,50 @@ Apply the plugin
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `dependencyMeta` {ImportDependencyMeta|CssImportDependencyMeta|AssetDependencyMeta}
-* `depth` {number}
-* `errors` {any}
-* `exportsArgument` {string}
-* `externalType` {ExternalsType}
-* `factoryMeta` {FactoryMeta}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `moduleArgument` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `renderedHash` {string}
-* `request` {ExternalModuleRequest}
-* `resolveOptions` {ResolveOptions}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `userRequest` {string}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
-* `getExternalModuleNodeCommonjsInitFragment` {object}
-* `ModuleExternalInitFragment` {ModuleExternalInitFragment}
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | `public` | {AsyncDependenciesBlock[]} | - | [`Module`](#module).[`blocks`](#blocks) |
+| <a id="buildinfo"></a> `buildInfo?` | `public` | {BuildInfo} | - | [`Module`](#module).[`buildInfo`](#buildinfo) |
+| <a id="buildmeta"></a> `buildMeta?` | `public` | {BuildMeta} | - | [`Module`](#module).[`buildMeta`](#buildmeta) |
+| <a id="chunksiterable"></a> `chunksIterable` | `public` | {Iterable<Chunk>} | - | [`Module`](#module).[`chunksIterable`](#chunksiterable) |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | `public` | {Dependency[]} | - | [`Module`](#module).[`codeGenerationDependencies`](#codegenerationdependencies) |
+| <a id="context"></a> `context` | `public` | {string} | - | [`Module`](#module).[`context`](#context) |
+| <a id="debugid"></a> `debugId` | `public` | {number} | - | [`Module`](#module).[`debugId`](#debugid) |
+| <a id="dependencies"></a> `dependencies` | `public` | {Dependency[]} | - | [`Module`](#module).[`dependencies`](#dependencies) |
+| <a id="dependencymeta"></a> `dependencyMeta?` | `public` | {ImportDependencyMeta|CssImportDependencyMeta|AssetDependencyMeta} | - | - |
+| <a id="depth"></a> `depth` | `public` | {number} | - | [`Module`](#module).[`depth`](#depth) |
+| <a id="errors"></a> `errors` | `public` | {any} | - | [`Module`](#module).[`errors`](#errors) |
+| <a id="exportsargument"></a> `exportsArgument` | `public` | {string} | - | [`Module`](#module).[`exportsArgument`](#exportsargument) |
+| <a id="externaltype"></a> `externalType` | `public` | {ExternalsType} | - | - |
+| <a id="factorymeta"></a> `factoryMeta?` | `public` | {FactoryMeta} | - | [`Module`](#module).[`factoryMeta`](#factorymeta) |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | `public` | {any} | - | [`Module`](#module).[`hasEqualsChunks`](#hasequalschunks) |
+| <a id="hash"></a> `hash` | `public` | {string} | - | [`Module`](#module).[`hash`](#hash) |
+| <a id="hot"></a> `hot` | `public` | {boolean} | - | [`Module`](#module).[`hot`](#hot) |
+| <a id="id"></a> ~~`id`~~ | `public` | {string|number} | **Deprecated** | [`Module`](#module).[`id`](#id) |
+| <a id="index"></a> `index` | `public` | {number} | - | [`Module`](#module).[`index`](#index) |
+| <a id="index2"></a> `index2` | `public` | {number} | - | [`Module`](#module).[`index2`](#index2) |
+| <a id="issuer"></a> `issuer?` | `public` | {Module} | - | [`Module`](#module).[`issuer`](#issuer) |
+| <a id="isused"></a> `isUsed` | `public` | {any} | - | [`Module`](#module).[`isUsed`](#isused) |
+| <a id="layer"></a> `layer` | `public` | {string} | - | [`Module`](#module).[`layer`](#layer) |
+| <a id="moduleargument"></a> `moduleArgument` | `public` | {string} | - | [`Module`](#module).[`moduleArgument`](#moduleargument) |
+| <a id="needid"></a> `needId` | `public` | {boolean} | - | [`Module`](#module).[`needId`](#needid) |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | `public` | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | [`Module`](#module).[`optimizationBailout`](#optimizationbailout) |
+| <a id="optional"></a> `optional` | `public` | {boolean} | - | [`Module`](#module).[`optional`](#optional) |
+| <a id="parent"></a> `parent?` | `public` | {DependenciesBlock} | - | [`Module`](#module).[`parent`](#parent) |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | `public` | {Dependency[]} | - | [`Module`](#module).[`presentationalDependencies`](#presentationaldependencies) |
+| <a id="profile"></a> `profile?` | `public` | {ModuleProfile} | - | [`Module`](#module).[`profile`](#profile) |
+| <a id="renderedhash"></a> `renderedHash` | `public` | {string} | - | [`Module`](#module).[`renderedHash`](#renderedhash) |
+| <a id="request"></a> `request` | `public` | {ExternalModuleRequest} | - | - |
+| <a id="resolveoptions"></a> `resolveOptions?` | `public` | {ResolveOptions} | - | [`Module`](#module).[`resolveOptions`](#resolveoptions) |
+| <a id="type"></a> `type` | `public` | {string} | - | [`Module`](#module).[`type`](#type) |
+| <a id="used"></a> `used` | `public` | {any} | - | [`Module`](#module).[`used`](#used) |
+| <a id="usedexports"></a> `usedExports` | `public` | {boolean|SortableSet<string>} | - | [`Module`](#module).[`usedExports`](#usedexports) |
+| <a id="userrequest"></a> `userRequest` | `public` | {string} | - | - |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | `public` | {boolean} | - | [`Module`](#module).[`useSimpleSourceMap`](#usesimplesourcemap) |
+| <a id="usesourcemap"></a> `useSourceMap` | `public` | {boolean} | - | [`Module`](#module).[`useSourceMap`](#usesourcemap) |
+| <a id="warnings"></a> `warnings` | `public` | {any} | - | [`Module`](#module).[`warnings`](#warnings) |
+| <a id="getexternalmodulenodecommonjsinitfragment"></a> `getExternalModuleNodeCommonjsInitFragment` | `static` | {(runtimeTemplate: RuntimeTemplate) => InitFragment<ChunkRenderContextJavascriptModulesPlugin>} | - | - |
+| <a id="moduleexternalinitfragment"></a> `ModuleExternalInitFragment` | `static` | {ModuleExternalInitFragment} | - | - |
 
 ### Methods
 
@@ -2798,7 +2841,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -2970,7 +3013,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`
@@ -3068,14 +3111,16 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 #### `new ExternalsPlugin(type, externals)`
 
-* `type` {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"|object}
+* `type` {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"|(dependency: Dependency) => ExternalsType}
 * `externals` {Externals}
 * Returns: {ExternalsPlugin}
 
 ### Properties
 
-* `externals` {Externals}
-* `type` {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"|object}
+| Property | Type |
+| ------ | ------ |
+| <a id="externals"></a> `externals` | {Externals} |
+| <a id="type"></a> `type` | {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"|(dependency: Dependency) => ExternalsType} |
 
 ### Methods
 
@@ -3129,7 +3174,7 @@ Apply the plugin
 
 #### Static method: `byType(map)`
 
-* `map` {object}
+* `map` {{ [index: string]: Generator }}
 * Returns: {ByTypeGenerator}
 
 ***
@@ -3172,26 +3217,28 @@ Apply the plugin
 
 ### Properties
 
-* `auxiliaryFiles` {Set<string>}
-* `chunkReason` {string}
-* `contentHash` {Record<string, string>}
-* `cssFilenameTemplate` {string|object}
-* `debugId` {number}
-* `entryModule` {Module} 
-* `extraAsync` {boolean}
-* `filenameTemplate` {string|object}
-* `files` {Set<string>}
-* `groupsIterable` {SortableSet<ChunkGroup>}
-* `hash` {string}
-* `id` {string|number}
-* `idNameHints` {SortableSet<string>}
-* `ids` {ChunkId[]}
-* `modulesIterable` {Iterable<Module>}
-* `name` {string}
-* `preventIntegration` {boolean}
-* `rendered` {boolean}
-* `renderedHash` {string}
-* `runtime` {RuntimeSpec}
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="auxiliaryfiles"></a> `auxiliaryFiles` | {Set<string>} | - | [`Chunk`](#chunk).[`auxiliaryFiles`](#auxiliaryfiles) |
+| <a id="chunkreason"></a> `chunkReason?` | {string} | - | [`Chunk`](#chunk).[`chunkReason`](#chunkreason) |
+| <a id="contenthash"></a> `contentHash` | {Record<string, string>} | - | [`Chunk`](#chunk).[`contentHash`](#contenthash) |
+| <a id="cssfilenametemplate"></a> `cssFilenameTemplate?` | {string|(pathData: PathData, assetInfo?: AssetInfo) => string} | - | [`Chunk`](#chunk).[`cssFilenameTemplate`](#cssfilenametemplate) |
+| <a id="debugid"></a> `debugId` | {number} | - | [`Chunk`](#chunk).[`debugId`](#debugid) |
+| <a id="entrymodule"></a> ~~`entryModule`~~ | {Module} | **Deprecated** | [`Chunk`](#chunk).[`entryModule`](#entrymodule) |
+| <a id="extraasync"></a> `extraAsync` | {boolean} | - | [`Chunk`](#chunk).[`extraAsync`](#extraasync) |
+| <a id="filenametemplate"></a> `filenameTemplate?` | {string|(pathData: PathData, assetInfo?: AssetInfo) => string} | - | [`Chunk`](#chunk).[`filenameTemplate`](#filenametemplate) |
+| <a id="files"></a> `files` | {Set<string>} | - | [`Chunk`](#chunk).[`files`](#files) |
+| <a id="groupsiterable"></a> `groupsIterable` | {SortableSet<ChunkGroup>} | - | [`Chunk`](#chunk).[`groupsIterable`](#groupsiterable) |
+| <a id="hash"></a> `hash?` | {string} | - | [`Chunk`](#chunk).[`hash`](#hash) |
+| <a id="id"></a> `id` | {string|number} | - | [`Chunk`](#chunk).[`id`](#id) |
+| <a id="idnamehints"></a> `idNameHints` | {SortableSet<string>} | - | [`Chunk`](#chunk).[`idNameHints`](#idnamehints) |
+| <a id="ids"></a> `ids` | {ChunkId[]} | - | [`Chunk`](#chunk).[`ids`](#ids) |
+| <a id="modulesiterable"></a> `modulesIterable` | {Iterable<Module>} | - | [`Chunk`](#chunk).[`modulesIterable`](#modulesiterable) |
+| <a id="name"></a> `name?` | {string} | - | [`Chunk`](#chunk).[`name`](#name) |
+| <a id="preventintegration"></a> `preventIntegration` | {boolean} | - | [`Chunk`](#chunk).[`preventIntegration`](#preventintegration) |
+| <a id="rendered"></a> `rendered` | {boolean} | - | [`Chunk`](#chunk).[`rendered`](#rendered) |
+| <a id="renderedhash"></a> `renderedHash?` | {string} | - | [`Chunk`](#chunk).[`renderedHash`](#renderedhash) |
+| <a id="runtime"></a> `runtime` | {RuntimeSpec} | - | [`Chunk`](#chunk).[`runtime`](#runtime) |
 
 ### Methods
 
@@ -3247,14 +3294,14 @@ Apply the plugin
 #### `getChildIdsByOrders(chunkGraph[, filterFn])`
 
 * `chunkGraph` {ChunkGraph}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {Record<string, ChunkId[]>}
 
 #### `getChildIdsByOrdersMap(chunkGraph[, includeDirectChildren][, filterFn])`
 
 * `chunkGraph` {ChunkGraph}
 * `includeDirectChildren` {boolean}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {ChunkChildIdsByOrdersMapByData}
 
 #### `getChildrenOfTypeInOrder(chunkGraph, type)`
@@ -3272,7 +3319,7 @@ Apply the plugin
 
 #### `getChunkModuleMaps(filterFn)`
 
-* `filterFn` {object}
+* `filterFn` {(m: Module) => boolean}
 * Returns: {ChunkModuleMaps}
 
 #### `getEntryOptions()`
@@ -3300,7 +3347,7 @@ Apply the plugin
 * `chunkGraph` {ChunkGraph}
 * `type` {string}
 * `includeDirectChildren` {boolean}
-* `filterFn` {object}
+* `filterFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {boolean}
 
 #### `hasEntryModule()`
@@ -3309,8 +3356,8 @@ Apply the plugin
 
 #### `hasModuleInGraph(filterFn[, filterChunkFn])`
 
-* `filterFn` {object}
-* `filterChunkFn` {object}
+* `filterFn` {(m: Module) => boolean}
+* `filterChunkFn` {(c: Chunk, chunkGraph: ChunkGraph) => boolean}
 * Returns: {boolean}
 
 #### `hasRuntime()`
@@ -3394,7 +3441,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {IgnorePluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {IgnorePluginOptions} |
 
 ### Methods
 
@@ -3418,17 +3467,13 @@ Note that if "contextRegExp" is given, both the "resourceRegExp" and "contextReg
 
 ### Type Parameters
 
-#### GenerateContext
-
-`GenerateContext`
+* `GenerateContext`
 
 ### Constructors
 
 #### `new InitFragment(content, stage, position[, key][, endContent])`
 
-###### GenerateContext
-
-`GenerateContext`
+* `GenerateContext`
 * `content` {string|Source}
 * `stage` {number}
 * `position` {number}
@@ -3438,18 +3483,20 @@ Note that if "contextRegExp" is given, both the "resourceRegExp" and "contextReg
 
 ### Properties
 
-* `content` {string|Source}
-* `endContent` {string|Source}
-* `key` {string}
-* `position` {number}
-* `stage` {number}
-* `STAGE_ASYNC_BOUNDARY` {number}
-* `STAGE_ASYNC_DEPENDENCIES` {number}
-* `STAGE_ASYNC_HARMONY_IMPORTS` {number}
-* `STAGE_CONSTANTS` {number}
-* `STAGE_HARMONY_EXPORTS` {number}
-* `STAGE_HARMONY_IMPORTS` {number}
-* `STAGE_PROVIDES` {number}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="content"></a> `content?` | `public` | {string|Source} |
+| <a id="endcontent"></a> `endContent?` | `public` | {string|Source} |
+| <a id="key"></a> `key?` | `public` | {string} |
+| <a id="position"></a> `position` | `public` | {number} |
+| <a id="stage"></a> `stage` | `public` | {number} |
+| <a id="stage-async-boundary"></a> `STAGE_ASYNC_BOUNDARY` | `static` | {number} |
+| <a id="stage-async-dependencies"></a> `STAGE_ASYNC_DEPENDENCIES` | `static` | {number} |
+| <a id="stage-async-harmony-imports"></a> `STAGE_ASYNC_HARMONY_IMPORTS` | `static` | {number} |
+| <a id="stage-constants"></a> `STAGE_CONSTANTS` | `static` | {number} |
+| <a id="stage-harmony-exports"></a> `STAGE_HARMONY_EXPORTS` | `static` | {number} |
+| <a id="stage-harmony-imports"></a> `STAGE_HARMONY_IMPORTS` | `static` | {number} |
+| <a id="stage-provides"></a> `STAGE_PROVIDES` | `static` | {number} |
 
 ### Methods
 
@@ -3475,9 +3522,7 @@ Note that if "contextRegExp" is given, both the "resourceRegExp" and "contextReg
 
 #### Static method: `addToSource(source, initFragments, context)`
 
-###### Context
-
-`Context`
+* `Context`
 * `source` {Source}
 * `initFragments` {MaybeMergeableInitFragment<Context>[]}
 * `context` {Context}
@@ -3496,8 +3541,10 @@ Note that if "contextRegExp" is given, both the "resourceRegExp" and "contextReg
 
 ### Properties
 
-* `options` {object}
-* `chunkHasJs` {object}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="options"></a> `options` | `public` | {object} |
+| <a id="chunkhasjs"></a> `chunkHasJs` | `static` | {(chunk: Chunk, chunkGraph: ChunkGraph) => boolean} |
 
 ### Methods
 
@@ -3571,7 +3618,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {LibManifestPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {LibManifestPluginOptions} |
 
 ### Methods
 
@@ -3599,7 +3648,14 @@ Apply the plugin
 
 ### Properties
 
-* `library` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="library"></a> `library` | {{ auxiliaryComment: AuxiliaryComment; export: LibraryExport; name: LibraryName; ... }} |
+| `library.auxiliaryComment` | {AuxiliaryComment} |
+| `library.export` | {LibraryExport} |
+| `library.name` | {LibraryName} |
+| `library.type` | {string} |
+| `library.umdNamedDefine` | {boolean} |
 
 ### Methods
 
@@ -3618,12 +3674,14 @@ Apply the plugin
 
 #### `new LoaderOptionsPlugin([options])`
 
-* `options` {LoaderOptionsPluginOptions|MatchObject}
+* `options` {LoaderOptionsPluginOptions&MatchObject}
 * Returns: {LoaderOptionsPlugin}
 
 ### Properties
 
-* `options` {LoaderOptionsPluginOptions|MatchObject}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {LoaderOptionsPluginOptions&MatchObject} |
 
 ### Methods
 
@@ -3647,7 +3705,9 @@ Apply the plugin
 
 ### Properties
 
-* `target` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="target"></a> `target` | {string} |
 
 ### Methods
 
@@ -3671,7 +3731,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {ManifestPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {ManifestPluginOptions} |
 
 ### Methods
 
@@ -3707,42 +3769,44 @@ Apply the plugin
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `depth` {number}
-* `errors` {any}
-* `exportsArgument` {string}
-* `factoryMeta` {FactoryMeta}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `moduleArgument` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `renderedHash` {string}
-* `resolveOptions` {ResolveOptions}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | {AsyncDependenciesBlock[]} | - | `DependenciesBlock.blocks` |
+| <a id="buildinfo"></a> `buildInfo?` | {BuildInfo} | - | - |
+| <a id="buildmeta"></a> `buildMeta?` | {BuildMeta} | - | - |
+| <a id="chunksiterable"></a> `chunksIterable` | {Iterable<Chunk>} | - | - |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | {Dependency[]} | - | - |
+| <a id="context"></a> `context` | {string} | - | - |
+| <a id="debugid"></a> `debugId` | {number} | - | - |
+| <a id="dependencies"></a> `dependencies` | {Dependency[]} | - | `DependenciesBlock.dependencies` |
+| <a id="depth"></a> `depth` | {number} | - | - |
+| <a id="errors"></a> `errors` | {any} | - | - |
+| <a id="exportsargument"></a> `exportsArgument` | {string} | - | - |
+| <a id="factorymeta"></a> `factoryMeta?` | {FactoryMeta} | - | - |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | {any} | - | - |
+| <a id="hash"></a> `hash` | {string} | - | - |
+| <a id="hot"></a> `hot` | {boolean} | - | - |
+| <a id="id"></a> ~~`id`~~ | {string|number} | **Deprecated** | - |
+| <a id="index"></a> `index` | {number} | - | - |
+| <a id="index2"></a> `index2` | {number} | - | - |
+| <a id="issuer"></a> `issuer?` | {Module} | - | - |
+| <a id="isused"></a> `isUsed` | {any} | - | - |
+| <a id="layer"></a> `layer` | {string} | - | - |
+| <a id="moduleargument"></a> `moduleArgument` | {string} | - | - |
+| <a id="needid"></a> `needId` | {boolean} | - | - |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | - |
+| <a id="optional"></a> `optional` | {boolean} | - | - |
+| <a id="parent"></a> `parent?` | {DependenciesBlock} | - | `DependenciesBlock.parent` |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | {Dependency[]} | - | - |
+| <a id="profile"></a> `profile?` | {ModuleProfile} | - | - |
+| <a id="renderedhash"></a> `renderedHash` | {string} | - | - |
+| <a id="resolveoptions"></a> `resolveOptions?` | {ResolveOptions} | - | - |
+| <a id="type"></a> `type` | {string} | - | - |
+| <a id="used"></a> `used` | {any} | - | - |
+| <a id="usedexports"></a> `usedExports` | {boolean|SortableSet<string>} | - | - |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | {boolean} | - | - |
+| <a id="usesourcemap"></a> `useSourceMap` | {boolean} | - | - |
+| <a id="warnings"></a> `warnings` | {any} | - | - |
 
 ### Methods
 
@@ -3798,7 +3862,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -3970,7 +4034,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`
@@ -4062,7 +4126,7 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 #### `create(data, callback)`
 
 * `data` {ModuleFactoryCreateData}
-* `callback` {object}
+* `callback` {(err?: Error, result?: ModuleFactoryResult) => void}
 * Returns: {void}
 
 ***
@@ -4077,7 +4141,9 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 ### Properties
 
-* `ModuleGraphConnection` {ModuleGraphConnection}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="modulegraphconnection"></a> `ModuleGraphConnection` | `static` | {ModuleGraphConnection} |
 
 ### Methods
 
@@ -4095,14 +4161,9 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 #### `cached(fn, args)`
 
-###### T
-
-`T` *extends* {any[]}
-
-###### R
-
-`R`
-* `fn` {object}
+* `T` *extends* {any[]}
+* `R`
+* `fn` {(moduleGraph: ModuleGraph, args: T) => R}
 * `args` {T}
 * Returns: {R}
 
@@ -4116,22 +4177,14 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 * `oldModule` {Module}
 * `newModule` {Module}
-* `filterConnection` {object}
+* `filterConnection` {(moduleGraphConnection: ModuleGraphConnection) => boolean}
 * Returns: {void}
 
 #### `dependencyCacheProvide(dependency, args)`
 
-###### D
-
-`D` *extends* {Dependency}
-
-###### ARGS
-
-`ARGS` *extends* {any[]}
-
-###### R
-
-`R`
+* `D` *extends* {Dependency}
+* `ARGS` *extends* {any[]}
+* `R`
 * `dependency` {D}
 * `args` {Tuple<ARGS, unknown>}
 * Returns: {R}
@@ -4199,7 +4252,7 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 #### `getOptimizationBailout(module)`
 
 * `module` {Module}
-* Returns: {string|object[]}
+* Returns: {string|(requestShortener: RequestShortener) => string[]}
 
 #### `getOrigin(dependency)`
 
@@ -4293,7 +4346,7 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 * `oldModule` {Module}
 * `newModule` {Module}
-* `filterConnection` {object}
+* `filterConnection` {(moduleGraphConnection: ModuleGraphConnection) => boolean}
 * Returns: {void}
 
 #### `removeAllModuleAttributes()`
@@ -4449,30 +4502,32 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 * `module` {Module}
 * `explanation` {string}
 * `weak` {boolean}
-* `condition` {false|object}
+* `condition` {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 * Returns: {ModuleGraphConnection}
 
 ### Properties
 
-* `condition` {false|object}
-* `conditional` {boolean}
-* `dependency` {Dependency}
-* `explanation` {string}
-* `explanations` {Set<string>}
-* `module` {Module}
-* `originModule` {Module}
-* `resolvedModule` {Module}
-* `resolvedOriginModule` {Module}
-* `weak` {boolean}
-* `addConnectionStates` {object}
-* `CIRCULAR_CONNECTION` {CIRCULAR_CONNECTION}
-* `TRANSITIVE_ONLY` {TRANSITIVE_ONLY}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="condition"></a> `condition?` | `public` | {false|(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState} |
+| <a id="conditional"></a> `conditional` | `public` | {boolean} |
+| <a id="dependency"></a> `dependency` | `public` | {Dependency} |
+| <a id="explanation"></a> `explanation` | `public` | {string} |
+| <a id="explanations"></a> `explanations?` | `public` | {Set<string>} |
+| <a id="module"></a> `module` | `public` | {Module} |
+| <a id="originmodule"></a> `originModule` | `public` | {Module} |
+| <a id="resolvedmodule"></a> `resolvedModule` | `public` | {Module} |
+| <a id="resolvedoriginmodule"></a> `resolvedOriginModule` | `public` | {Module} |
+| <a id="weak"></a> `weak?` | `public` | {boolean} |
+| <a id="addconnectionstates"></a> `addConnectionStates` | `static` | {(a: ConnectionState, b: ConnectionState) => ConnectionState} |
+| <a id="circular-connection"></a> `CIRCULAR_CONNECTION` | `static` | {CIRCULAR_CONNECTION} |
+| <a id="transitive-only"></a> `TRANSITIVE_ONLY` | `static` | {TRANSITIVE_ONLY} |
 
 ### Methods
 
 #### `addCondition(condition)`
 
-* `condition` {object}
+* `condition` {(moduleGraphConnection: ModuleGraphConnection, runtime: RuntimeSpec) => ConnectionState}
 * Returns: {void}
 
 #### `addExplanation(explanation)`
@@ -4518,27 +4573,29 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 ### Properties
 
-* `compilers` {Compiler[]}
-* `dependencies` {WeakMap<Compiler, string[]>}
-* `hooks` {Readonly<object>}
-* `inputFileSystem` {InputFileSystem}
-* `intermediateFileSystem` {IntermediateFileSystem}
-* `options` {WebpackOptionsNormalized[]|MultiCompilerOptions}
-* `outputFileSystem` {OutputFileSystem}
-* `outputPath` {string}
-* `running` {boolean}
-* `watchFileSystem` {WatchFileSystem}
+| Property | Type |
+| ------ | ------ |
+| <a id="compilers"></a> `compilers` | {Compiler[]} |
+| <a id="dependencies"></a> `dependencies` | {WeakMap<Compiler, string[]>} |
+| <a id="hooks"></a> `hooks` | {Readonly<{ done: SyncHook<Tuple<MultiStats>>; infrastructureLog: MultiHook<SyncBailHook<Tuple<string, string, undefined|any[]>, true|void>>; invalid: MultiHook<SyncHook<Tuple<null|string, number>>>; ... }>} |
+| <a id="inputfilesystem"></a> `inputFileSystem` | {InputFileSystem} |
+| <a id="intermediatefilesystem"></a> `intermediateFileSystem` | {IntermediateFileSystem} |
+| <a id="options"></a> `options` | {WebpackOptionsNormalized[]&MultiCompilerOptions} |
+| <a id="outputfilesystem"></a> `outputFileSystem` | {OutputFileSystem} |
+| <a id="outputpath"></a> `outputPath` | {string} |
+| <a id="running"></a> `running` | {boolean} |
+| <a id="watchfilesystem"></a> `watchFileSystem` | {WatchFileSystem} |
 
 ### Methods
 
 #### `close(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `getInfrastructureLogger(name)`
 
-* `name` {string|object}
+* `name` {string|() => string}
 * Returns: {WebpackLogger}
 
 #### `purgeInputFileSystem()`
@@ -4555,7 +4612,7 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 > Stability: 0 - Deprecated
 
 * `compilers` {Compiler[]}
-* `fn` {object}
+* `fn` {(compiler: Compiler, callback: CallbackWebpackFunction_2<MultiStats, void>) => void}
 * `callback` {CallbackWebpackFunction_2<Stats[], void>}
 * Returns: {void}
 
@@ -4590,8 +4647,10 @@ This method should have been private
 
 ### Properties
 
-* `hash` {string}
-* `stats` {Stats[]}
+| Property | Type |
+| ------ | ------ |
+| <a id="hash"></a> `hash` | {string} |
+| <a id="stats"></a> `stats` | {Stats[]} |
 
 ### Methods
 
@@ -4649,56 +4708,58 @@ Apply the plugin
 
 ### Properties
 
-* `binary` {boolean}
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `depth` {number}
-* `error` {WebpackError}
-* `errors` {any}
-* `exportsArgument` {string}
-* `extractSourceMap` {boolean}
-* `factoryMeta` {FactoryMeta}
-* `generator` {Generator}
-* `generatorOptions` {GeneratorOptions}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `loaders` {LoaderItem[]}
-* `matchResource` {string}
-* `moduleArgument` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `parser` {ParserClass}
-* `parserOptions` {ParserOptions}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `rawRequest` {string}
-* `renderedHash` {string}
-* `request` {string}
-* `resolveOptions` {ResolveOptions}
-* `resource` {string}
-* `resourceResolveData` {ResourceSchemeData|Partial<ResolveRequest>}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `userRequest` {string}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="binary"></a> `binary` | {boolean} | - | - |
+| <a id="blocks"></a> `blocks` | {AsyncDependenciesBlock[]} | - | [`Module`](#module).[`blocks`](#blocks) |
+| <a id="buildinfo"></a> `buildInfo?` | {BuildInfo} | - | [`Module`](#module).[`buildInfo`](#buildinfo) |
+| <a id="buildmeta"></a> `buildMeta?` | {BuildMeta} | - | [`Module`](#module).[`buildMeta`](#buildmeta) |
+| <a id="chunksiterable"></a> `chunksIterable` | {Iterable<Chunk>} | - | [`Module`](#module).[`chunksIterable`](#chunksiterable) |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | {Dependency[]} | - | [`Module`](#module).[`codeGenerationDependencies`](#codegenerationdependencies) |
+| <a id="context"></a> `context` | {string} | - | [`Module`](#module).[`context`](#context) |
+| <a id="debugid"></a> `debugId` | {number} | - | [`Module`](#module).[`debugId`](#debugid) |
+| <a id="dependencies"></a> `dependencies` | {Dependency[]} | - | [`Module`](#module).[`dependencies`](#dependencies) |
+| <a id="depth"></a> `depth` | {number} | - | [`Module`](#module).[`depth`](#depth) |
+| <a id="error"></a> `error` | {WebpackError} | - | - |
+| <a id="errors"></a> `errors` | {any} | - | [`Module`](#module).[`errors`](#errors) |
+| <a id="exportsargument"></a> `exportsArgument` | {string} | - | [`Module`](#module).[`exportsArgument`](#exportsargument) |
+| <a id="extractsourcemap"></a> `extractSourceMap` | {boolean} | - | - |
+| <a id="factorymeta"></a> `factoryMeta?` | {FactoryMeta} | - | [`Module`](#module).[`factoryMeta`](#factorymeta) |
+| <a id="generator"></a> `generator?` | {Generator} | - | - |
+| <a id="generatoroptions"></a> `generatorOptions?` | {GeneratorOptions} | - | - |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | {any} | - | [`Module`](#module).[`hasEqualsChunks`](#hasequalschunks) |
+| <a id="hash"></a> `hash` | {string} | - | [`Module`](#module).[`hash`](#hash) |
+| <a id="hot"></a> `hot` | {boolean} | - | [`Module`](#module).[`hot`](#hot) |
+| <a id="id"></a> ~~`id`~~ | {string|number} | **Deprecated** | [`Module`](#module).[`id`](#id) |
+| <a id="index"></a> `index` | {number} | - | [`Module`](#module).[`index`](#index) |
+| <a id="index2"></a> `index2` | {number} | - | [`Module`](#module).[`index2`](#index2) |
+| <a id="issuer"></a> `issuer?` | {Module} | - | [`Module`](#module).[`issuer`](#issuer) |
+| <a id="isused"></a> `isUsed` | {any} | - | [`Module`](#module).[`isUsed`](#isused) |
+| <a id="layer"></a> `layer` | {string} | - | [`Module`](#module).[`layer`](#layer) |
+| <a id="loaders"></a> `loaders` | {LoaderItem[]} | - | - |
+| <a id="matchresource"></a> `matchResource?` | {string} | - | - |
+| <a id="moduleargument"></a> `moduleArgument` | {string} | - | [`Module`](#module).[`moduleArgument`](#moduleargument) |
+| <a id="needid"></a> `needId` | {boolean} | - | [`Module`](#module).[`needId`](#needid) |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | [`Module`](#module).[`optimizationBailout`](#optimizationbailout) |
+| <a id="optional"></a> `optional` | {boolean} | - | [`Module`](#module).[`optional`](#optional) |
+| <a id="parent"></a> `parent?` | {DependenciesBlock} | - | [`Module`](#module).[`parent`](#parent) |
+| <a id="parser"></a> `parser?` | {ParserClass} | - | - |
+| <a id="parseroptions"></a> `parserOptions?` | {ParserOptions} | - | - |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | {Dependency[]} | - | [`Module`](#module).[`presentationalDependencies`](#presentationaldependencies) |
+| <a id="profile"></a> `profile?` | {ModuleProfile} | - | [`Module`](#module).[`profile`](#profile) |
+| <a id="rawrequest"></a> `rawRequest` | {string} | - | - |
+| <a id="renderedhash"></a> `renderedHash` | {string} | - | [`Module`](#module).[`renderedHash`](#renderedhash) |
+| <a id="request"></a> `request` | {string} | - | - |
+| <a id="resolveoptions"></a> `resolveOptions?` | {ResolveOptions} | - | [`Module`](#module).[`resolveOptions`](#resolveoptions) |
+| <a id="resource"></a> `resource` | {string} | - | - |
+| <a id="resourceresolvedata"></a> `resourceResolveData?` | {ResourceSchemeData&Partial<ResolveRequest>} | - | - |
+| <a id="type"></a> `type` | {string} | - | [`Module`](#module).[`type`](#type) |
+| <a id="used"></a> `used` | {any} | - | [`Module`](#module).[`used`](#used) |
+| <a id="usedexports"></a> `usedExports` | {boolean|SortableSet<string>} | - | [`Module`](#module).[`usedExports`](#usedexports) |
+| <a id="userrequest"></a> `userRequest` | {string} | - | - |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | {boolean} | - | [`Module`](#module).[`useSimpleSourceMap`](#usesimplesourcemap) |
+| <a id="usesourcemap"></a> `useSourceMap` | {boolean} | - | [`Module`](#module).[`useSourceMap`](#usesourcemap) |
+| <a id="warnings"></a> `warnings` | {any} | - | [`Module`](#module).[`warnings`](#warnings) |
 
 ### Methods
 
@@ -4750,7 +4811,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 
 #### `applyNoParseRule(rule, content)`
 
-* `rule` {string|RegExp|object}
+* `rule` {string|RegExp|(content: string) => boolean}
 * `content` {string}
 * Returns: {boolean}
 
@@ -4760,7 +4821,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -4964,7 +5025,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`
@@ -5011,7 +5072,7 @@ restore unsafe cache data
 
 #### `shouldPreventParsing(noParseRule, request)`
 
-* `noParseRule` {string|RegExp|object|string|RegExp|object[]}
+* `noParseRule` {string|RegExp|(content: string) => boolean|string|RegExp|(content: string) => boolean[]}
 * `request` {string}
 * Returns: {boolean}
 
@@ -5074,15 +5135,17 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 #### `new NormalModuleReplacementPlugin(resourceRegExp, newResource)`
 
 * `resourceRegExp` {RegExp}
-* `newResource` {string|object}
+* `newResource` {string|(resolveData: ResolveData) => void}
 * Returns: {NormalModuleReplacementPlugin}
 
 Create an instance of the plugin
 
 ### Properties
 
-* `newResource` {string|object}
-* `resourceRegExp` {RegExp}
+| Property | Type |
+| ------ | ------ |
+| <a id="newresource"></a> `newResource` | {string|(resolveData: ResolveData) => void} |
+| <a id="resourceregexp"></a> `resourceRegExp` | {RegExp} |
 
 ### Methods
 
@@ -5128,7 +5191,9 @@ Apply the plugin
 
 ### Properties
 
-* `platform` {Partial<PlatformTargetProperties>}
+| Property | Type |
+| ------ | ------ |
+| <a id="platform"></a> `platform` | {Partial<PlatformTargetProperties>} |
 
 ### Methods
 
@@ -5153,8 +5218,10 @@ Apply the plugin
 
 ### Properties
 
-* `context` {string}
-* `request` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="context"></a> `context` | {string} |
+| <a id="request"></a> `request` | {string} |
 
 ### Methods
 
@@ -5178,18 +5245,20 @@ Apply the plugin
 
 ### Properties
 
-* `dependenciesCount` {number}
-* `handler` {object}
-* `modulesCount` {number}
-* `options` {ProgressPluginOptions}
-* `percentBy` {"entries"|"modules"|"dependencies"}
-* `profile` {boolean}
-* `showActiveModules` {boolean}
-* `showDependencies` {boolean}
-* `showEntries` {boolean}
-* `showModules` {boolean}
-* `createDefaultHandler` {object}
-* `defaultOptions` {Required<Omit<ProgressPluginOptions, "handler">>}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="dependenciescount"></a> `dependenciesCount` | `public` | {number} |
+| <a id="handler"></a> `handler?` | `public` | {(percentage: number, msg: string, args: string[]) => void} |
+| <a id="modulescount"></a> `modulesCount` | `public` | {number} |
+| <a id="options"></a> `options` | `public` | {ProgressPluginOptions} |
+| <a id="percentby"></a> `percentBy` | `public` | {"entries"|"modules"|"dependencies"} |
+| <a id="profile"></a> `profile` | `public` | {boolean} |
+| <a id="showactivemodules"></a> `showActiveModules` | `public` | {boolean} |
+| <a id="showdependencies"></a> `showDependencies` | `public` | {boolean} |
+| <a id="showentries"></a> `showEntries` | `public` | {boolean} |
+| <a id="showmodules"></a> `showModules` | `public` | {boolean} |
+| <a id="createdefaulthandler"></a> `createDefaultHandler` | `static` | {(profile: boolean, logger: WebpackLogger) => (percentage: number, msg: string, args: string[]) => void} |
+| <a id="defaultoptions"></a> `defaultOptions` | `static` | {Required<Omit<ProgressPluginOptions, "handler">>} |
 
 ### Methods
 
@@ -5201,7 +5270,7 @@ Apply the plugin
 #### Static method: `getReporter(compiler)`
 
 * `compiler` {Compiler}
-* Returns: {object}
+* Returns: {(p: number, args: string[]) => void}
 
 ***
 
@@ -5216,7 +5285,9 @@ Apply the plugin
 
 ### Properties
 
-* `definitions` {Record<string, string|string[]>}
+| Property | Type |
+| ------ | ------ |
+| <a id="definitions"></a> `definitions` | {Record<string, string|string[]>} |
 
 ### Methods
 
@@ -5239,9 +5310,11 @@ Apply the plugin
 
 ### Properties
 
-* `fileSystem` {FileSystem}
-* `hooks` {KnownHooks}
-* `options` {ResolveOptionsResolverFactoryObject1}
+| Property | Type |
+| ------ | ------ |
+| <a id="filesystem"></a> `fileSystem` | {FileSystem} |
+| <a id="hooks"></a> `hooks` | {KnownHooks} |
+| <a id="options"></a> `options` | {ResolveOptionsResolverFactoryObject1} |
 
 ### Methods
 
@@ -5251,7 +5324,7 @@ Apply the plugin
 * `request` {ResolveRequest}
 * `message` {string}
 * `resolveContext` {ResolveContext}
-* `callback` {object}
+* `callback` {(err?: Error, result?: ResolveRequest) => void}
 * Returns: {void}
 
 #### `ensureHook(name)`
@@ -5301,7 +5374,7 @@ Apply the plugin
 * `path` {string}
 * `request` {string}
 * `resolveContext` {ResolveContext}
-* `callback` {object}
+* `callback` {(err: ErrorWithDetail, res?: string|false, req?: ResolveRequest) => void}
 * Returns: {void}
 
 #### `resolveSync(context, path, request)`
@@ -5336,53 +5409,55 @@ Apply the plugin
 
 ### Properties
 
-* `blocks` {AsyncDependenciesBlock[]}
-* `buildInfo` {BuildInfo}
-* `buildMeta` {BuildMeta}
-* `chunk` {Chunk}
-* `chunkGraph` {ChunkGraph}
-* `chunksIterable` {Iterable<Chunk>}
-* `codeGenerationDependencies` {Dependency[]}
-* `compilation` {Compilation}
-* `context` {string}
-* `debugId` {number}
-* `dependencies` {Dependency[]}
-* `dependentHash` {boolean}
-* `depth` {number}
-* `errors` {any}
-* `exportsArgument` {string}
-* `factoryMeta` {FactoryMeta}
-* `fullHash` {boolean}
-* `hasEqualsChunks` {any}
-* `hash` {string}
-* `hot` {boolean}
-* `id` {string|number} 
-* `index` {number}
-* `index2` {number}
-* `issuer` {Module}
-* `isUsed` {any}
-* `layer` {string}
-* `moduleArgument` {string}
-* `name` {string}
-* `needId` {boolean}
-* `optimizationBailout` {string|object[]} 
-* `optional` {boolean}
-* `parent` {DependenciesBlock}
-* `presentationalDependencies` {Dependency[]}
-* `profile` {ModuleProfile}
-* `renderedHash` {string}
-* `resolveOptions` {ResolveOptions}
-* `stage` {number}
-* `type` {string}
-* `used` {any}
-* `usedExports` {boolean|SortableSet<string>}
-* `useSimpleSourceMap` {boolean}
-* `useSourceMap` {boolean}
-* `warnings` {any}
-* `STAGE_ATTACH` {number} Runtime modules which attach to handlers of other runtime modules
-* `STAGE_BASIC` {number} Runtime modules with simple dependencies on other runtime modules
-* `STAGE_NORMAL` {number} Runtime modules without any dependencies to other runtime modules
-* `STAGE_TRIGGER` {number} Runtime modules which trigger actions on bootstrap
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="blocks"></a> `blocks` | `public` | {AsyncDependenciesBlock[]} | - | [`Module`](#module).[`blocks`](#blocks) |
+| <a id="buildinfo"></a> `buildInfo?` | `public` | {BuildInfo} | - | [`Module`](#module).[`buildInfo`](#buildinfo) |
+| <a id="buildmeta"></a> `buildMeta?` | `public` | {BuildMeta} | - | [`Module`](#module).[`buildMeta`](#buildmeta) |
+| <a id="chunk"></a> `chunk?` | `public` | {Chunk} | - | - |
+| <a id="chunkgraph"></a> `chunkGraph?` | `public` | {ChunkGraph} | - | - |
+| <a id="chunksiterable"></a> `chunksIterable` | `public` | {Iterable<Chunk>} | - | [`Module`](#module).[`chunksIterable`](#chunksiterable) |
+| <a id="codegenerationdependencies"></a> `codeGenerationDependencies?` | `public` | {Dependency[]} | - | [`Module`](#module).[`codeGenerationDependencies`](#codegenerationdependencies) |
+| <a id="compilation"></a> `compilation?` | `public` | {Compilation} | - | - |
+| <a id="context"></a> `context` | `public` | {string} | - | [`Module`](#module).[`context`](#context) |
+| <a id="debugid"></a> `debugId` | `public` | {number} | - | [`Module`](#module).[`debugId`](#debugid) |
+| <a id="dependencies"></a> `dependencies` | `public` | {Dependency[]} | - | [`Module`](#module).[`dependencies`](#dependencies) |
+| <a id="dependenthash"></a> `dependentHash` | `public` | {boolean} | - | - |
+| <a id="depth"></a> `depth` | `public` | {number} | - | [`Module`](#module).[`depth`](#depth) |
+| <a id="errors"></a> `errors` | `public` | {any} | - | [`Module`](#module).[`errors`](#errors) |
+| <a id="exportsargument"></a> `exportsArgument` | `public` | {string} | - | [`Module`](#module).[`exportsArgument`](#exportsargument) |
+| <a id="factorymeta"></a> `factoryMeta?` | `public` | {FactoryMeta} | - | [`Module`](#module).[`factoryMeta`](#factorymeta) |
+| <a id="fullhash"></a> `fullHash` | `public` | {boolean} | - | - |
+| <a id="hasequalschunks"></a> `hasEqualsChunks` | `public` | {any} | - | [`Module`](#module).[`hasEqualsChunks`](#hasequalschunks) |
+| <a id="hash"></a> `hash` | `public` | {string} | - | [`Module`](#module).[`hash`](#hash) |
+| <a id="hot"></a> `hot` | `public` | {boolean} | - | [`Module`](#module).[`hot`](#hot) |
+| <a id="id"></a> ~~`id`~~ | `public` | {string|number} | **Deprecated** | [`Module`](#module).[`id`](#id) |
+| <a id="index"></a> `index` | `public` | {number} | - | [`Module`](#module).[`index`](#index) |
+| <a id="index2"></a> `index2` | `public` | {number} | - | [`Module`](#module).[`index2`](#index2) |
+| <a id="issuer"></a> `issuer?` | `public` | {Module} | - | [`Module`](#module).[`issuer`](#issuer) |
+| <a id="isused"></a> `isUsed` | `public` | {any} | - | [`Module`](#module).[`isUsed`](#isused) |
+| <a id="layer"></a> `layer` | `public` | {string} | - | [`Module`](#module).[`layer`](#layer) |
+| <a id="moduleargument"></a> `moduleArgument` | `public` | {string} | - | [`Module`](#module).[`moduleArgument`](#moduleargument) |
+| <a id="name"></a> `name` | `public` | {string} | - | - |
+| <a id="needid"></a> `needId` | `public` | {boolean} | - | [`Module`](#module).[`needId`](#needid) |
+| <a id="optimizationbailout"></a> ~~`optimizationBailout`~~ | `public` | {string|(requestShortener: RequestShortener) => string[]} | **Deprecated** | [`Module`](#module).[`optimizationBailout`](#optimizationbailout) |
+| <a id="optional"></a> `optional` | `public` | {boolean} | - | [`Module`](#module).[`optional`](#optional) |
+| <a id="parent"></a> `parent?` | `public` | {DependenciesBlock} | - | [`Module`](#module).[`parent`](#parent) |
+| <a id="presentationaldependencies"></a> `presentationalDependencies?` | `public` | {Dependency[]} | - | [`Module`](#module).[`presentationalDependencies`](#presentationaldependencies) |
+| <a id="profile"></a> `profile?` | `public` | {ModuleProfile} | - | [`Module`](#module).[`profile`](#profile) |
+| <a id="renderedhash"></a> `renderedHash` | `public` | {string} | - | [`Module`](#module).[`renderedHash`](#renderedhash) |
+| <a id="resolveoptions"></a> `resolveOptions?` | `public` | {ResolveOptions} | - | [`Module`](#module).[`resolveOptions`](#resolveoptions) |
+| <a id="stage"></a> `stage` | `public` | {number} | - | - |
+| <a id="type"></a> `type` | `public` | {string} | - | [`Module`](#module).[`type`](#type) |
+| <a id="used"></a> `used` | `public` | {any} | - | [`Module`](#module).[`used`](#used) |
+| <a id="usedexports"></a> `usedExports` | `public` | {boolean|SortableSet<string>} | - | [`Module`](#module).[`usedExports`](#usedexports) |
+| <a id="usesimplesourcemap"></a> `useSimpleSourceMap` | `public` | {boolean} | - | [`Module`](#module).[`useSimpleSourceMap`](#usesimplesourcemap) |
+| <a id="usesourcemap"></a> `useSourceMap` | `public` | {boolean} | - | [`Module`](#module).[`useSourceMap`](#usesourcemap) |
+| <a id="warnings"></a> `warnings` | `public` | {any} | - | [`Module`](#module).[`warnings`](#warnings) |
+| <a id="stage-attach"></a> `STAGE_ATTACH` | `static` | {number} | Runtime modules which attach to handlers of other runtime modules | - |
+| <a id="stage-basic"></a> `STAGE_BASIC` | `static` | {number} | Runtime modules with simple dependencies on other runtime modules | - |
+| <a id="stage-normal"></a> `STAGE_NORMAL` | `static` | {number} | Runtime modules without any dependencies to other runtime modules | - |
+| <a id="stage-trigger"></a> `STAGE_TRIGGER` | `static` | {number} | Runtime modules which trigger actions on bootstrap | - |
 
 ### Methods
 
@@ -5445,7 +5520,7 @@ This is used for when a Module has a AsyncDependencyBlock tie (for code-splittin
 * `compilation` {Compilation}
 * `resolver` {ResolverWithOptions}
 * `fs` {InputFileSystem}
-* `callback` {object}
+* `callback` {(err?: WebpackError) => void}
 * Returns: {void}
 
 #### `chunkCondition(chunk, compilation)`
@@ -5625,7 +5700,7 @@ This data will be passed to restoreFromUnsafeCache later.
 #### `needBuild(context, callback)`
 
 * `context` {NeedBuildContext}
-* `callback` {object}
+* `callback` {(err?: WebpackError, needBuild?: boolean) => void}
 * Returns: {void}
 
 #### `needRebuild(fileTimestamps, contextTimestamps)`
@@ -5719,12 +5794,14 @@ In webpack 6, call getSourceBasicTypes() directly on the module instance instead
 
 ### Properties
 
-* `fallbackModuleFilenameTemplate` {DevtoolFallbackModuleFilenameTemplate}
-* `moduleFilenameTemplate` {DevtoolModuleFilenameTemplate}
-* `namespace` {string}
-* `options` {SourceMapDevToolPluginOptions}
-* `sourceMapFilename` {string|false}
-* `sourceMappingURLComment` {string|false|object}
+| Property | Type |
+| ------ | ------ |
+| <a id="fallbackmodulefilenametemplate"></a> `fallbackModuleFilenameTemplate` | {DevtoolFallbackModuleFilenameTemplate} |
+| <a id="modulefilenametemplate"></a> `moduleFilenameTemplate` | {DevtoolModuleFilenameTemplate} |
+| <a id="namespace"></a> `namespace` | {string} |
+| <a id="options"></a> `options` | {SourceMapDevToolPluginOptions} |
+| <a id="sourcemapfilename"></a> `sourceMapFilename?` | {string|false} |
+| <a id="sourcemappingurlcomment"></a> `sourceMappingURLComment` | {string|false|(pathData: PathData, assetInfo?: AssetInfo) => string} |
 
 ### Methods
 
@@ -5748,10 +5825,12 @@ Apply the plugin
 
 ### Properties
 
-* `compilation` {Compilation}
-* `endTime` {number}
-* `hash` {string}
-* `startTime` {number}
+| Property | Type |
+| ------ | ------ |
+| <a id="compilation"></a> `compilation` | {Compilation} |
+| <a id="endtime"></a> `endTime` | {number} |
+| <a id="hash"></a> `hash` | {string} |
+| <a id="starttime"></a> `startTime` | {number} |
 
 ### Methods
 
@@ -5785,8 +5864,10 @@ Apply the plugin
 
 ### Properties
 
-* `NUMBER_OF_IDENTIFIER_CONTINUATION_CHARS` {number}
-* `NUMBER_OF_IDENTIFIER_START_CHARS` {number}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="number-of-identifier-continuation-chars"></a> `NUMBER_OF_IDENTIFIER_CONTINUATION_CHARS` | `static` | {number} |
+| <a id="number-of-identifier-start-chars"></a> `NUMBER_OF_IDENTIFIER_START_CHARS` | `static` | {number} |
 
 ### Methods
 
@@ -5830,7 +5911,7 @@ Apply the plugin
 
 * `renderContext` {ChunkRenderContextJavascriptModulesPlugin}
 * `modules` {Module[]}
-* `renderModule` {object}
+* `renderModule` {(module: Module, renderInArray?: boolean) => Source}
 * `prefix` {string}
 * Returns: {Source}
 
@@ -5843,7 +5924,7 @@ Apply the plugin
 #### Static method: `renderRuntimeModules(runtimeModules, renderContext)`
 
 * `runtimeModules` {RuntimeModule[]}
-* `renderContext` {RenderContextJavascriptModulesPlugin|object}
+* `renderContext` {RenderContextJavascriptModulesPlugin&{ codeGenerationResults: CodeGenerationResults }}
 * Returns: {Source}
 
 #### Static method: `toComment(str)`
@@ -5879,7 +5960,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {WatchIgnorePluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {WatchIgnorePluginOptions} |
 
 ### Methods
 
@@ -5902,30 +5985,32 @@ Apply the plugin
 
 ### Properties
 
-* `blocked` {boolean}
-* `callbacks` {object[]}
-* `closed` {boolean}
-* `compiler` {Compiler}
-* `handler` {CallbackWebpackFunction_2<Stats, void>}
-* `invalid` {boolean}
-* `lastWatcherStartTime` {number}
-* `pausedWatcher` {Watcher}
-* `running` {boolean}
-* `startTime` {number}
-* `suspended` {boolean}
-* `watcher` {Watcher}
-* `watchOptions` {WatchOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="blocked"></a> `blocked` | {boolean} |
+| <a id="callbacks"></a> `callbacks` | {(err: Error, result?: void) => void[]} |
+| <a id="closed"></a> `closed` | {boolean} |
+| <a id="compiler"></a> `compiler` | {Compiler} |
+| <a id="handler"></a> `handler` | {CallbackWebpackFunction_2<Stats, void>} |
+| <a id="invalid"></a> `invalid` | {boolean} |
+| <a id="lastwatcherstarttime"></a> `lastWatcherStartTime?` | {number} |
+| <a id="pausedwatcher"></a> `pausedWatcher?` | {Watcher} |
+| <a id="running"></a> `running` | {boolean} |
+| <a id="starttime"></a> `startTime` | {number} |
+| <a id="suspended"></a> `suspended` | {boolean} |
+| <a id="watcher"></a> `watcher?` | {Watcher} |
+| <a id="watchoptions"></a> `watchOptions` | {WatchOptions} |
 
 ### Methods
 
 #### `close(callback)`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `invalidate([callback])`
 
-* `callback` {object}
+* `callback` {(err: Error, result?: void) => void}
 * Returns: {void}
 
 #### `resume()`
@@ -5953,36 +6038,32 @@ Apply the plugin
 
 ### Indexable
 
-> \[`index`: {number}\]: {object}
+> \[`index`: {number}\]: {() => string}
 
 ### Constructors
 
 #### `new WebpackError([message][, options])`
 
 * `message` {string}
-* `options` {object}
+* `options` {{ cause: unknown }}
 * Returns: {WebpackError}
 
 Creates an instance of WebpackError.
 
 ### Properties
 
-* `chunk` {Chunk}
-* `details` {string}
-* `file` {string}
-* `hideStack` {boolean}
-* `loc` {SyntheticDependencyLocation|RealDependencyLocation}
-* `message` {string}
-* `module` {Module}
-* `name` {string}
-* `stack` {string}
-* `stackTraceLimit` {number} The `Error.stackTraceLimit` property specifies the number of stack frames
-collected by a stack trace (whether generated by `new Error().stack` or
-`Error.captureStackTrace(obj)`).
-The default value is `10` but may be set to any valid JavaScript number. Changes
-will affect any stack trace captured _after_ the value has been changed.
-If set to a non-number value, or set to a negative number, stack traces will
-not capture any frames.
+| Property | Modifier | Type | Description | Overrides | Inherited from |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| <a id="chunk"></a> `chunk?` | `public` | {Chunk} | - | - | - |
+| <a id="details"></a> `details?` | `public` | {string} | - | - | - |
+| <a id="file"></a> `file?` | `public` | {string} | - | - | - |
+| <a id="hidestack"></a> `hideStack?` | `public` | {boolean} | - | - | - |
+| <a id="loc"></a> `loc?` | `public` | {SyntheticDependencyLocation|RealDependencyLocation} | - | - | - |
+| <a id="message"></a> `message` | `public` | {string} | - | - | `Error.message` |
+| <a id="module"></a> `module?` | `public` | {Module} | - | - | - |
+| <a id="name"></a> `name` | `public` | {string} | - | - | `Error.name` |
+| <a id="stack"></a> `stack?` | `public` | {string} | - | - | `Error.stack` |
+| <a id="stacktracelimit"></a> `stackTraceLimit` | `static` | {number} | The `Error.stackTraceLimit` property specifies the number of stack frames collected by a stack trace (whether generated by `new Error().stack` or `Error.captureStackTrace(obj)`). The default value is `10` but may be set to any valid JavaScript number. Changes will affect any stack trace captured _after_ the value has been changed. If set to a non-number value, or set to a negative number, stack traces will not capture any frames. | `Error.stackTraceLimit` | - |
 
 ### Methods
 
@@ -6102,23 +6183,17 @@ a();
 
 ### Properties
 
-* `baseDataPath` {string} 
-* `errors` {SchemaUtilErrorObject[]} 
-* `headerName` {string} 
-* `message` {string}
-* `name` {string}
-* `postFormatter` {PostFormatter} 
-* `schema` {Schema} 
-* `stack` {string}
-* `stackTraceLimit` {number} The `Error.stackTraceLimit` property specifies the number of stack frames
-collected by a stack trace (whether generated by `new Error().stack` or
-`Error.captureStackTrace(obj)`).
-
-The default value is `10` but may be set to any valid JavaScript number. Changes
-will affect any stack trace captured _after_ the value has been changed.
-
-If set to a non-number value, or set to a negative number, stack traces will
-not capture any frames.
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="basedatapath"></a> `baseDataPath` | `public` | {string} | - | - |
+| <a id="errors"></a> `errors` | `public` | {SchemaUtilErrorObject[]} | - | - |
+| <a id="headername"></a> `headerName` | `public` | {string} | - | - |
+| <a id="message"></a> `message` | `public` | {string} | - | `Error.message` |
+| <a id="name"></a> `name` | `public` | {string} | - | `Error.name` |
+| <a id="postformatter"></a> `postFormatter` | `public` | {PostFormatter} | - | - |
+| <a id="schema"></a> `schema` | `public` | {Schema} | - | - |
+| <a id="stack"></a> `stack?` | `public` | {string} | - | `Error.stack` |
+| <a id="stacktracelimit"></a> `stackTraceLimit` | `static` | {number} | The `Error.stackTraceLimit` property specifies the number of stack frames collected by a stack trace (whether generated by `new Error().stack` or `Error.captureStackTrace(obj)`). The default value is `10` but may be set to any valid JavaScript number. Changes will affect any stack trace captured _after_ the value has been changed. If set to a non-number value, or set to a negative number, stack traces will not capture any frames. | `Error.stackTraceLimit` |
 
 ### Methods
 
@@ -6219,10 +6294,12 @@ a();
 
 ### Properties
 
-* `configs` {ArgumentConfig[]}
-* `description` {string}
-* `multiple` {boolean}
-* `simpleType` {SimpleType}
+| Property | Type |
+| ------ | ------ |
+| <a id="configs"></a> `configs` | {ArgumentConfig[]} |
+| <a id="description"></a> `description?` | {string} |
+| <a id="multiple"></a> `multiple` | {boolean} |
+| <a id="simpletype"></a> `simpleType` | {SimpleType} |
 
 ***
 
@@ -6230,9 +6307,11 @@ a();
 
 ### Properties
 
-* `info` {AssetInfo} info about the asset
-* `name` {string} the filename of the asset
-* `source` {Source} source of the asset
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="info"></a> `info` | {AssetInfo} | info about the asset |
+| <a id="name"></a> `name` | {string} | the filename of the asset |
+| <a id="source"></a> `source` | {Source} | source of the asset |
 
 ***
 
@@ -6240,11 +6319,13 @@ a();
 
 ### Properties
 
-* `compilation` {Compilation}
-* `content` {Buffer}
-* `outputPath` {string}
-* `source` {Source}
-* `targetPath` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="compilation"></a> `compilation` | {Compilation} |
+| <a id="content"></a> `content` | {Buffer} |
+| <a id="outputpath"></a> `outputPath` | {string} |
+| <a id="source"></a> `source` | {Source} |
+| <a id="targetpath"></a> `targetPath` | {string} |
 
 ***
 
@@ -6252,47 +6333,49 @@ a();
 
 ### Properties
 
-* `bgBlack` {object}
-* `bgBlackBright` {object}
-* `bgBlue` {object}
-* `bgBlueBright` {object}
-* `bgCyan` {object}
-* `bgCyanBright` {object}
-* `bgGreen` {object}
-* `bgGreenBright` {object}
-* `bgMagenta` {object}
-* `bgMagentaBright` {object}
-* `bgRed` {object}
-* `bgRedBright` {object}
-* `bgWhite` {object}
-* `bgWhiteBright` {object}
-* `bgYellow` {object}
-* `bgYellowBright` {object}
-* `black` {object}
-* `blackBright` {object}
-* `blue` {object}
-* `blueBright` {object}
-* `bold` {object}
-* `cyan` {object}
-* `cyanBright` {object}
-* `dim` {object}
-* `gray` {object}
-* `green` {object}
-* `greenBright` {object}
-* `hidden` {object}
-* `inverse` {object}
-* `italic` {object}
-* `magenta` {object}
-* `magentaBright` {object}
-* `red` {object}
-* `redBright` {object}
-* `reset` {object}
-* `strikethrough` {object}
-* `underline` {object}
-* `white` {object}
-* `whiteBright` {object}
-* `yellow` {object}
-* `yellowBright` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="bgblack"></a> `bgBlack` | {(value?: any) => string} |
+| <a id="bgblackbright"></a> `bgBlackBright` | {(value?: any) => string} |
+| <a id="bgblue"></a> `bgBlue` | {(value?: any) => string} |
+| <a id="bgbluebright"></a> `bgBlueBright` | {(value?: any) => string} |
+| <a id="bgcyan"></a> `bgCyan` | {(value?: any) => string} |
+| <a id="bgcyanbright"></a> `bgCyanBright` | {(value?: any) => string} |
+| <a id="bggreen"></a> `bgGreen` | {(value?: any) => string} |
+| <a id="bggreenbright"></a> `bgGreenBright` | {(value?: any) => string} |
+| <a id="bgmagenta"></a> `bgMagenta` | {(value?: any) => string} |
+| <a id="bgmagentabright"></a> `bgMagentaBright` | {(value?: any) => string} |
+| <a id="bgred"></a> `bgRed` | {(value?: any) => string} |
+| <a id="bgredbright"></a> `bgRedBright` | {(value?: any) => string} |
+| <a id="bgwhite"></a> `bgWhite` | {(value?: any) => string} |
+| <a id="bgwhitebright"></a> `bgWhiteBright` | {(value?: any) => string} |
+| <a id="bgyellow"></a> `bgYellow` | {(value?: any) => string} |
+| <a id="bgyellowbright"></a> `bgYellowBright` | {(value?: any) => string} |
+| <a id="black"></a> `black` | {(value?: any) => string} |
+| <a id="blackbright"></a> `blackBright` | {(value?: any) => string} |
+| <a id="blue"></a> `blue` | {(value?: any) => string} |
+| <a id="bluebright"></a> `blueBright` | {(value?: any) => string} |
+| <a id="bold"></a> `bold` | {(value?: any) => string} |
+| <a id="cyan"></a> `cyan` | {(value?: any) => string} |
+| <a id="cyanbright"></a> `cyanBright` | {(value?: any) => string} |
+| <a id="dim"></a> `dim` | {(value?: any) => string} |
+| <a id="gray"></a> `gray` | {(value?: any) => string} |
+| <a id="green"></a> `green` | {(value?: any) => string} |
+| <a id="greenbright"></a> `greenBright` | {(value?: any) => string} |
+| <a id="hidden"></a> `hidden` | {(value?: any) => string} |
+| <a id="inverse"></a> `inverse` | {(value?: any) => string} |
+| <a id="italic"></a> `italic` | {(value?: any) => string} |
+| <a id="magenta"></a> `magenta` | {(value?: any) => string} |
+| <a id="magentabright"></a> `magentaBright` | {(value?: any) => string} |
+| <a id="red"></a> `red` | {(value?: any) => string} |
+| <a id="redbright"></a> `redBright` | {(value?: any) => string} |
+| <a id="reset"></a> `reset` | {(value?: any) => string} |
+| <a id="strikethrough"></a> `strikethrough` | {(value?: any) => string} |
+| <a id="underline"></a> `underline` | {(value?: any) => string} |
+| <a id="white"></a> `white` | {(value?: any) => string} |
+| <a id="whitebright"></a> `whiteBright` | {(value?: any) => string} |
+| <a id="yellow"></a> `yellow` | {(value?: any) => string} |
+| <a id="yellowbright"></a> `yellowBright` | {(value?: any) => string} |
 
 ***
 
@@ -6300,7 +6383,9 @@ a();
 
 ### Properties
 
-* `useColor` {boolean} force use colors
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="usecolor"></a> `useColor?` | {boolean} | force use colors |
 
 ***
 
@@ -6310,43 +6395,45 @@ Options object as provided by the user.
 
 ### Properties
 
-* `amd` {false|object} Set the value of `require.amd` and `define.amd`. Or disable AMD support.
-* `bail` {boolean} Report the first error as a hard error instead of tolerating it.
-* `cache` {boolean|FileCacheOptions|MemoryCacheOptions} Cache generated modules and chunks to improve performance for multiple incremental builds.
-* `context` {string} The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
-* `dependencies` {string[]} References to other configurations to depend on.
-* `devtool` {string|false|object[]} A developer tool to enhance debugging (false | eval | [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map).
-* `dotenv` {boolean|DotenvPluginOptions} Enable and configure the Dotenv plugin to load environment variables from .env files.
-* `entry` {string|string[]|EntryObject|object} The entry point(s) of the compilation.
-* `experiments` {Experiments} Enables/Disables experiments (experimental features with relax SemVer compatibility).
-* `extends` {string|string[]} Extend configuration from another configuration (only works when using webpack-cli).
-* `externals` {string|RegExp|ExternalItemObjectKnown|ExternalItemObjectUnknown|object|object|ExternalItem[]} Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
-* `externalsPresets` {ExternalsPresets} Enable presets of externals for specific targets.
-* `externalsType` {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"} Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-* `ignoreWarnings` {RegExp|object|object[]} Ignore specific warnings.
-* `infrastructureLogging` {InfrastructureLogging} Options for infrastructure level logging.
-* `loader` {Loader} Custom values available in the loader context.
-* `mode` {"development"|"none"|"production"} Enable production optimizations or development hints.
-* `module` {ModuleOptions} Options affecting the normal modules (`NormalModuleFactory`).
-* `name` {string} Name of the configuration. Used when loading multiple configurations.
-* `node` {false|NodeOptions} Include polyfills or mocks for various node stuff.
-* `optimization` {Optimization} Enables/Disables integrated optimizations.
-* `output` {Output} Options affecting the output of the compilation. `output` options tell webpack how to write the compiled files to disk.
-* `parallelism` {number} The number of parallel processed modules in the compilation.
-* `performance` {false|PerformanceOptions} Configuration for web performance recommendations.
-* `plugins` {false|""|0|WebpackPluginInstance|object[]} Add additional plugins to the compiler.
-* `profile` {boolean} Capture timing information for each module.
-* `recordsInputPath` {string|false} Store compiler state to a json file.
-* `recordsOutputPath` {string|false} Load compiler state from a json file.
-* `recordsPath` {string|false} Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks. An absolute path is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
-* `resolve` {ResolveOptions} Options for the resolver.
-* `resolveLoader` {ResolveOptions} Options for the resolver when resolving loaders.
-* `snapshot` {SnapshotOptionsWebpackOptions} Options affecting how file system snapshots are created and validated.
-* `stats` {boolean|"verbose"|"none"|"summary"|"errors-only"|"errors-warnings"|"minimal"|"normal"|"detailed"|StatsOptions} Stats options object or preset name.
-* `target` {string|false|string[]} Environment to build for. An array of environments to build for all of them when possible.
-* `validate` {boolean} Enable validation of webpack configuration. Defaults to true in development mode. In production mode, defaults to true unless futureDefaults is enabled, then defaults to false.
-* `watch` {boolean} Enter watch mode, which rebuilds on file change.
-* `watchOptions` {WatchOptions} Options for the watcher.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="amd"></a> `amd?` | {false|{ [index: string]: any }} | Set the value of `require.amd` and `define.amd`. Or disable AMD support. |
+| <a id="bail"></a> `bail?` | {boolean} | Report the first error as a hard error instead of tolerating it. |
+| <a id="cache"></a> `cache?` | {boolean|FileCacheOptions|MemoryCacheOptions} | Cache generated modules and chunks to improve performance for multiple incremental builds. |
+| <a id="context"></a> `context?` | {string} | The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory. |
+| <a id="dependencies"></a> `dependencies?` | {string[]} | References to other configurations to depend on. |
+| <a id="devtool"></a> `devtool?` | {string|false|{ type: "css"|"javascript"|"all"; use: RawDevTool }[]} | A developer tool to enhance debugging (false | eval | [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map). |
+| <a id="dotenv"></a> `dotenv?` | {boolean|DotenvPluginOptions} | Enable and configure the Dotenv plugin to load environment variables from .env files. |
+| <a id="entry"></a> `entry?` | {string|string[]|EntryObject|() => string|string[]|EntryObject|Promise<EntryStatic>} | The entry point(s) of the compilation. |
+| <a id="experiments"></a> `experiments?` | {Experiments} | Enables/Disables experiments (experimental features with relax SemVer compatibility). |
+| <a id="extends"></a> `extends?` | {string|string[]} | Extend configuration from another configuration (only works when using webpack-cli). |
+| <a id="externals"></a> `externals?` | {string|RegExp|ExternalItemObjectKnown&ExternalItemObjectUnknown|(data: ExternalItemFunctionData, callback: (err?: Error, result?: string|boolean|string[]|{ [index: string]: any }) => void) => void|(data: ExternalItemFunctionData) => Promise<ExternalItemValue>|ExternalItem[]} | Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`. |
+| <a id="externalspresets"></a> `externalsPresets?` | {ExternalsPresets} | Enable presets of externals for specific targets. |
+| <a id="externalstype"></a> `externalsType?` | {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"} | Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value). |
+| <a id="ignorewarnings"></a> `ignoreWarnings?` | {RegExp|{ file: RegExp; message: RegExp; module: RegExp }|(warning: Error, compilation: Compilation) => boolean[]} | Ignore specific warnings. |
+| <a id="infrastructurelogging"></a> `infrastructureLogging?` | {InfrastructureLogging} | Options for infrastructure level logging. |
+| <a id="loader"></a> `loader?` | {Loader} | Custom values available in the loader context. |
+| <a id="mode"></a> `mode?` | {"development"|"none"|"production"} | Enable production optimizations or development hints. |
+| <a id="module"></a> `module?` | {ModuleOptions} | Options affecting the normal modules (`NormalModuleFactory`). |
+| <a id="name"></a> `name?` | {string} | Name of the configuration. Used when loading multiple configurations. |
+| <a id="node"></a> `node?` | {false|NodeOptions} | Include polyfills or mocks for various node stuff. |
+| <a id="optimization"></a> `optimization?` | {Optimization} | Enables/Disables integrated optimizations. |
+| <a id="output"></a> `output?` | {Output} | Options affecting the output of the compilation. `output` options tell webpack how to write the compiled files to disk. |
+| <a id="parallelism"></a> `parallelism?` | {number} | The number of parallel processed modules in the compilation. |
+| <a id="performance"></a> `performance?` | {false|PerformanceOptions} | Configuration for web performance recommendations. |
+| <a id="plugins"></a> `plugins?` | {false|""|0|WebpackPluginInstance|(this: Compiler, compiler: Compiler) => void[]} | Add additional plugins to the compiler. |
+| <a id="profile"></a> `profile?` | {boolean} | Capture timing information for each module. |
+| <a id="recordsinputpath"></a> `recordsInputPath?` | {string|false} | Store compiler state to a json file. |
+| <a id="recordsoutputpath"></a> `recordsOutputPath?` | {string|false} | Load compiler state from a json file. |
+| <a id="recordspath"></a> `recordsPath?` | {string|false} | Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks. An absolute path is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined. |
+| <a id="resolve"></a> `resolve?` | {ResolveOptions} | Options for the resolver. |
+| <a id="resolveloader"></a> `resolveLoader?` | {ResolveOptions} | Options for the resolver when resolving loaders. |
+| <a id="snapshot"></a> `snapshot?` | {SnapshotOptionsWebpackOptions} | Options affecting how file system snapshots are created and validated. |
+| <a id="stats"></a> `stats?` | {boolean|"verbose"|"none"|"summary"|"errors-only"|"errors-warnings"|"minimal"|"normal"|"detailed"|StatsOptions} | Stats options object or preset name. |
+| <a id="target"></a> `target?` | {string|false|string[]} | Environment to build for. An array of environments to build for all of them when possible. |
+| <a id="validate"></a> `validate?` | {boolean} | Enable validation of webpack configuration. Defaults to true in development mode. In production mode, defaults to true unless futureDefaults is enabled, then defaults to false. |
+| <a id="watch"></a> `watch?` | {boolean} | Enter watch mode, which rebuilds on file change. |
+| <a id="watchoptions"></a> `watchOptions?` | {WatchOptions} | Options for the watcher. |
 
 ***
 
@@ -6364,11 +6451,13 @@ Multiple entry bundles are created. The key is the entry name. The value can be 
 
 ### Properties
 
-* `context` {string} the directory in which the request is placed
-* `contextInfo` {ModuleFactoryCreateDataContextInfo} contextual information
-* `dependencyType` {string} the category of the referencing dependency
-* `getResolve` {object} get a resolve function with the current resolver options
-* `request` {string} the request as written by the user in the require/import expression/statement
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="context"></a> `context` | {string} | the directory in which the request is placed |
+| <a id="contextinfo"></a> `contextInfo` | {ModuleFactoryCreateDataContextInfo} | contextual information |
+| <a id="dependencytype"></a> `dependencyType` | {string} | the category of the referencing dependency |
+| <a id="getresolve"></a> `getResolve` | {(options?: ResolveOptions) => (context: string, request: string, callback: (err?: Error, result?: string|false, resolveRequest?: ResolveRequest) => void) => void|(context: string, request: string) => Promise<string>} | get a resolve function with the current resolver options |
+| <a id="request"></a> `request` | {string} | the request as written by the user in the require/import expression/statement |
 
 ***
 
@@ -6378,7 +6467,9 @@ If an dependency matches exactly a property of the object, the property value is
 
 ### Properties
 
-* `byLayer` {object|object} Specify externals depending on the layer.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="bylayer"></a> `byLayer?` | {{ [index: string]: ExternalItem }|(layer: string) => ExternalItem} | Specify externals depending on the layer. |
 
 ***
 
@@ -6398,26 +6489,28 @@ Options object for persistent file-based caching.
 
 ### Properties
 
-* `allowCollectingMemory` {boolean} Allows to collect unused memory allocated during deserialization. This requires copying data into smaller buffers and has a performance cost.
-* `buildDependencies` {object} Dependencies the build depends on (in multiple categories, default categories: 'defaultWebpack').
-* `cacheDirectory` {string} Base directory for the cache (defaults to node_modules/.cache/webpack).
-* `cacheLocation` {string} Locations for the cache (defaults to cacheDirectory / name).
-* `compression` {false|"gzip"|"brotli"} Compression type used for the cache files.
-* `hashAlgorithm` {string} Algorithm used for generation the hash (see node.js crypto package).
-* `idleTimeout` {number} Time in ms after which idle period the cache storing should happen.
-* `idleTimeoutAfterLargeChanges` {number} Time in ms after which idle period the cache storing should happen when larger changes has been detected (cumulative build time > 2 x avg cache store time).
-* `idleTimeoutForInitialStore` {number} Time in ms after which idle period the initial cache storing should happen.
-* `immutablePaths` {string|RegExp[]} List of paths that are managed by a package manager and contain a version or hash in its path so all files are immutable.
-* `managedPaths` {string|RegExp[]} List of paths that are managed by a package manager and can be trusted to not be modified otherwise.
-* `maxAge` {number} Time for which unused cache entries stay in the filesystem cache at minimum (in milliseconds).
-* `maxMemoryGenerations` {number} Number of generations unused cache entries stay in memory cache at minimum (0 = no memory cache used, 1 = may be removed after unused for a single compilation, ..., Infinity: kept forever). Cache entries will be deserialized from disk when removed from memory cache.
-* `memoryCacheUnaffected` {boolean} Additionally cache computation of modules that are unchanged and reference only unchanged modules in memory.
-* `name` {string} Name for the cache. Different names will lead to different coexisting caches.
-* `profile` {boolean} Track and log detailed timing information for individual cache items.
-* `readonly` {boolean} Enable/disable readonly mode.
-* `store` {"pack"} When to store data to the filesystem. (pack: Store data when compiler is idle in a single file).
-* `type` {"filesystem"} Filesystem caching.
-* `version` {string} Version of the cache data. Different versions won't allow to reuse the cache and override existing content. Update the version when config changed in a way which doesn't allow to reuse cache. This will invalidate the cache.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="allowcollectingmemory"></a> `allowCollectingMemory?` | {boolean} | Allows to collect unused memory allocated during deserialization. This requires copying data into smaller buffers and has a performance cost. |
+| <a id="builddependencies"></a> `buildDependencies?` | {{ [index: string]: string[] }} | Dependencies the build depends on (in multiple categories, default categories: 'defaultWebpack'). |
+| <a id="cachedirectory"></a> `cacheDirectory?` | {string} | Base directory for the cache (defaults to node_modules/.cache/webpack). |
+| <a id="cachelocation"></a> `cacheLocation?` | {string} | Locations for the cache (defaults to cacheDirectory / name). |
+| <a id="compression"></a> `compression?` | {false|"gzip"|"brotli"} | Compression type used for the cache files. |
+| <a id="hashalgorithm"></a> `hashAlgorithm?` | {string} | Algorithm used for generation the hash (see node.js crypto package). |
+| <a id="idletimeout"></a> `idleTimeout?` | {number} | Time in ms after which idle period the cache storing should happen. |
+| <a id="idletimeoutafterlargechanges"></a> `idleTimeoutAfterLargeChanges?` | {number} | Time in ms after which idle period the cache storing should happen when larger changes has been detected (cumulative build time > 2 x avg cache store time). |
+| <a id="idletimeoutforinitialstore"></a> `idleTimeoutForInitialStore?` | {number} | Time in ms after which idle period the initial cache storing should happen. |
+| <a id="immutablepaths"></a> `immutablePaths?` | {string|RegExp[]} | List of paths that are managed by a package manager and contain a version or hash in its path so all files are immutable. |
+| <a id="managedpaths"></a> `managedPaths?` | {string|RegExp[]} | List of paths that are managed by a package manager and can be trusted to not be modified otherwise. |
+| <a id="maxage"></a> `maxAge?` | {number} | Time for which unused cache entries stay in the filesystem cache at minimum (in milliseconds). |
+| <a id="maxmemorygenerations"></a> `maxMemoryGenerations?` | {number} | Number of generations unused cache entries stay in memory cache at minimum (0 = no memory cache used, 1 = may be removed after unused for a single compilation, ..., Infinity: kept forever). Cache entries will be deserialized from disk when removed from memory cache. |
+| <a id="memorycacheunaffected"></a> `memoryCacheUnaffected?` | {boolean} | Additionally cache computation of modules that are unchanged and reference only unchanged modules in memory. |
+| <a id="name"></a> `name?` | {string} | Name for the cache. Different names will lead to different coexisting caches. |
+| <a id="profile"></a> `profile?` | {boolean} | Track and log detailed timing information for individual cache items. |
+| <a id="readonly"></a> `readonly?` | {boolean} | Enable/disable readonly mode. |
+| <a id="store"></a> `store?` | {"pack"} | When to store data to the filesystem. (pack: Store data when compiler is idle in a single file). |
+| <a id="type"></a> `type` | {"filesystem"} | Filesystem caching. |
+| <a id="version"></a> `version?` | {string} | Version of the cache data. Different versions won't allow to reuse the cache and override existing content. Update the version when config changed in a way which doesn't allow to reuse cache. This will invalidate the cache. |
 
 ***
 
@@ -6427,20 +6520,22 @@ Specify options for each generator.
 
 ### Properties
 
-* `asset` {AssetGeneratorOptions} Generator options for asset modules.
-* `asset/bytes` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `asset/inline` {AssetInlineGeneratorOptions} Generator options for asset/inline modules.
-* `asset/resource` {AssetResourceGeneratorOptions} Generator options for asset/resource modules.
-* `asset/source` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `css` {CssGeneratorOptions} Generator options for css modules.
-* `css/auto` {CssModuleGeneratorOptions} Generator options for css/module modules.
-* `css/global` {CssModuleGeneratorOptions} Generator options for css/module modules.
-* `css/module` {CssModuleGeneratorOptions} Generator options for css/module modules.
-* `javascript` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `javascript/auto` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `javascript/dynamic` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `javascript/esm` {EmptyGeneratorOptions} No generator options are supported for this module type.
-* `json` {JsonGeneratorOptions} Generator options for json modules.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="asset"></a> `asset?` | {AssetGeneratorOptions} | Generator options for asset modules. |
+| <a id="assetbytes"></a> `asset/bytes?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="assetinline"></a> `asset/inline?` | {AssetInlineGeneratorOptions} | Generator options for asset/inline modules. |
+| <a id="assetresource"></a> `asset/resource?` | {AssetResourceGeneratorOptions} | Generator options for asset/resource modules. |
+| <a id="assetsource"></a> `asset/source?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="css"></a> `css?` | {CssGeneratorOptions} | Generator options for css modules. |
+| <a id="cssauto"></a> `css/auto?` | {CssModuleGeneratorOptions} | Generator options for css/module modules. |
+| <a id="cssglobal"></a> `css/global?` | {CssModuleGeneratorOptions} | Generator options for css/module modules. |
+| <a id="cssmodule"></a> `css/module?` | {CssModuleGeneratorOptions} | Generator options for css/module modules. |
+| <a id="javascript"></a> `javascript?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="javascriptauto"></a> `javascript/auto?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="javascriptdynamic"></a> `javascript/dynamic?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="javascriptesm"></a> `javascript/esm?` | {EmptyGeneratorOptions} | No generator options are supported for this module type. |
+| <a id="json"></a> `json?` | {JsonGeneratorOptions} | Generator options for json modules. |
 
 ***
 
@@ -6448,24 +6543,26 @@ Specify options for each generator.
 
 ### Properties
 
-* `dirname` {object}
-* `join` {object}
-* `lstat` {LStatFs}
-* `lstatSync` {LStatSync}
-* `purge` {object}
-* `readdir` {ReaddirFs}
-* `readdirSync` {ReaddirSync}
-* `readFile` {ReadFileFs}
-* `readFileSync` {ReadFileSync}
-* `readJson` {object}
-* `readJsonSync` {object}
-* `readlink` {ReadlinkFs}
-* `readlinkSync` {ReadlinkSync}
-* `realpath` {RealPathFs}
-* `realpathSync` {RealPathSync}
-* `relative` {object}
-* `stat` {StatFs}
-* `statSync` {StatSync}
+| Property | Type |
+| ------ | ------ |
+| <a id="dirname"></a> `dirname?` | {(dirname: string) => string} |
+| <a id="join"></a> `join?` | {(path1: string, path2: string) => string} |
+| <a id="lstat"></a> `lstat?` | {LStatFs} |
+| <a id="lstatsync"></a> `lstatSync?` | {LStatSync} |
+| <a id="purge"></a> `purge?` | {(value?: string|string[]|Set<string>) => void} |
+| <a id="readdir"></a> `readdir` | {ReaddirFs} |
+| <a id="readdirsync"></a> `readdirSync?` | {ReaddirSync} |
+| <a id="readfile"></a> `readFile` | {ReadFileFs} |
+| <a id="readfilesync"></a> `readFileSync?` | {ReadFileSync} |
+| <a id="readjson"></a> `readJson?` | {(pathOrFileDescriptor: PathOrFileDescriptorFs, callback: (err: Error|ErrnoException, result?: JsonObjectFs) => void) => void} |
+| <a id="readjsonsync"></a> `readJsonSync?` | {(pathOrFileDescriptor: PathOrFileDescriptorFs) => JsonObjectFs} |
+| <a id="readlink"></a> `readlink` | {ReadlinkFs} |
+| <a id="readlinksync"></a> `readlinkSync?` | {ReadlinkSync} |
+| <a id="realpath"></a> `realpath?` | {RealPathFs} |
+| <a id="realpathsync"></a> `realpathSync?` | {RealPathSync} |
+| <a id="relative"></a> `relative?` | {(from: string, to: string) => string} |
+| <a id="stat"></a> `stat` | {StatFs} |
+| <a id="statsync"></a> `statSync?` | {StatSync} |
 
 ***
 
@@ -6475,12 +6572,14 @@ Options for library.
 
 ### Properties
 
-* `amdContainer` {string} Add a container for define/require functions in the AMD module.
-* `auxiliaryComment` {string|LibraryCustomUmdCommentObject} Add a comment in the UMD wrapper.
-* `export` {string|string[]} Specify which export should be exposed as library.
-* `name` {string|string[]|LibraryCustomUmdObject} The name of the library (some types allow unnamed libraries too).
-* `type` {string} Type of library (types included by default are 'var', 'module', 'assign', 'assign-properties', 'this', 'window', 'self', 'global', 'commonjs', 'commonjs2', 'commonjs-module', 'commonjs-static', 'amd', 'amd-require', 'umd', 'umd2', 'jsonp', 'system', but others might be added by plugins).
-* `umdNamedDefine` {boolean} If `output.libraryTarget` is set to umd and `output.library` is set, setting this to true will name the AMD module.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="amdcontainer"></a> `amdContainer?` | {string} | Add a container for define/require functions in the AMD module. |
+| <a id="auxiliarycomment"></a> `auxiliaryComment?` | {string|LibraryCustomUmdCommentObject} | Add a comment in the UMD wrapper. |
+| <a id="export"></a> `export?` | {string|string[]} | Specify which export should be exposed as library. |
+| <a id="name"></a> `name?` | {string|string[]|LibraryCustomUmdObject} | The name of the library (some types allow unnamed libraries too). |
+| <a id="type"></a> `type` | {string} | Type of library (types included by default are 'var', 'module', 'assign', 'assign-properties', 'this', 'window', 'self', 'global', 'commonjs', 'commonjs2', 'commonjs-module', 'commonjs-static', 'amd', 'amd-require', 'umd', 'umd2', 'jsonp', 'system', but others might be added by plugins). |
+| <a id="umdnameddefine"></a> `umdNamedDefine?` | {boolean} | If `output.libraryTarget` is set to umd and `output.library` is set, setting this to true will name the AMD module. |
 
 ***
 
@@ -6488,15 +6587,10 @@ Options for library.
 
 ### Type Parameters
 
-#### OptionsType
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
-
-* `this` {NormalModuleLoaderContext<OptionsType>|LoaderRunnerLoaderContext<OptionsType>|LoaderPluginLoaderContext|HotModuleReplacementPluginLoaderContext|ContextAdditions}
+* `this` {NormalModuleLoaderContext<OptionsType>&LoaderRunnerLoaderContext<OptionsType>&LoaderPluginLoaderContext&HotModuleReplacementPluginLoaderContext&ContextAdditions}
 * `content` {string}
 * `sourceMap` {string|RawSourceMap}
 * `additionalData` {AdditionalData}
@@ -6508,19 +6602,16 @@ Options for library.
 
 ### Type Parameters
 
-#### OptionsType
-
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
 ### Properties
 
-* `default` {RawLoaderDefinitionFunction<OptionsType, ContextAdditions>|LoaderDefinitionFunction<OptionsType, ContextAdditions>}
-* `pitch` {PitchLoaderDefinitionFunction<OptionsType, ContextAdditions>}
-* `raw` {false}
+| Property | Type |
+| ------ | ------ |
+| <a id="default"></a> `default?` | {RawLoaderDefinitionFunction<OptionsType, ContextAdditions>|LoaderDefinitionFunction<OptionsType, ContextAdditions>} |
+| <a id="pitch"></a> `pitch?` | {PitchLoaderDefinitionFunction<OptionsType, ContextAdditions>} |
+| <a id="raw"></a> `raw?` | {false} |
 
 ***
 
@@ -6530,9 +6621,11 @@ Options object for in-memory caching.
 
 ### Properties
 
-* `cacheUnaffected` {boolean} Additionally cache computation of modules that are unchanged and reference only unchanged modules.
-* `maxGenerations` {number} Number of generations unused cache entries stay in memory cache at minimum (1 = may be removed after unused for a single compilation, ..., Infinity: kept forever).
-* `type` {"memory"} In memory caching.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="cacheunaffected"></a> `cacheUnaffected?` | {boolean} | Additionally cache computation of modules that are unchanged and reference only unchanged modules. |
+| <a id="maxgenerations"></a> `maxGenerations?` | {number} | Number of generations unused cache entries stay in memory cache at minimum (1 = may be removed after unused for a single compilation, ..., Infinity: kept forever). |
+| <a id="type"></a> `type` | {"memory"} | In memory caching. |
 
 ***
 
@@ -6542,25 +6635,27 @@ Options affecting the normal modules (`NormalModuleFactory`).
 
 ### Properties
 
-* `defaultRules` {false|""|0|"..."|RuleSetRule[]} An array of rules applied by default for modules.
-* `exprContextCritical` {boolean} Enable warnings for full dynamic dependencies.
-* `exprContextRecursive` {boolean} Enable recursive directory lookup for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRecursive'.
-* `exprContextRegExp` {boolean|RegExp} Sets the default regular expression for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRegExp'.
-* `exprContextRequest` {string} Set the default request for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRequest'.
-* `generator` {GeneratorOptionsByModuleType} Specify options for each generator.
-* `noParse` {string|RegExp|object|string|RegExp|object[]} Don't parse files matching. It's matched against the full resolved request.
-* `parser` {ParserOptionsByModuleType} Specify options for each parser.
-* `rules` {false|""|0|"..."|RuleSetRule[]} An array of rules applied for modules.
-* `strictExportPresence` {boolean} Emit errors instead of warnings when imported names don't exist in imported module. Deprecated: This option has moved to 'module.parser.javascript.strictExportPresence'.
-* `strictThisContextOnImports` {boolean} Handle the this context correctly according to the spec for namespace objects. Deprecated: This option has moved to 'module.parser.javascript.strictThisContextOnImports'.
-* `unknownContextCritical` {boolean} Enable warnings when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextCritical'.
-* `unknownContextRecursive` {boolean} Enable recursive directory lookup when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRecursive'.
-* `unknownContextRegExp` {boolean|RegExp} Sets the regular expression when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRegExp'.
-* `unknownContextRequest` {string} Sets the request when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRequest'.
-* `unsafeCache` {boolean|object} Cache the resolving of module requests.
-* `wrappedContextCritical` {boolean} Enable warnings for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextCritical'.
-* `wrappedContextRecursive` {boolean} Enable recursive directory lookup for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextRecursive'.
-* `wrappedContextRegExp` {RegExp} Set the inner regular expression for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextRegExp'.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="defaultrules"></a> `defaultRules?` | {false|""|0|"..."|RuleSetRule[]} | An array of rules applied by default for modules. |
+| <a id="exprcontextcritical"></a> `exprContextCritical?` | {boolean} | Enable warnings for full dynamic dependencies. |
+| <a id="exprcontextrecursive"></a> ~~`exprContextRecursive?`~~ | {boolean} | Enable recursive directory lookup for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRecursive'. **Deprecated** |
+| <a id="exprcontextregexp"></a> ~~`exprContextRegExp?`~~ | {boolean|RegExp} | Sets the default regular expression for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRegExp'. **Deprecated** |
+| <a id="exprcontextrequest"></a> ~~`exprContextRequest?`~~ | {string} | Set the default request for full dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.exprContextRequest'. **Deprecated** |
+| <a id="generator"></a> `generator?` | {GeneratorOptionsByModuleType} | Specify options for each generator. |
+| <a id="noparse"></a> `noParse?` | {string|RegExp|(content: string) => boolean|string|RegExp|(content: string) => boolean[]} | Don't parse files matching. It's matched against the full resolved request. |
+| <a id="parser"></a> `parser?` | {ParserOptionsByModuleType} | Specify options for each parser. |
+| <a id="rules"></a> `rules?` | {false|""|0|"..."|RuleSetRule[]} | An array of rules applied for modules. |
+| <a id="strictexportpresence"></a> ~~`strictExportPresence?`~~ | {boolean} | Emit errors instead of warnings when imported names don't exist in imported module. Deprecated: This option has moved to 'module.parser.javascript.strictExportPresence'. **Deprecated** |
+| <a id="strictthiscontextonimports"></a> ~~`strictThisContextOnImports?`~~ | {boolean} | Handle the this context correctly according to the spec for namespace objects. Deprecated: This option has moved to 'module.parser.javascript.strictThisContextOnImports'. **Deprecated** |
+| <a id="unknowncontextcritical"></a> ~~`unknownContextCritical?`~~ | {boolean} | Enable warnings when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextCritical'. **Deprecated** |
+| <a id="unknowncontextrecursive"></a> ~~`unknownContextRecursive?`~~ | {boolean} | Enable recursive directory lookup when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRecursive'. **Deprecated** |
+| <a id="unknowncontextregexp"></a> ~~`unknownContextRegExp?`~~ | {boolean|RegExp} | Sets the regular expression when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRegExp'. **Deprecated** |
+| <a id="unknowncontextrequest"></a> ~~`unknownContextRequest?`~~ | {string} | Sets the request when using the require function in a not statically analyse-able way. Deprecated: This option has moved to 'module.parser.javascript.unknownContextRequest'. **Deprecated** |
+| <a id="unsafecache"></a> `unsafeCache?` | {boolean|(module: Module) => boolean} | Cache the resolving of module requests. |
+| <a id="wrappedcontextcritical"></a> ~~`wrappedContextCritical?`~~ | {boolean} | Enable warnings for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextCritical'. **Deprecated** |
+| <a id="wrappedcontextrecursive"></a> ~~`wrappedContextRecursive?`~~ | {boolean} | Enable recursive directory lookup for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextRecursive'. **Deprecated** |
+| <a id="wrappedcontextregexp"></a> ~~`wrappedContextRegExp?`~~ | {RegExp} | Set the inner regular expression for partial dynamic dependencies. Deprecated: This option has moved to 'module.parser.javascript.wrappedContextRegExp'. **Deprecated** |
 
 ***
 
@@ -6568,7 +6663,9 @@ Options affecting the normal modules (`NormalModuleFactory`).
 
 ### Properties
 
-* `parallelism` {number} how many Compilers are allows to run at the same time in parallel
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="parallelism"></a> `parallelism?` | {number} | how many Compilers are allows to run at the same time in parallel |
 
 ***
 
@@ -6576,8 +6673,10 @@ Options affecting the normal modules (`NormalModuleFactory`).
 
 ### Properties
 
-* `read` {object}
-* `setCircularReference` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="read"></a> `read` | {() => any} |
+| <a id="setcircularreference"></a> `setCircularReference` | {(value: ReferenceableItem) => void} |
 
 ***
 
@@ -6585,12 +6684,14 @@ Options affecting the normal modules (`NormalModuleFactory`).
 
 ### Properties
 
-* `rollback` {object}
-* `setCircularReference` {object}
-* `snapshot` {object}
-* `write` {object}
-* `writeLazy` {object}
-* `writeSeparate` {object}
+| Property | Type |
+| ------ | ------ |
+| <a id="rollback"></a> `rollback` | {(snapshot: ObjectSerializerSnapshot) => void} |
+| <a id="setcircularreference"></a> `setCircularReference` | {(value: ReferenceableItem) => void} |
+| <a id="snapshot"></a> `snapshot` | {() => ObjectSerializerSnapshot} |
+| <a id="write"></a> `write` | {(value?: any) => void} |
+| <a id="writelazy"></a> `writeLazy?` | {(item?: any) => void} |
+| <a id="writeseparate"></a> `writeSeparate?` | {(item: any, obj?: LazyOptions) => LazyFunction<any, any, any, LazyOptions>} |
 
 ***
 
@@ -6598,18 +6699,20 @@ Options affecting the normal modules (`NormalModuleFactory`).
 
 ### Properties
 
-* `createReadStream` {object}
-* `dirname` {object}
-* `join` {object}
-* `lstat` {LStatFs}
-* `mkdir` {Mkdir}
-* `readdir` {ReaddirFs}
-* `readFile` {ReadFileFs}
-* `relative` {object}
-* `rmdir` {object}
-* `stat` {StatFs}
-* `unlink` {object}
-* `writeFile` {WriteFile}
+| Property | Type |
+| ------ | ------ |
+| <a id="createreadstream"></a> `createReadStream?` | {(path: PathLikeFs, options?: "ascii"|"utf8"|"utf-8"|"utf16le"|"utf-16le"|"ucs2"|"ucs-2"|"base64"|"base64url"|"latin1"|"binary"|"hex"|ReadStreamOptions) => ReadableStream} |
+| <a id="dirname"></a> `dirname?` | {(dirname: string) => string} |
+| <a id="join"></a> `join?` | {(path1: string, path2: string) => string} |
+| <a id="lstat"></a> `lstat?` | {LStatFs} |
+| <a id="mkdir"></a> `mkdir` | {Mkdir} |
+| <a id="readdir"></a> `readdir?` | {ReaddirFs} |
+| <a id="readfile"></a> `readFile` | {ReadFileFs} |
+| <a id="relative"></a> `relative?` | {(from: string, to: string) => string} |
+| <a id="rmdir"></a> `rmdir?` | {(file: PathLikeFs, callback: (err: ErrnoException) => void) => void} |
+| <a id="stat"></a> `stat` | {StatFs} |
+| <a id="unlink"></a> `unlink?` | {(pathLike: PathLikeFs, callback: (err: ErrnoException) => void) => void} |
+| <a id="writefile"></a> `writeFile` | {WriteFile} |
 
 ***
 
@@ -6619,20 +6722,22 @@ Specify options for each parser.
 
 ### Properties
 
-* `asset` {AssetParserOptions} Parser options for asset modules.
-* `asset/bytes` {EmptyParserOptions} No parser options are supported for this module type.
-* `asset/inline` {EmptyParserOptions} No parser options are supported for this module type.
-* `asset/resource` {EmptyParserOptions} No parser options are supported for this module type.
-* `asset/source` {EmptyParserOptions} No parser options are supported for this module type.
-* `css` {CssParserOptions} Parser options for css modules.
-* `css/auto` {CssModuleParserOptions} Parser options for css/module modules.
-* `css/global` {CssModuleParserOptions} Parser options for css/module modules.
-* `css/module` {CssModuleParserOptions} Parser options for css/module modules.
-* `javascript` {JavascriptParserOptions} Parser options for javascript modules.
-* `javascript/auto` {JavascriptParserOptions} Parser options for javascript modules.
-* `javascript/dynamic` {JavascriptParserOptions} Parser options for javascript modules.
-* `javascript/esm` {JavascriptParserOptions} Parser options for javascript modules.
-* `json` {JsonParserOptions} Parser options for JSON modules.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="asset"></a> `asset?` | {AssetParserOptions} | Parser options for asset modules. |
+| <a id="assetbytes"></a> `asset/bytes?` | {EmptyParserOptions} | No parser options are supported for this module type. |
+| <a id="assetinline"></a> `asset/inline?` | {EmptyParserOptions} | No parser options are supported for this module type. |
+| <a id="assetresource"></a> `asset/resource?` | {EmptyParserOptions} | No parser options are supported for this module type. |
+| <a id="assetsource"></a> `asset/source?` | {EmptyParserOptions} | No parser options are supported for this module type. |
+| <a id="css"></a> `css?` | {CssParserOptions} | Parser options for css modules. |
+| <a id="cssauto"></a> `css/auto?` | {CssModuleParserOptions} | Parser options for css/module modules. |
+| <a id="cssglobal"></a> `css/global?` | {CssModuleParserOptions} | Parser options for css/module modules. |
+| <a id="cssmodule"></a> `css/module?` | {CssModuleParserOptions} | Parser options for css/module modules. |
+| <a id="javascript"></a> `javascript?` | {JavascriptParserOptions} | Parser options for javascript modules. |
+| <a id="javascriptauto"></a> `javascript/auto?` | {JavascriptParserOptions} | Parser options for javascript modules. |
+| <a id="javascriptdynamic"></a> `javascript/dynamic?` | {JavascriptParserOptions} | Parser options for javascript modules. |
+| <a id="javascriptesm"></a> `javascript/esm?` | {JavascriptParserOptions} | Parser options for javascript modules. |
+| <a id="json"></a> `json?` | {JsonParserOptions} | Parser options for JSON modules. |
 
 ***
 
@@ -6640,21 +6745,23 @@ Specify options for each parser.
 
 ### Properties
 
-* `basename` {string}
-* `chunk` {Chunk|ChunkPathData}
-* `chunkGraph` {ChunkGraph}
-* `contentHash` {string}
-* `contentHashType` {string}
-* `contentHashWithLength` {object}
-* `filename` {string}
-* `hash` {string}
-* `hashWithLength` {object}
-* `module` {Module|ModulePathData}
-* `noChunkHash` {boolean}
-* `prepareId` {object}
-* `query` {string}
-* `runtime` {RuntimeSpec}
-* `url` {string}
+| Property | Type |
+| ------ | ------ |
+| <a id="basename"></a> `basename?` | {string} |
+| <a id="chunk"></a> `chunk?` | {Chunk|ChunkPathData} |
+| <a id="chunkgraph"></a> `chunkGraph?` | {ChunkGraph} |
+| <a id="contenthash"></a> `contentHash?` | {string} |
+| <a id="contenthashtype"></a> `contentHashType?` | {string} |
+| <a id="contenthashwithlength"></a> `contentHashWithLength?` | {(length: number) => string} |
+| <a id="filename"></a> `filename?` | {string} |
+| <a id="hash"></a> `hash?` | {string} |
+| <a id="hashwithlength"></a> `hashWithLength?` | {(length: number) => string} |
+| <a id="module"></a> `module?` | {Module|ModulePathData} |
+| <a id="nochunkhash"></a> `noChunkHash?` | {boolean} |
+| <a id="prepareid"></a> `prepareId?` | {(id: string|number) => string|number} |
+| <a id="query"></a> `query?` | {string} |
+| <a id="runtime"></a> `runtime?` | {RuntimeSpec} |
+| <a id="url"></a> `url?` | {string} |
 
 ***
 
@@ -6662,15 +6769,10 @@ Specify options for each parser.
 
 ### Type Parameters
 
-#### OptionsType
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
-
-* `this` {NormalModuleLoaderContext<OptionsType>|LoaderRunnerLoaderContext<OptionsType>|LoaderPluginLoaderContext|HotModuleReplacementPluginLoaderContext|ContextAdditions}
+* `this` {NormalModuleLoaderContext<OptionsType>&LoaderRunnerLoaderContext<OptionsType>&LoaderPluginLoaderContext&HotModuleReplacementPluginLoaderContext&ContextAdditions}
 * `remainingRequest` {string}
 * `previousRequest` {string}
 * `data` {object}
@@ -6682,12 +6784,14 @@ Specify options for each parser.
 
 ### Properties
 
-* `argument` {string}
-* `expected` {string}
-* `index` {number}
-* `path` {string}
-* `type` {ProblemType}
-* `value` {string|number|boolean|RegExp}
+| Property | Type |
+| ------ | ------ |
+| <a id="argument"></a> `argument` | {string} |
+| <a id="expected"></a> `expected?` | {string} |
+| <a id="index"></a> `index?` | {number} |
+| <a id="path"></a> `path` | {string} |
+| <a id="type"></a> `type` | {ProblemType} |
+| <a id="value"></a> `value?` | {string|number|boolean|RegExp} |
 
 ***
 
@@ -6695,15 +6799,10 @@ Specify options for each parser.
 
 ### Type Parameters
 
-#### OptionsType
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
-
-* `this` {NormalModuleLoaderContext<OptionsType>|LoaderRunnerLoaderContext<OptionsType>|LoaderPluginLoaderContext|HotModuleReplacementPluginLoaderContext|ContextAdditions}
+* `this` {NormalModuleLoaderContext<OptionsType>&LoaderRunnerLoaderContext<OptionsType>&LoaderPluginLoaderContext&HotModuleReplacementPluginLoaderContext&ContextAdditions}
 * `content` {Buffer}
 * `sourceMap` {string|RawSourceMap}
 * `additionalData` {AdditionalData}
@@ -6715,16 +6814,19 @@ Specify options for each parser.
 
 ### Properties
 
-* `chunk` {Chunk} the chunk used to render
-* `chunkGraph` {ChunkGraph}
-* `codeGenerationResults` {CodeGenerationResults}
-* `dependencyTemplates` {DependencyTemplates}
-* `fullHash` {string}
-* `hash` {string}
-* `moduleGraph` {ModuleGraph}
-* `moduleTemplates` {object}
-* `outputOptions` {OutputNormalizedWithDefaults}
-* `runtimeTemplate` {RuntimeTemplate}
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="chunk"></a> `chunk` | {Chunk} | the chunk used to render |
+| <a id="chunkgraph"></a> `chunkGraph` | {ChunkGraph} | - |
+| <a id="codegenerationresults"></a> `codeGenerationResults` | {CodeGenerationResults} | - |
+| <a id="dependencytemplates"></a> `dependencyTemplates` | {DependencyTemplates} | - |
+| <a id="fullhash"></a> `fullHash` | {string} | - |
+| <a id="hash"></a> `hash` | {string} | - |
+| <a id="modulegraph"></a> `moduleGraph` | {ModuleGraph} | - |
+| <a id="moduletemplates"></a> `moduleTemplates` | {{ javascript: ModuleTemplate }} | - |
+| `moduleTemplates.javascript` | {ModuleTemplate} | - |
+| <a id="outputoptions"></a> `outputOptions` | {OutputNormalizedWithDefaults} | - |
+| <a id="runtimetemplate"></a> `runtimeTemplate` | {RuntimeTemplate} | - |
 
 ***
 
@@ -6732,19 +6834,21 @@ Specify options for each parser.
 
 ### Properties
 
-* `attributes` {ImportAttributes}
-* `cacheable` {boolean} allow to use the unsafe cache
-* `context` {string}
-* `contextDependencies` {LazySet<string>}
-* `contextInfo` {ModuleFactoryCreateDataContextInfo}
-* `createData` {Partial<NormalModuleCreateData|object>}
-* `dependencies` {ModuleDependency[]}
-* `dependencyType` {string}
-* `fileDependencies` {LazySet<string>}
-* `ignoredModule` {Module}
-* `missingDependencies` {LazySet<string>}
-* `request` {string}
-* `resolveOptions` {ResolveOptions}
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="attributes"></a> `attributes?` | {ImportAttributes} | - |
+| <a id="cacheable"></a> `cacheable` | {boolean} | allow to use the unsafe cache |
+| <a id="context"></a> `context` | {string} | - |
+| <a id="contextdependencies"></a> `contextDependencies` | {LazySet<string>} | - |
+| <a id="contextinfo"></a> `contextInfo` | {ModuleFactoryCreateDataContextInfo} | - |
+| <a id="createdata"></a> `createData` | {Partial<NormalModuleCreateData&{ settings: ModuleSettings }>} | - |
+| <a id="dependencies"></a> `dependencies` | {ModuleDependency[]} | - |
+| <a id="dependencytype"></a> `dependencyType` | {string} | - |
+| <a id="filedependencies"></a> `fileDependencies` | {LazySet<string>} | - |
+| <a id="ignoredmodule"></a> `ignoredModule?` | {Module} | - |
+| <a id="missingdependencies"></a> `missingDependencies` | {LazySet<string>} | - |
+| <a id="request"></a> `request` | {string} | - |
+| <a id="resolveoptions"></a> `resolveOptions?` | {ResolveOptions} | - |
 
 ***
 
@@ -6754,35 +6858,37 @@ Options object for resolving requests.
 
 ### Properties
 
-* `alias` {object[]|object} Redirect module requests.
-* `aliasFields` {string|string[][]} Fields in the description file (usually package.json) which are used to redirect requests inside the module.
-* `byDependency` {object} Extra resolve options per dependency category. Typical categories are "commonjs", "amd", "esm".
-* `cache` {boolean} Enable caching of successfully resolved requests (cache entries are revalidated).
-* `cachePredicate` {object} Predicate function to decide which requests should be cached.
-* `cacheWithContext` {boolean} Include the context information in the cache identifier when caching.
-* `conditionNames` {string[]} Condition names for exports field entry point.
-* `descriptionFiles` {string[]} Filenames used to find a description file (like a package.json).
-* `enforceExtension` {boolean} Enforce the resolver to use one of the extensions from the extensions option (User must specify requests without extension).
-* `exportsFields` {string[]} Field names from the description file (usually package.json) which are used to provide entry points of a package.
-* `extensionAlias` {object} An object which maps extension to extension aliases.
-* `extensions` {string[]} Extensions added to the request when trying to find the file.
-* `fallback` {object[]|object} Redirect module requests when normal resolving fails.
-* `fileSystem` {InputFileSystem} Filesystem for the resolver.
-* `fullySpecified` {boolean} Treats the request specified by the user as fully specified, meaning no extensions are added and the mainFiles in directories are not resolved (This doesn't affect requests from mainFields, aliasFields or aliases).
-* `importsFields` {string[]} Field names from the description file (usually package.json) which are used to provide internal request of a package (requests starting with # are considered as internal).
-* `mainFields` {string|string[][]} Field names from the description file (package.json) which are used to find the default entry point.
-* `mainFiles` {string[]} Filenames used to find the default entry point if there is no description file or main field.
-* `modules` {string[]} Folder names or directory paths where to find modules.
-* `plugins` {false|""|0|"..."|object|object[]} Plugins for the resolver.
-* `preferAbsolute` {boolean} Prefer to resolve server-relative URLs (starting with '/') as absolute paths before falling back to resolve in 'resolve.roots'.
-* `preferRelative` {boolean} Prefer to resolve module requests as relative request and fallback to resolving as module.
-* `resolver` {Resolver} Custom resolver.
-* `restrictions` {string|RegExp[]} A list of resolve restrictions. Resolve results must fulfill all of these restrictions to resolve successfully. Other resolve paths are taken when restrictions are not met.
-* `roots` {string[]} A list of directories in which requests that are server-relative URLs (starting with '/') are resolved.
-* `symlinks` {boolean} Enable resolving symlinks to the original location.
-* `tsconfig` {string|boolean|object} TypeScript config for paths mapping. Can be `false` (disabled), `true` (use default `tsconfig.json`), a string path to `tsconfig.json`, or an object with `configFile` and `references` options.
-* `unsafeCache` {boolean|object} Enable caching of successfully resolved requests (cache entries are not revalidated).
-* `useSyncFileSystemCalls` {boolean} Use synchronous filesystem calls for the resolver.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="alias"></a> `alias?` | {{ alias: string|false|string[]; name: string; onlyModule: boolean }[]|{ [index: string]: string|false|string[] }} | Redirect module requests. |
+| <a id="aliasfields"></a> `aliasFields?` | {string|string[][]} | Fields in the description file (usually package.json) which are used to redirect requests inside the module. |
+| <a id="bydependency"></a> `byDependency?` | {{ [index: string]: ResolveOptions }} | Extra resolve options per dependency category. Typical categories are "commonjs", "amd", "esm". |
+| <a id="cache"></a> `cache?` | {boolean} | Enable caching of successfully resolved requests (cache entries are revalidated). |
+| <a id="cachepredicate"></a> `cachePredicate?` | {(request: ResolveRequest) => boolean} | Predicate function to decide which requests should be cached. |
+| <a id="cachewithcontext"></a> `cacheWithContext?` | {boolean} | Include the context information in the cache identifier when caching. |
+| <a id="conditionnames"></a> `conditionNames?` | {string[]} | Condition names for exports field entry point. |
+| <a id="descriptionfiles"></a> `descriptionFiles?` | {string[]} | Filenames used to find a description file (like a package.json). |
+| <a id="enforceextension"></a> `enforceExtension?` | {boolean} | Enforce the resolver to use one of the extensions from the extensions option (User must specify requests without extension). |
+| <a id="exportsfields"></a> `exportsFields?` | {string[]} | Field names from the description file (usually package.json) which are used to provide entry points of a package. |
+| <a id="extensionalias"></a> `extensionAlias?` | {{ [index: string]: string|string[] }} | An object which maps extension to extension aliases. |
+| <a id="extensions"></a> `extensions?` | {string[]} | Extensions added to the request when trying to find the file. |
+| <a id="fallback"></a> `fallback?` | {{ alias: string|false|string[]; name: string; onlyModule: boolean }[]|{ [index: string]: string|false|string[] }} | Redirect module requests when normal resolving fails. |
+| <a id="filesystem"></a> `fileSystem?` | {InputFileSystem} | Filesystem for the resolver. |
+| <a id="fullyspecified"></a> `fullySpecified?` | {boolean} | Treats the request specified by the user as fully specified, meaning no extensions are added and the mainFiles in directories are not resolved (This doesn't affect requests from mainFields, aliasFields or aliases). |
+| <a id="importsfields"></a> `importsFields?` | {string[]} | Field names from the description file (usually package.json) which are used to provide internal request of a package (requests starting with # are considered as internal). |
+| <a id="mainfields"></a> `mainFields?` | {string|string[][]} | Field names from the description file (package.json) which are used to find the default entry point. |
+| <a id="mainfiles"></a> `mainFiles?` | {string[]} | Filenames used to find the default entry point if there is no description file or main field. |
+| <a id="modules"></a> `modules?` | {string[]} | Folder names or directory paths where to find modules. |
+| <a id="plugins"></a> `plugins?` | {false|""|0|"..."|{ [index: string]: any }|(this: Resolver, arg1: Resolver) => void[]} | Plugins for the resolver. |
+| <a id="preferabsolute"></a> `preferAbsolute?` | {boolean} | Prefer to resolve server-relative URLs (starting with '/') as absolute paths before falling back to resolve in 'resolve.roots'. |
+| <a id="preferrelative"></a> `preferRelative?` | {boolean} | Prefer to resolve module requests as relative request and fallback to resolving as module. |
+| <a id="resolver"></a> `resolver?` | {Resolver} | Custom resolver. |
+| <a id="restrictions"></a> `restrictions?` | {string|RegExp[]} | A list of resolve restrictions. Resolve results must fulfill all of these restrictions to resolve successfully. Other resolve paths are taken when restrictions are not met. |
+| <a id="roots"></a> `roots?` | {string[]} | A list of directories in which requests that are server-relative URLs (starting with '/') are resolved. |
+| <a id="symlinks"></a> `symlinks?` | {boolean} | Enable resolving symlinks to the original location. |
+| <a id="tsconfig"></a> `tsconfig?` | {string|boolean|{ configFile: string; references: string }} | TypeScript config for paths mapping. Can be `false` (disabled), `true` (use default `tsconfig.json`), a string path to `tsconfig.json`, or an object with `configFile` and `references` options. |
+| <a id="unsafecache"></a> `unsafeCache?` | {boolean|{ [index: string]: any }} | Enable caching of successfully resolved requests (cache entries are not revalidated). |
+| <a id="usesyncfilesystemcalls"></a> `useSyncFileSystemCalls?` | {boolean} | Use synchronous filesystem calls for the resolver. |
 
 ***
 
@@ -6792,35 +6898,37 @@ A rule description with conditions and effects for modules.
 
 ### Properties
 
-* `assert` {object} Match on import assertions of the dependency.
-* `compiler` {string|RegExp|RuleSetLogicalConditions|object|RuleSetCondition[]} Match the child compiler name.
-* `dependency` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match dependency type.
-* `descriptionData` {object} Match values of properties in the description file (usually package.json).
-* `enforce` {"pre"|"post"} Enforce this rule as pre or post step.
-* `exclude` {string|RegExp|RuleSetLogicalConditionsAbsolute|object|RuleSetConditionAbsolute[]} Shortcut for resource.exclude.
-* `extractSourceMap` {boolean} Enable/Disable extracting source map.
-* `generator` {object} The options for the module generator.
-* `include` {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|object} Shortcut for resource.include.
-* `issuer` {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|object} Match the issuer of the module (The module pointing to this module).
-* `issuerLayer` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match layer of the issuer of this module (The module pointing to this module).
-* `layer` {string} Specifies the layer in which the module should be placed in.
-* `loader` {string} Shortcut for use.loader.
-* `mimetype` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match module mimetype when load from Data URI.
-* `oneOf` {false|""|0|RuleSetRule[]} Only execute the first matching rule in this array.
-* `options` {string|object} Shortcut for use.options.
-* `parser` {object} Options for parsing.
-* `realResource` {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|object} Match the real resource path of the module.
-* `resolve` {ResolveOptions} Options for the resolver.
-* `resource` {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|object} Match the resource path of the module.
-* `resourceFragment` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match the resource fragment of the module.
-* `resourceQuery` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match the resource query of the module.
-* `rules` {false|""|0|RuleSetRule[]} Match and execute these rules when this rule is matched.
-* `scheme` {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|object} Match module scheme.
-* `sideEffects` {boolean} Flags a module as with or without side effects.
-* `test` {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|object} Shortcut for resource.test.
-* `type` {string} Module type to use for the module.
-* `use` {string|RuleSetUseFunction|string|false|0|RuleSetUseFunction|object[]|object} Modifiers applied to the module when rule is matched.
-* `with` {object} Match on import attributes of the dependency.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="assert"></a> `assert?` | {{ [index: string]: RuleSetConditionOrConditions }} | Match on import assertions of the dependency. |
+| <a id="compiler"></a> `compiler?` | {string|RegExp|RuleSetLogicalConditions|(value: string) => boolean|RuleSetCondition[]} | Match the child compiler name. |
+| <a id="dependency"></a> `dependency?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match dependency type. |
+| <a id="descriptiondata"></a> `descriptionData?` | {{ [index: string]: RuleSetConditionOrConditions }} | Match values of properties in the description file (usually package.json). |
+| <a id="enforce"></a> `enforce?` | {"pre"|"post"} | Enforce this rule as pre or post step. |
+| <a id="exclude"></a> `exclude?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|(value: string) => boolean|RuleSetConditionAbsolute[]} | Shortcut for resource.exclude. |
+| <a id="extractsourcemap"></a> `extractSourceMap?` | {boolean} | Enable/Disable extracting source map. |
+| <a id="generator"></a> `generator?` | {{ [index: string]: any }} | The options for the module generator. |
+| <a id="include"></a> `include?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|(value: string) => boolean} | Shortcut for resource.include. |
+| <a id="issuer"></a> `issuer?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|(value: string) => boolean} | Match the issuer of the module (The module pointing to this module). |
+| <a id="issuerlayer"></a> `issuerLayer?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match layer of the issuer of this module (The module pointing to this module). |
+| <a id="layer"></a> `layer?` | {string} | Specifies the layer in which the module should be placed in. |
+| <a id="loader"></a> `loader?` | {string} | Shortcut for use.loader. |
+| <a id="mimetype"></a> `mimetype?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match module mimetype when load from Data URI. |
+| <a id="oneof"></a> `oneOf?` | {false|""|0|RuleSetRule[]} | Only execute the first matching rule in this array. |
+| <a id="options"></a> `options?` | {string|{ [index: string]: any }} | Shortcut for use.options. |
+| <a id="parser"></a> `parser?` | {{ [index: string]: any }} | Options for parsing. |
+| <a id="realresource"></a> `realResource?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|(value: string) => boolean} | Match the real resource path of the module. |
+| <a id="resolve"></a> `resolve?` | {ResolveOptions} | Options for the resolver. |
+| <a id="resource"></a> `resource?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|(value: string) => boolean} | Match the resource path of the module. |
+| <a id="resourcefragment"></a> `resourceFragment?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match the resource fragment of the module. |
+| <a id="resourcequery"></a> `resourceQuery?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match the resource query of the module. |
+| <a id="rules"></a> `rules?` | {false|""|0|RuleSetRule[]} | Match and execute these rules when this rule is matched. |
+| <a id="scheme"></a> `scheme?` | {string|RegExp|RuleSetLogicalConditions|RuleSetCondition[]|(value: string) => boolean} | Match module scheme. |
+| <a id="sideeffects"></a> `sideEffects?` | {boolean} | Flags a module as with or without side effects. |
+| <a id="test"></a> `test?` | {string|RegExp|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]|(value: string) => boolean} | Shortcut for resource.test. |
+| <a id="type"></a> `type?` | {string} | Module type to use for the module. |
+| <a id="use"></a> `use?` | {string|RuleSetUseFunction|string|false|0|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }[]|{ ident: string; loader: string; options: string|{ [index: string]: any } }} | Modifiers applied to the module when rule is matched. |
+| <a id="with"></a> `with?` | {{ [index: string]: RuleSetConditionOrConditions }} | Match on import attributes of the dependency. |
 
 ***
 
@@ -6830,85 +6938,87 @@ Stats options object.
 
 ### Properties
 
-* `all` {boolean} Fallback value for stats options when an option is not defined (has precedence over local webpack defaults).
-* `assets` {boolean} Add assets information.
-* `assetsSort` {string|false} Sort the assets by that field.
-* `assetsSpace` {number} Space to display assets (groups will be collapsed to fit this space).
-* `builtAt` {boolean} Add built at time information.
-* `cached` {boolean} Add information about cached (not built) modules (deprecated: use 'cachedModules' instead).
-* `cachedAssets` {boolean} Show cached assets (setting this to `false` only shows emitted files).
-* `cachedModules` {boolean} Add information about cached (not built) modules.
-* `children` {boolean|"verbose"|"none"|"summary"|"errors-only"|"errors-warnings"|"minimal"|"normal"|"detailed"|StatsOptions|StatsValue[]} Add children information.
-* `chunkGroupAuxiliary` {boolean} Display auxiliary assets in chunk groups.
-* `chunkGroupChildren` {boolean} Display children of chunk groups.
-* `chunkGroupMaxAssets` {number} Limit of assets displayed in chunk groups.
-* `chunkGroups` {boolean} Display all chunk groups with the corresponding bundles.
-* `chunkModules` {boolean} Add built modules information to chunk information.
-* `chunkModulesSpace` {number} Space to display chunk modules (groups will be collapsed to fit this space, value is in number of modules/group).
-* `chunkOrigins` {boolean} Add the origins of chunks and chunk merging info.
-* `chunkRelations` {boolean} Add information about parent, children and sibling chunks to chunk information.
-* `chunks` {boolean} Add chunk information.
-* `chunksSort` {string|false} Sort the chunks by that field.
-* `colors` {boolean|object} Enables/Disables colorful output.
-* `context` {string} Context directory for request shortening.
-* `dependentModules` {boolean} Show chunk modules that are dependencies of other modules of the chunk.
-* `depth` {boolean} Add module depth in module graph.
-* `entrypoints` {boolean|"auto"} Display the entry points with the corresponding bundles.
-* `env` {boolean} Add --env information.
-* `errorCause` {boolean|"auto"} Add cause to errors.
-* `errorDetails` {boolean|"auto"} Add details to errors (like resolving log).
-* `errorErrors` {boolean|"auto"} Add nested errors to errors (like in AggregateError).
-* `errors` {boolean} Add errors.
-* `errorsCount` {boolean} Add errors count.
-* `errorsSpace` {number} Space to display errors (value is in number of lines).
-* `errorStack` {boolean} Add internal stack trace to errors.
-* `exclude` {string|boolean|RegExp|ModuleFilterItemTypes[]|object} Please use excludeModules instead.
-* `excludeAssets` {string|RegExp|AssetFilterItemTypes[]|object} Suppress assets that match the specified filters. Filters can be Strings, RegExps or Functions.
-* `excludeModules` {string|boolean|RegExp|ModuleFilterItemTypes[]|object} Suppress modules that match the specified filters. Filters can be Strings, RegExps, Booleans or Functions.
-* `groupAssetsByChunk` {boolean} Group assets by how their are related to chunks.
-* `groupAssetsByEmitStatus` {boolean} Group assets by their status (emitted, compared for emit or cached).
-* `groupAssetsByExtension` {boolean} Group assets by their extension.
-* `groupAssetsByInfo` {boolean} Group assets by their asset info (immutable, development, hotModuleReplacement, etc).
-* `groupAssetsByPath` {boolean} Group assets by their path.
-* `groupModulesByAttributes` {boolean} Group modules by their attributes (errors, warnings, assets, optional, orphan, or dependent).
-* `groupModulesByCacheStatus` {boolean} Group modules by their status (cached or built and cacheable).
-* `groupModulesByExtension` {boolean} Group modules by their extension.
-* `groupModulesByLayer` {boolean} Group modules by their layer.
-* `groupModulesByPath` {boolean} Group modules by their path.
-* `groupModulesByType` {boolean} Group modules by their type.
-* `groupReasonsByOrigin` {boolean} Group reasons by their origin module.
-* `hash` {boolean} Add the hash of the compilation.
-* `ids` {boolean} Add ids.
-* `logging` {boolean|"error"|"warn"|"info"|"log"|"verbose"|"none"} Add logging output.
-* `loggingDebug` {string|boolean|RegExp|FilterItemTypes[]|object} Include debug logging of specified loggers (i. e. for plugins or loaders). Filters can be Strings, RegExps or Functions.
-* `loggingTrace` {boolean} Add stack traces to logging output.
-* `moduleAssets` {boolean} Add information about assets inside modules.
-* `modules` {boolean} Add built modules information.
-* `modulesSort` {string|false} Sort the modules by that field.
-* `modulesSpace` {number} Space to display modules (groups will be collapsed to fit this space, value is in number of modules/groups).
-* `moduleTrace` {boolean} Add dependencies and origin of warnings/errors.
-* `nestedModules` {boolean} Add information about modules nested in other modules (like with module concatenation).
-* `nestedModulesSpace` {number} Space to display modules nested within other modules (groups will be collapsed to fit this space, value is in number of modules/group).
-* `optimizationBailout` {boolean} Show reasons why optimization bailed out for modules.
-* `orphanModules` {boolean} Add information about orphan modules.
-* `outputPath` {boolean} Add output path information.
-* `performance` {boolean} Add performance hint flags.
-* `preset` {string|boolean} Preset for the default values.
-* `providedExports` {boolean} Show exports provided by modules.
-* `publicPath` {boolean} Add public path information.
-* `reasons` {boolean} Add information about the reasons why modules are included.
-* `reasonsSpace` {number} Space to display reasons (groups will be collapsed to fit this space).
-* `relatedAssets` {boolean} Add information about assets that are related to other assets (like SourceMaps for assets).
-* `runtime` {boolean} Add information about runtime modules (deprecated: use 'runtimeModules' instead).
-* `runtimeModules` {boolean} Add information about runtime modules.
-* `source` {boolean} Add the source code of modules.
-* `timings` {boolean} Add timing information.
-* `usedExports` {boolean} Show exports used by modules.
-* `version` {boolean} Add webpack version information.
-* `warnings` {boolean} Add warnings.
-* `warningsCount` {boolean} Add warnings count.
-* `warningsFilter` {string|RegExp|WarningFilterItemTypes[]|object} Suppress listing warnings that match the specified filters (they will still be counted). Filters can be Strings, RegExps or Functions.
-* `warningsSpace` {number} Space to display warnings (value is in number of lines).
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="all"></a> `all?` | {boolean} | Fallback value for stats options when an option is not defined (has precedence over local webpack defaults). |
+| <a id="assets"></a> `assets?` | {boolean} | Add assets information. |
+| <a id="assetssort"></a> `assetsSort?` | {string|false} | Sort the assets by that field. |
+| <a id="assetsspace"></a> `assetsSpace?` | {number} | Space to display assets (groups will be collapsed to fit this space). |
+| <a id="builtat"></a> `builtAt?` | {boolean} | Add built at time information. |
+| <a id="cached"></a> ~~`cached?`~~ | {boolean} | Add information about cached (not built) modules (deprecated: use 'cachedModules' instead). **Deprecated** |
+| <a id="cachedassets"></a> `cachedAssets?` | {boolean} | Show cached assets (setting this to `false` only shows emitted files). |
+| <a id="cachedmodules"></a> `cachedModules?` | {boolean} | Add information about cached (not built) modules. |
+| <a id="children"></a> `children?` | {boolean|"verbose"|"none"|"summary"|"errors-only"|"errors-warnings"|"minimal"|"normal"|"detailed"|StatsOptions|StatsValue[]} | Add children information. |
+| <a id="chunkgroupauxiliary"></a> `chunkGroupAuxiliary?` | {boolean} | Display auxiliary assets in chunk groups. |
+| <a id="chunkgroupchildren"></a> `chunkGroupChildren?` | {boolean} | Display children of chunk groups. |
+| <a id="chunkgroupmaxassets"></a> `chunkGroupMaxAssets?` | {number} | Limit of assets displayed in chunk groups. |
+| <a id="chunkgroups"></a> `chunkGroups?` | {boolean} | Display all chunk groups with the corresponding bundles. |
+| <a id="chunkmodules"></a> `chunkModules?` | {boolean} | Add built modules information to chunk information. |
+| <a id="chunkmodulesspace"></a> `chunkModulesSpace?` | {number} | Space to display chunk modules (groups will be collapsed to fit this space, value is in number of modules/group). |
+| <a id="chunkorigins"></a> `chunkOrigins?` | {boolean} | Add the origins of chunks and chunk merging info. |
+| <a id="chunkrelations"></a> `chunkRelations?` | {boolean} | Add information about parent, children and sibling chunks to chunk information. |
+| <a id="chunks"></a> `chunks?` | {boolean} | Add chunk information. |
+| <a id="chunkssort"></a> `chunksSort?` | {string|false} | Sort the chunks by that field. |
+| <a id="colors"></a> `colors?` | {boolean|{ bold: string; cyan: string; green: string; ... }} | Enables/Disables colorful output. |
+| <a id="context"></a> `context?` | {string} | Context directory for request shortening. |
+| <a id="dependentmodules"></a> `dependentModules?` | {boolean} | Show chunk modules that are dependencies of other modules of the chunk. |
+| <a id="depth"></a> `depth?` | {boolean} | Add module depth in module graph. |
+| <a id="entrypoints"></a> `entrypoints?` | {boolean|"auto"} | Display the entry points with the corresponding bundles. |
+| <a id="env"></a> `env?` | {boolean} | Add --env information. |
+| <a id="errorcause"></a> `errorCause?` | {boolean|"auto"} | Add cause to errors. |
+| <a id="errordetails"></a> `errorDetails?` | {boolean|"auto"} | Add details to errors (like resolving log). |
+| <a id="errorerrors"></a> `errorErrors?` | {boolean|"auto"} | Add nested errors to errors (like in AggregateError). |
+| <a id="errors"></a> `errors?` | {boolean} | Add errors. |
+| <a id="errorscount"></a> `errorsCount?` | {boolean} | Add errors count. |
+| <a id="errorsspace"></a> `errorsSpace?` | {number} | Space to display errors (value is in number of lines). |
+| <a id="errorstack"></a> `errorStack?` | {boolean} | Add internal stack trace to errors. |
+| <a id="exclude"></a> `exclude?` | {string|boolean|RegExp|ModuleFilterItemTypes[]|(name: string, module: StatsModule, type: "module"|"chunk"|"root-of-chunk"|"nested") => boolean} | Please use excludeModules instead. |
+| <a id="excludeassets"></a> `excludeAssets?` | {string|RegExp|AssetFilterItemTypes[]|(name: string, asset: StatsAsset) => boolean} | Suppress assets that match the specified filters. Filters can be Strings, RegExps or Functions. |
+| <a id="excludemodules"></a> `excludeModules?` | {string|boolean|RegExp|ModuleFilterItemTypes[]|(name: string, module: StatsModule, type: "module"|"chunk"|"root-of-chunk"|"nested") => boolean} | Suppress modules that match the specified filters. Filters can be Strings, RegExps, Booleans or Functions. |
+| <a id="groupassetsbychunk"></a> `groupAssetsByChunk?` | {boolean} | Group assets by how their are related to chunks. |
+| <a id="groupassetsbyemitstatus"></a> `groupAssetsByEmitStatus?` | {boolean} | Group assets by their status (emitted, compared for emit or cached). |
+| <a id="groupassetsbyextension"></a> `groupAssetsByExtension?` | {boolean} | Group assets by their extension. |
+| <a id="groupassetsbyinfo"></a> `groupAssetsByInfo?` | {boolean} | Group assets by their asset info (immutable, development, hotModuleReplacement, etc). |
+| <a id="groupassetsbypath"></a> `groupAssetsByPath?` | {boolean} | Group assets by their path. |
+| <a id="groupmodulesbyattributes"></a> `groupModulesByAttributes?` | {boolean} | Group modules by their attributes (errors, warnings, assets, optional, orphan, or dependent). |
+| <a id="groupmodulesbycachestatus"></a> `groupModulesByCacheStatus?` | {boolean} | Group modules by their status (cached or built and cacheable). |
+| <a id="groupmodulesbyextension"></a> `groupModulesByExtension?` | {boolean} | Group modules by their extension. |
+| <a id="groupmodulesbylayer"></a> `groupModulesByLayer?` | {boolean} | Group modules by their layer. |
+| <a id="groupmodulesbypath"></a> `groupModulesByPath?` | {boolean} | Group modules by their path. |
+| <a id="groupmodulesbytype"></a> `groupModulesByType?` | {boolean} | Group modules by their type. |
+| <a id="groupreasonsbyorigin"></a> `groupReasonsByOrigin?` | {boolean} | Group reasons by their origin module. |
+| <a id="hash"></a> `hash?` | {boolean} | Add the hash of the compilation. |
+| <a id="ids"></a> `ids?` | {boolean} | Add ids. |
+| <a id="logging"></a> `logging?` | {boolean|"error"|"warn"|"info"|"log"|"verbose"|"none"} | Add logging output. |
+| <a id="loggingdebug"></a> `loggingDebug?` | {string|boolean|RegExp|FilterItemTypes[]|(value: string) => boolean} | Include debug logging of specified loggers (i. e. for plugins or loaders). Filters can be Strings, RegExps or Functions. |
+| <a id="loggingtrace"></a> `loggingTrace?` | {boolean} | Add stack traces to logging output. |
+| <a id="moduleassets"></a> `moduleAssets?` | {boolean} | Add information about assets inside modules. |
+| <a id="modules"></a> `modules?` | {boolean} | Add built modules information. |
+| <a id="modulessort"></a> `modulesSort?` | {string|false} | Sort the modules by that field. |
+| <a id="modulesspace"></a> `modulesSpace?` | {number} | Space to display modules (groups will be collapsed to fit this space, value is in number of modules/groups). |
+| <a id="moduletrace"></a> `moduleTrace?` | {boolean} | Add dependencies and origin of warnings/errors. |
+| <a id="nestedmodules"></a> `nestedModules?` | {boolean} | Add information about modules nested in other modules (like with module concatenation). |
+| <a id="nestedmodulesspace"></a> `nestedModulesSpace?` | {number} | Space to display modules nested within other modules (groups will be collapsed to fit this space, value is in number of modules/group). |
+| <a id="optimizationbailout"></a> `optimizationBailout?` | {boolean} | Show reasons why optimization bailed out for modules. |
+| <a id="orphanmodules"></a> `orphanModules?` | {boolean} | Add information about orphan modules. |
+| <a id="outputpath"></a> `outputPath?` | {boolean} | Add output path information. |
+| <a id="performance"></a> `performance?` | {boolean} | Add performance hint flags. |
+| <a id="preset"></a> `preset?` | {string|boolean} | Preset for the default values. |
+| <a id="providedexports"></a> `providedExports?` | {boolean} | Show exports provided by modules. |
+| <a id="publicpath"></a> `publicPath?` | {boolean} | Add public path information. |
+| <a id="reasons"></a> `reasons?` | {boolean} | Add information about the reasons why modules are included. |
+| <a id="reasonsspace"></a> `reasonsSpace?` | {number} | Space to display reasons (groups will be collapsed to fit this space). |
+| <a id="relatedassets"></a> `relatedAssets?` | {boolean} | Add information about assets that are related to other assets (like SourceMaps for assets). |
+| <a id="runtime"></a> ~~`runtime?`~~ | {boolean} | Add information about runtime modules (deprecated: use 'runtimeModules' instead). **Deprecated** |
+| <a id="runtimemodules"></a> `runtimeModules?` | {boolean} | Add information about runtime modules. |
+| <a id="source"></a> `source?` | {boolean} | Add the source code of modules. |
+| <a id="timings"></a> `timings?` | {boolean} | Add timing information. |
+| <a id="usedexports"></a> `usedExports?` | {boolean} | Show exports used by modules. |
+| <a id="version"></a> `version?` | {boolean} | Add webpack version information. |
+| <a id="warnings"></a> `warnings?` | {boolean} | Add warnings. |
+| <a id="warningscount"></a> `warningsCount?` | {boolean} | Add warnings count. |
+| <a id="warningsfilter"></a> `warningsFilter?` | {string|RegExp|WarningFilterItemTypes[]|(warning: StatsError, warningString: string) => boolean} | Suppress listing warnings that match the specified filters (they will still be counted). Filters can be Strings, RegExps or Functions. |
+| <a id="warningsspace"></a> `warningsSpace?` | {number} | Space to display warnings (value is in number of lines). |
 
 ***
 
@@ -6918,42 +7028,44 @@ Normalized webpack options object.
 
 ### Properties
 
-* `amd` {false|object} Set the value of `require.amd` and `define.amd`. Or disable AMD support.
-* `bail` {boolean} Report the first error as a hard error instead of tolerating it.
-* `cache` {CacheOptionsNormalized} Cache generated modules and chunks to improve performance for multiple incremental builds.
-* `context` {string} The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
-* `dependencies` {string[]} References to other configurations to depend on.
-* `devServer` {false|object} Options for the webpack-dev-server.
-* `devtool` {string|false|object[]} A developer tool to enhance debugging (false | eval | [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map).
-* `dotenv` {boolean|DotenvPluginOptions} Enable and configure the Dotenv plugin to load environment variables from .env files.
-* `entry` {EntryNormalized} The entry point(s) of the compilation.
-* `experiments` {ExperimentsNormalized} Enables/Disables experiments (experimental features with relax SemVer compatibility).
-* `externals` {Externals} Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
-* `externalsPresets` {ExternalsPresets} Enable presets of externals for specific targets.
-* `externalsType` {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"} Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-* `ignoreWarnings` {object[]} Ignore specific warnings.
-* `infrastructureLogging` {InfrastructureLogging} Options for infrastructure level logging.
-* `loader` {Loader} Custom values available in the loader context.
-* `mode` {"development"|"none"|"production"} Enable production optimizations or development hints.
-* `module` {ModuleOptionsNormalized} Options affecting the normal modules (`NormalModuleFactory`).
-* `name` {string} Name of the configuration. Used when loading multiple configurations.
-* `node` {Node} Include polyfills or mocks for various node stuff.
-* `optimization` {OptimizationNormalized} Enables/Disables integrated optimizations.
-* `output` {OutputNormalized} Normalized options affecting the output of the compilation. `output` options tell webpack how to write the compiled files to disk.
-* `parallelism` {number} The number of parallel processed modules in the compilation.
-* `performance` {false|PerformanceOptions} Configuration for web performance recommendations.
-* `plugins` {WebpackPluginInstance|object[]} Add additional plugins to the compiler.
-* `profile` {boolean} Capture timing information for each module.
-* `recordsInputPath` {string|false} Store compiler state to a json file.
-* `recordsOutputPath` {string|false} Load compiler state from a json file.
-* `resolve` {ResolveOptions} Options for the resolver.
-* `resolveLoader` {ResolveOptions} Options for the resolver when resolving loaders.
-* `snapshot` {SnapshotOptionsWebpackOptions} Options affecting how file system snapshots are created and validated.
-* `stats` {StatsValue} Stats options object or preset name.
-* `target` {string|false|string[]} Environment to build for. An array of environments to build for all of them when possible.
-* `validate` {boolean} Enable validation of webpack configuration. Defaults to true in development mode. In production mode, defaults to true unless futureDefaults is enabled, then defaults to false.
-* `watch` {boolean} Enter watch mode, which rebuilds on file change.
-* `watchOptions` {WatchOptions} Options for the watcher.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="amd"></a> `amd?` | {false|{ [index: string]: any }} | Set the value of `require.amd` and `define.amd`. Or disable AMD support. |
+| <a id="bail"></a> `bail?` | {boolean} | Report the first error as a hard error instead of tolerating it. |
+| <a id="cache"></a> `cache` | {CacheOptionsNormalized} | Cache generated modules and chunks to improve performance for multiple incremental builds. |
+| <a id="context"></a> `context?` | {string} | The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory. |
+| <a id="dependencies"></a> `dependencies?` | {string[]} | References to other configurations to depend on. |
+| <a id="devserver"></a> `devServer?` | {false|{ [index: string]: any }} | Options for the webpack-dev-server. |
+| <a id="devtool"></a> `devtool?` | {string|false|{ type: "css"|"javascript"|"all"; use: RawDevTool }[]} | A developer tool to enhance debugging (false | eval | [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map). |
+| <a id="dotenv"></a> `dotenv?` | {boolean|DotenvPluginOptions} | Enable and configure the Dotenv plugin to load environment variables from .env files. |
+| <a id="entry"></a> `entry` | {EntryNormalized} | The entry point(s) of the compilation. |
+| <a id="experiments"></a> `experiments` | {ExperimentsNormalized} | Enables/Disables experiments (experimental features with relax SemVer compatibility). |
+| <a id="externals"></a> `externals` | {Externals} | Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`. |
+| <a id="externalspresets"></a> `externalsPresets` | {ExternalsPresets} | Enable presets of externals for specific targets. |
+| <a id="externalstype"></a> `externalsType?` | {"asset"|"module"|"css-import"|"css-url"|"global"|"import"|"commonjs"|"jsonp"|"promise"|"this"|"var"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"} | Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value). |
+| <a id="ignorewarnings"></a> `ignoreWarnings?` | {(warning: Error, compilation: Compilation) => boolean[]} | Ignore specific warnings. |
+| <a id="infrastructurelogging"></a> `infrastructureLogging` | {InfrastructureLogging} | Options for infrastructure level logging. |
+| <a id="loader"></a> `loader?` | {Loader} | Custom values available in the loader context. |
+| <a id="mode"></a> `mode?` | {"development"|"none"|"production"} | Enable production optimizations or development hints. |
+| <a id="module"></a> `module` | {ModuleOptionsNormalized} | Options affecting the normal modules (`NormalModuleFactory`). |
+| <a id="name"></a> `name?` | {string} | Name of the configuration. Used when loading multiple configurations. |
+| <a id="node"></a> `node` | {Node} | Include polyfills or mocks for various node stuff. |
+| <a id="optimization"></a> `optimization` | {OptimizationNormalized} | Enables/Disables integrated optimizations. |
+| <a id="output"></a> `output` | {OutputNormalized} | Normalized options affecting the output of the compilation. `output` options tell webpack how to write the compiled files to disk. |
+| <a id="parallelism"></a> `parallelism?` | {number} | The number of parallel processed modules in the compilation. |
+| <a id="performance"></a> `performance?` | {false|PerformanceOptions} | Configuration for web performance recommendations. |
+| <a id="plugins"></a> `plugins` | {WebpackPluginInstance|(this: Compiler, compiler: Compiler) => void[]} | Add additional plugins to the compiler. |
+| <a id="profile"></a> `profile?` | {boolean} | Capture timing information for each module. |
+| <a id="recordsinputpath"></a> `recordsInputPath?` | {string|false} | Store compiler state to a json file. |
+| <a id="recordsoutputpath"></a> `recordsOutputPath?` | {string|false} | Load compiler state from a json file. |
+| <a id="resolve"></a> `resolve` | {ResolveOptions} | Options for the resolver. |
+| <a id="resolveloader"></a> `resolveLoader` | {ResolveOptions} | Options for the resolver when resolving loaders. |
+| <a id="snapshot"></a> `snapshot` | {SnapshotOptionsWebpackOptions} | Options affecting how file system snapshots are created and validated. |
+| <a id="stats"></a> `stats` | {StatsValue} | Stats options object or preset name. |
+| <a id="target"></a> `target?` | {string|false|string[]} | Environment to build for. An array of environments to build for all of them when possible. |
+| <a id="validate"></a> `validate?` | {boolean} | Enable validation of webpack configuration. Defaults to true in development mode. In production mode, defaults to true unless futureDefaults is enabled, then defaults to false. |
+| <a id="watch"></a> `watch?` | {boolean} | Enter watch mode, which rebuilds on file change. |
+| <a id="watchoptions"></a> `watchOptions` | {WatchOptions} | Options for the watcher. |
 
 ***
 
@@ -6967,31 +7079,33 @@ Plugin instance.
 
 ### Properties
 
-* `apply` {object} The run point of the plugin, required method.
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="apply"></a> `apply` | {(compiler: Compiler) => void} | The run point of the plugin, required method. |
 
 ***
 
 ## Type: `AssetInfo`
 
-> **AssetInfo** = {KnownAssetInfo|Record<string, any>}
+> **AssetInfo** = {KnownAssetInfo&Record<string, any>}
 
 ***
 
 ## Type: `Entry`
 
-> **Entry** = {string|object|EntryObject|string[]}
+> **Entry** = {string|() => string|EntryObject|string[]|Promise<EntryStatic>|EntryObject|string[]}
 
 ***
 
 ## Type: `EntryNormalized`
 
-> **EntryNormalized** = {object|EntryStaticNormalized}
+> **EntryNormalized** = {() => Promise<EntryStaticNormalized>|EntryStaticNormalized}
 
 ***
 
 ## Type: `EntryOptions`
 
-> **EntryOptions** = {object|Omit<EntryDescriptionNormalized, "import">}
+> **EntryOptions** = {{ name: string }&Omit<EntryDescriptionNormalized, "import">}
 
 ### Type Declaration
 
@@ -7001,49 +7115,49 @@ Plugin instance.
 
 ## Type: `ExternalItem`
 
-> **ExternalItem** = {string|RegExp|ExternalItemObjectKnown|ExternalItemObjectUnknown|object|object}
+> **ExternalItem** = {string|RegExp|ExternalItemObjectKnown&ExternalItemObjectUnknown|(data: ExternalItemFunctionData, callback: (err?: null|Error, result?: string|boolean|string[]|{ [index: string]: any }) => void) => void|(data: ExternalItemFunctionData) => Promise<ExternalItemValue>}
 
 ***
 
 ## Type: `ExternalItemFunction`
 
-> **ExternalItemFunction** = {object|object}
+> **ExternalItemFunction** = {(data: ExternalItemFunctionData, callback: (err?: null|Error, result?: string|boolean|string[]|{ [index: string]: any }) => void) => void|(data: ExternalItemFunctionData) => Promise<ExternalItemValue>}
 
 ***
 
 ## Type: `ExternalItemFunctionCallback`
 
-> **ExternalItemFunctionCallback** = {object}
+> **ExternalItemFunctionCallback** = {(data: ExternalItemFunctionData, callback: (err?: null|Error, result?: string|boolean|string[]|{ [index: string]: any }) => void) => void}
 
 * `data` {ExternalItemFunctionData}
-* `callback` {object}
+* `callback` {(err?: null|Error, result?: string|boolean|string[]|{ [index: string]: any }) => void}
 * Returns: {void}
 
 ***
 
 ## Type: `ExternalItemFunctionDataGetResolve`
 
-> **ExternalItemFunctionDataGetResolve** = {object}
+> **ExternalItemFunctionDataGetResolve** = {(options?: ResolveOptions) => (context: string, request: string, callback: (err?: null|Error, result?: string|false, resolveRequest?: ResolveRequest) => void) => void|(context: string, request: string) => Promise<string>}
 
 * `options` {ResolveOptions}
-* Returns: {object|object}
+* Returns: {(context: string, request: string, callback: (err?: null|Error, result?: string|false, resolveRequest?: ResolveRequest) => void) => void|(context: string, request: string) => Promise<string>}
 
 ***
 
 ## Type: `ExternalItemFunctionDataGetResolveCallbackResult`
 
-> **ExternalItemFunctionDataGetResolveCallbackResult** = {object}
+> **ExternalItemFunctionDataGetResolveCallbackResult** = {(context: string, request: string, callback: (err?: null|Error, result?: string|false, resolveRequest?: ResolveRequest) => void) => void}
 
 * `context` {string}
 * `request` {string}
-* `callback` {object}
+* `callback` {(err?: null|Error, result?: string|false, resolveRequest?: ResolveRequest) => void}
 * Returns: {void}
 
 ***
 
 ## Type: `ExternalItemFunctionDataGetResolveResult`
 
-> **ExternalItemFunctionDataGetResolveResult** = {object}
+> **ExternalItemFunctionDataGetResolveResult** = {(context: string, request: string) => Promise<string>}
 
 * `context` {string}
 * `request` {string}
@@ -7053,7 +7167,7 @@ Plugin instance.
 
 ## Type: `ExternalItemFunctionPromise`
 
-> **ExternalItemFunctionPromise** = {object}
+> **ExternalItemFunctionPromise** = {(data: ExternalItemFunctionData) => Promise<ExternalItemValue>}
 
 * `data` {ExternalItemFunctionData}
 * Returns: {Promise<ExternalItemValue>}
@@ -7062,31 +7176,29 @@ Plugin instance.
 
 ## Type: `ExternalItemValue`
 
-> **ExternalItemValue** = {string|boolean|string[]|object}
+> **ExternalItemValue** = {string|boolean|string[]|{ [index: string]: any }}
 
 ***
 
 ## Type: `Externals`
 
-> **Externals** = {string|RegExp|ExternalItemObjectKnown|ExternalItemObjectUnknown|object|object|ExternalItem[]}
+> **Externals** = {string|RegExp|ExternalItemObjectKnown&ExternalItemObjectUnknown|(data: ExternalItemFunctionData, callback: (err?: null|Error, result?: string|boolean|string[]|{ [index: string]: any }) => void) => void|(data: ExternalItemFunctionData) => Promise<ExternalItemValue>|ExternalItem[]}
 
 ***
 
 ## Type: `LoaderContext`
 
-> **LoaderContext**\<`OptionsType`\> = {NormalModuleLoaderContext<OptionsType>|LoaderRunnerLoaderContext<OptionsType>|LoaderPluginLoaderContext|HotModuleReplacementPluginLoaderContext}
+> **LoaderContext**\<`OptionsType`\> = {NormalModuleLoaderContext<OptionsType>&LoaderRunnerLoaderContext<OptionsType>&LoaderPluginLoaderContext&HotModuleReplacementPluginLoaderContext}
 
 ### Type Parameters
 
-#### OptionsType
-
-`OptionsType`
+* `OptionsType`
 
 ***
 
 ## Type: `LoaderDefinition`
 
-> **LoaderDefinition**\<`OptionsType`, `ContextAdditions`\> = {LoaderDefinitionFunction<OptionsType, ContextAdditions>|object}
+> **LoaderDefinition**\<`OptionsType`, `ContextAdditions`\> = {LoaderDefinitionFunction<OptionsType, ContextAdditions>&{ pitch: PitchLoaderDefinitionFunction<OptionsType, ContextAdditions>; raw: false }}
 
 ### Type Declaration
 
@@ -7095,31 +7207,26 @@ Plugin instance.
 
 ### Type Parameters
 
-#### OptionsType
-
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
 ***
 
 ## Type: `MultiConfiguration`
 
-> **MultiConfiguration** = {ReadonlyArray<Configuration>|MultiCompilerOptions}
+> **MultiConfiguration** = {ReadonlyArray<Configuration>&MultiCompilerOptions}
 
 ***
 
 ## Type: `ParserState`
 
-> **ParserState** = {ParserStateBase|Record<string, any>}
+> **ParserState** = {ParserStateBase&Record<string, any>}
 
 ***
 
 ## Type: `RawLoaderDefinition`
 
-> **RawLoaderDefinition**\<`OptionsType`, `ContextAdditions`\> = {RawLoaderDefinitionFunction<OptionsType, ContextAdditions>|object}
+> **RawLoaderDefinition**\<`OptionsType`, `ContextAdditions`\> = {RawLoaderDefinitionFunction<OptionsType, ContextAdditions>&{ pitch: PitchLoaderDefinitionFunction<OptionsType, ContextAdditions>; raw: true }}
 
 ### Type Declaration
 
@@ -7128,13 +7235,8 @@ Plugin instance.
 
 ### Type Parameters
 
-#### OptionsType
-
-`OptionsType` = {object}
-
-#### ContextAdditions
-
-`ContextAdditions` = {object}
+* `OptionsType` = {object}
+* `ContextAdditions` = {object}
 
 ***
 
@@ -7146,43 +7248,43 @@ Plugin instance.
 
 ## Type: `ResolvePluginInstance`
 
-> **ResolvePluginInstance** = {object|object}
+> **ResolvePluginInstance** = {{ [index: string]: any }|(this: Resolver, arg1: Resolver) => void}
 
 ### Union Members
 
 #### Type Literal
 
-{object}
+{{ [index: string]: any }}
 
 #### Index Signature
 
 \[`index`: {string}\]: {any}
 
-* `apply` {object} The run point of the plugin, required method.
+* `apply` {(arg0: Resolver) => void} The run point of the plugin, required method.
 
 ***
 
 #### Function
 
-{object}
+{(this: Resolver, arg1: Resolver) => void}
 
 ***
 
 ## Type: `RuleSetCondition`
 
-> **RuleSetCondition** = {string|RegExp|object|RuleSetLogicalConditions|RuleSetCondition[]}
+> **RuleSetCondition** = {string|RegExp|(value: string) => boolean|RuleSetLogicalConditions|RuleSetCondition[]}
 
 ***
 
 ## Type: `RuleSetConditionAbsolute`
 
-> **RuleSetConditionAbsolute** = {string|RegExp|object|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]}
+> **RuleSetConditionAbsolute** = {string|RegExp|(value: string) => boolean|RuleSetLogicalConditionsAbsolute|RuleSetConditionAbsolute[]}
 
 ***
 
 ## Type: `RuleSetUse`
 
-> **RuleSetUse** = {string|undefined|null|string|false|0|RuleSetUseFunction|object[]|RuleSetUseFunction|object}
+> **RuleSetUse** = {string|undefined|null|string|false|0|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }[]|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }}
 
 ### Union Members
 
@@ -7190,7 +7292,7 @@ Plugin instance.
 
 ***
 
-{undefined|null|string|false|0|RuleSetUseFunction|object[]}
+{undefined|null|string|false|0|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }[]}
 
 ***
 
@@ -7200,26 +7302,26 @@ Plugin instance.
 
 #### Type Literal
 
-{object}
+{{ ident: string; loader: string; options: string|{ [index: string]: any } }}
 
 * `ident` {string} Unique loader options identifier.
 * `loader` {string} Loader name.
-* `options` {string|object} Loader options.
+* `options` {string|{ [index: string]: any }} Loader options.
 
 ***
 
 ## Type: `RuleSetUseFunction`
 
-> **RuleSetUseFunction** = {object}
+> **RuleSetUseFunction** = {(data: EffectData) => string|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }|undefined|null|string|false|0|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }[]}
 
 * `data` {EffectData}
-* Returns: {string|RuleSetUseFunction|object|undefined|null|string|false|0|RuleSetUseFunction|object[]}
+* Returns: {string|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }|undefined|null|string|false|0|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }[]}
 
 ***
 
 ## Type: `RuleSetUseItem`
 
-> **RuleSetUseItem** = {string|RuleSetUseFunction|object}
+> **RuleSetUseItem** = {string|RuleSetUseFunction|{ ident: string; loader: string; options: string|{ [index: string]: any } }}
 
 ### Union Members
 
@@ -7233,107 +7335,107 @@ Plugin instance.
 
 #### Type Literal
 
-{object}
+{{ ident: string; loader: string; options: string|{ [index: string]: any } }}
 
 * `ident` {string} Unique loader options identifier.
 * `loader` {string} Loader name.
-* `options` {string|object} Loader options.
+* `options` {string|{ [index: string]: any }} Loader options.
 
 ***
 
 ## Type: `StatsAsset`
 
-> **StatsAsset** = {KnownStatsAsset|Record<string, any>}
+> **StatsAsset** = {KnownStatsAsset&Record<string, any>}
 
 ***
 
 ## Type: `StatsChunk`
 
-> **StatsChunk** = {KnownStatsChunk|Record<string, any>}
+> **StatsChunk** = {KnownStatsChunk&Record<string, any>}
 
 ***
 
 ## Type: `StatsChunkGroup`
 
-> **StatsChunkGroup** = {KnownStatsChunkGroup|Record<string, any>}
+> **StatsChunkGroup** = {KnownStatsChunkGroup&Record<string, any>}
 
 ***
 
 ## Type: `StatsChunkOrigin`
 
-> **StatsChunkOrigin** = {KnownStatsChunkOrigin|Record<string, any>}
+> **StatsChunkOrigin** = {KnownStatsChunkOrigin&Record<string, any>}
 
 ***
 
 ## Type: `StatsCompilation`
 
-> **StatsCompilation** = {KnownStatsCompilation|Record<string, any>}
+> **StatsCompilation** = {KnownStatsCompilation&Record<string, any>}
 
 ***
 
 ## Type: `StatsError`
 
-> **StatsError** = {KnownStatsError|Record<string, any>}
+> **StatsError** = {KnownStatsError&Record<string, any>}
 
 ***
 
 ## Type: `StatsLogging`
 
-> **StatsLogging** = {KnownStatsLogging|Record<string, any>}
+> **StatsLogging** = {KnownStatsLogging&Record<string, any>}
 
 ***
 
 ## Type: `StatsLoggingEntry`
 
-> **StatsLoggingEntry** = {KnownStatsLoggingEntry|Record<string, any>}
+> **StatsLoggingEntry** = {KnownStatsLoggingEntry&Record<string, any>}
 
 ***
 
 ## Type: `StatsModule`
 
-> **StatsModule** = {KnownStatsModule|Record<string, any>}
+> **StatsModule** = {KnownStatsModule&Record<string, any>}
 
 ***
 
 ## Type: `StatsModuleIssuer`
 
-> **StatsModuleIssuer** = {KnownStatsModuleIssuer|Record<string, any>}
+> **StatsModuleIssuer** = {KnownStatsModuleIssuer&Record<string, any>}
 
 ***
 
 ## Type: `StatsModuleReason`
 
-> **StatsModuleReason** = {KnownStatsModuleReason|Record<string, any>}
+> **StatsModuleReason** = {KnownStatsModuleReason&Record<string, any>}
 
 ***
 
 ## Type: `StatsModuleTraceDependency`
 
-> **StatsModuleTraceDependency** = {KnownStatsModuleTraceDependency|Record<string, any>}
+> **StatsModuleTraceDependency** = {KnownStatsModuleTraceDependency&Record<string, any>}
 
 ***
 
 ## Type: `StatsModuleTraceItem`
 
-> **StatsModuleTraceItem** = {KnownStatsModuleTraceItem|Record<string, any>}
+> **StatsModuleTraceItem** = {KnownStatsModuleTraceItem&Record<string, any>}
 
 ***
 
 ## Type: `StatsProfile`
 
-> **StatsProfile** = {KnownStatsProfile|Record<string, any>}
+> **StatsProfile** = {KnownStatsProfile&Record<string, any>}
 
 ***
 
 ## Type: `TemplatePath`
 
-> **TemplatePath** = {string|object}
+> **TemplatePath** = {string|(pathData: PathData, assetInfo?: AssetInfo) => string}
 
 ***
 
 ## Type: `WebpackPluginFunction`
 
-> **WebpackPluginFunction** = {object}
+> **WebpackPluginFunction** = {(this: Compiler, compiler: Compiler) => void}
 
 * `this` {Compiler}
 * `compiler` {Compiler}
@@ -7343,13 +7445,13 @@ Plugin instance.
 
 ## `UsageState`
 
-> `const` **UsageState**: {Readonly<object>}
+> `const` **UsageState**: {Readonly<{ NoInfo: 2; OnlyPropertiesUsed: 1; Unknown: 3; ... }>}
 
 ***
 
 ## `validate`
 
-> `const` **validate**: {object}
+> `const` **validate**: {(configuration: Configuration|MultiConfiguration) => void}
 
 * `configuration` {Configuration|MultiConfiguration}
 * Returns: {void}
@@ -7358,7 +7460,7 @@ Plugin instance.
 
 ## `validateSchema`
 
-> `const` **validateSchema**: {object}
+> `const` **validateSchema**: {(schema: Parameters<validateFunction>, options: Parameters<validateFunction>, validationConfiguration?: ValidationErrorConfiguration) => void}
 
 * `schema` {Parameters<validateFunction>}
 * `options` {Parameters<validateFunction>}

@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {HttpUriOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {HttpUriOptions} |
 
 ### Methods
 
@@ -36,11 +38,13 @@ Apply the plugin
 
 ### Properties
 
-* `context` {string}
-* `modules` {NormalizedModules}
-* `options` {VirtualUrlOptions}
-* `scheme` {string}
-* `DEFAULT_SCHEME` {string}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="context"></a> `context?` | `public` | {string} |
+| <a id="modules"></a> `modules` | `public` | {NormalizedModules} |
+| <a id="options"></a> `options` | `public` | {VirtualUrlOptions} |
+| <a id="scheme"></a> `scheme` | `public` | {string} |
+| <a id="default-scheme"></a> `DEFAULT_SCHEME` | `static` | {string} |
 
 ### Methods
 
@@ -58,7 +62,7 @@ Apply the plugin
 
 #### `getCacheVersion(version)`
 
-* `version` {string|true|object}
+* `version` {string|true|() => string}
 * Returns: {string}
 
 Get the cache version for a given version value

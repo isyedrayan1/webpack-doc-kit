@@ -11,8 +11,10 @@
 
 ### Properties
 
-* `options` {ProfilingPluginOptions}
-* `Profiler` {Profiler}
+| Property | Modifier | Type |
+| ------ | ------ | ------ |
+| <a id="options"></a> `options` | `public` | {ProfilingPluginOptions} |
+| <a id="profiler"></a> `Profiler` | `static` | {Profiler} |
 
 ### Methods
 

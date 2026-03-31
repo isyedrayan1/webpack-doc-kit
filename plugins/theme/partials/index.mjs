@@ -43,6 +43,30 @@ export default ctx => ({
   ...ctx.partials,
   ...typePartials,
 
+  typeParametersList(model = []) {
+    return model
+      .map(typeParameter => {
+        const signature = [`\`${typeParameter.name}\``];
+
+        if (typeParameter.type) {
+          signature.push(
+            `*extends* ${ctx.partials.someType(typeParameter.type)}`
+          );
+        }
+
+        if (typeParameter.default) {
+          signature.push(`= ${ctx.partials.someType(typeParameter.default)}`);
+        }
+
+        const description = typeParameter.comment?.summary?.length
+          ? ` ${ctx.helpers.getCommentParts(typeParameter.comment.summary).trim()}`
+          : '';
+
+        return `* ${signature.join(' ')}${description}`;
+      })
+      .join('\n');
+  },
+
   signature(model, options) {
     const comment = options.multipleSignatures
       ? model.comment
@@ -109,5 +133,4 @@ export default ctx => ({
   parametersList: ctx.helpers.typedList,
   typedParametersList: ctx.helpers.typedList,
   typeDeclarationList: ctx.helpers.typedList,
-  propertiesTable: ctx.helpers.typedList,
 });

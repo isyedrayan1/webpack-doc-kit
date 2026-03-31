@@ -11,7 +11,9 @@
 
 ### Properties
 
-* `options` {ChunkModuleIdRangePluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {ChunkModuleIdRangePluginOptions} |
 
 ### Methods
 
@@ -35,7 +37,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {DeterministicChunkIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {DeterministicChunkIdsPluginOptions} |
 
 ### Methods
 
@@ -59,7 +63,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {DeterministicModuleIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {DeterministicModuleIdsPluginOptions} |
 
 ### Methods
 
@@ -83,7 +89,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {HashedModuleIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {HashedModuleIdsPluginOptions} |
 
 ### Methods
 
@@ -107,7 +115,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {NamedChunkIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {NamedChunkIdsPluginOptions} |
 
 ### Methods
 
@@ -131,7 +141,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {NamedModuleIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {NamedModuleIdsPluginOptions} |
 
 ### Methods
 
@@ -174,7 +186,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {OccurrenceChunkIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {OccurrenceChunkIdsPluginOptions} |
 
 ### Methods
 
@@ -198,7 +212,9 @@ Apply the plugin
 
 ### Properties
 
-* `options` {OccurrenceModuleIdsPluginOptions}
+| Property | Type |
+| ------ | ------ |
+| <a id="options"></a> `options` | {OccurrenceModuleIdsPluginOptions} |
 
 ### Methods
 
