@@ -472,6 +472,7 @@
   "javascript.JavascriptParser.getComments": "webpack/namespaces/javascript.md#getcomments",
   "javascript.JavascriptParser.getFreeInfoFromVariable": "webpack/namespaces/javascript.md#getfreeinfofromvariable",
   "javascript.JavascriptParser.getMemberExpressionInfo": "webpack/namespaces/javascript.md#getmemberexpressioninfo",
+  "javascript.JavascriptParser.getMemberExpressionRoot": "webpack/namespaces/javascript.md#getmemberexpressionroot",
   "javascript.JavascriptParser.getNameForExpression": "webpack/namespaces/javascript.md#getnameforexpression",
   "javascript.JavascriptParser.getNameInfoFromVariable": "webpack/namespaces/javascript.md#getnameinfofromvariable",
   "javascript.JavascriptParser.getRenameIdentifier": "webpack/namespaces/javascript.md#getrenameidentifier",
