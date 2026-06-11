@@ -61,7 +61,7 @@ Creates an instance of JavascriptParser.
 ### Properties
 
 * `comments` {CommentJavascriptParser[]}
-* `currentTagData` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* `currentTagData` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
 * `destructuringAssignmentProperties` {WeakMap<Expression, Set<DestructuringAssignmentProperty>>}
 * `hooks` {Readonly<object>}
 * `magicCommentContext` {Context}
@@ -410,7 +410,9 @@ Gets rename identifier.
 
 * `name` {string}
 * `tag` {symbol}
-* Returns: {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* Returns: {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
+
+Returns tag data.
 
 Returns tag data.
 
@@ -695,7 +697,7 @@ Updates variable using the provided name.
 
 * `name` {string}
 * `tag` {symbol}
-* `data` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* `data` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
 * `flags` {0|1|2|4}
 * Returns: {void}
 
@@ -896,6 +898,15 @@ Walk function declaration.
 * Returns: {void}
 
 Walk function expression.
+
+#### `walkGuardedBranch(frame, walk)`
+
+* `frame` {object}
+* `walk` {object}
+* Returns: {void}
+
+Walks a conditional branch with its guard frame (if any) pushed onto the
+parser-state guard stack for the duration of the branch body.
 
 #### `walkIdentifier(expression)`
 
