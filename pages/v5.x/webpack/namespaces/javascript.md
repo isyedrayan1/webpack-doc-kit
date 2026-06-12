@@ -414,8 +414,6 @@ Gets rename identifier.
 
 Returns tag data.
 
-Returns tag data.
-
 #### `getVariableInfo(name)`
 
 * `name` {string}

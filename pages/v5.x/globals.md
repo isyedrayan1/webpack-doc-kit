@@ -8589,6 +8589,48 @@ Plugin instance.
 
 ***
 
+## Type: `AssetModuleBuildInfo`
+
+> **AssetModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo|KnownAssetModuleBuildInfo}
+
+***
+
+## Type: `BuildInfo`
+
+> **BuildInfo** = {KnownBuildInfo|Record<string, any>}
+
+***
+
+## Type: `BuildMeta`
+
+> **BuildMeta** = {KnownBuildMeta|Record<string, any>}
+
+***
+
+## Type: `ConcatenatedModuleBuildInfo`
+
+> **ConcatenatedModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownConcatenatedModuleBuildInfo}
+
+***
+
+## Type: `ContextModuleBuildInfo`
+
+> **ContextModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownContextModuleBuildInfo}
+
+***
+
+## Type: `CssModuleBuildInfo`
+
+> **CssModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo|KnownCssModuleBuildInfo}
+
+***
+
+## Type: `CssModuleBuildMeta`
+
+> **CssModuleBuildMeta** = {KnownBuildMeta|Record<string, any>|KnownCssModuleBuildMeta}
+
+***
+
 ## Type: `Entry`
 
 > **Entry** = {string|object|EntryObject|string[]}
@@ -8678,9 +8720,39 @@ Plugin instance.
 
 ***
 
+## Type: `ExternalModuleBuildInfo`
+
+> **ExternalModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownExternalModuleBuildInfo}
+
+***
+
 ## Type: `Externals`
 
 > **Externals** = {string|RegExp|ExternalItemObjectKnown|ExternalItemObjectUnknown|object|object|ExternalItem[]}
+
+***
+
+## Type: `HtmlModuleBuildInfo`
+
+> **HtmlModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo|KnownHtmlModuleBuildInfo}
+
+***
+
+## Type: `JavascriptModuleBuildInfo`
+
+> **JavascriptModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo|KnownJavascriptModuleBuildInfo}
+
+***
+
+## Type: `JavascriptModuleBuildMeta`
+
+> **JavascriptModuleBuildMeta** = {KnownBuildMeta|Record<string, any>|KnownJavascriptModuleBuildMeta}
+
+***
+
+## Type: `JsonModuleBuildInfo`
+
+> **JsonModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo|KnownJsonModuleBuildInfo}
 
 ***
 
@@ -8720,6 +8792,12 @@ Plugin instance.
 ## Type: `MultiConfiguration`
 
 > **MultiConfiguration** = {ReadonlyArray<Configuration>|MultiCompilerOptions}
+
+***
+
+## Type: `NormalModuleBuildInfo`
+
+> **NormalModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownNormalModuleBuildInfo}
 
 ***
 
@@ -8955,6 +9033,12 @@ Plugin instance.
 ## Type: `StatsProfile`
 
 > **StatsProfile** = {KnownStatsProfile|Record<string, any>}
+
+***
+
+## Type: `SyncWasmModuleBuildMeta`
+
+> **SyncWasmModuleBuildMeta** = {KnownBuildMeta|Record<string, any>|KnownSyncWasmModuleBuildMeta}
 
 ***
 
