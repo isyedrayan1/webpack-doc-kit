@@ -221,6 +221,7 @@
   "electron.ElectronTargetPlugin": "webpack/namespaces/electron.md#electrontargetplugin",
   "electron.ElectronTargetPlugin.constructor": "webpack/namespaces/electron.md#constructor",
   "electron.ElectronTargetPlugin.constructor.ElectronTargetPlugin": "webpack/namespaces/electron.md#constructorelectrontargetplugin",
+  "electron.ElectronTargetPlugin.type": "webpack/namespaces/electron.md#type",
   "electron.ElectronTargetPlugin.apply": "webpack/namespaces/electron.md#apply",
   "esm": "webpack/namespaces/esm.md",
   "esm.ModuleChunkLoadingRuntimeModule": "webpack/namespaces/esm.md#modulechunkloadingruntimemodule",
