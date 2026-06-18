@@ -107,7 +107,7 @@ Returns the key iterator, eagerly materializing pending merges first.
 
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_4<number|T[]>}
 * Returns: {void}
 
 Serializes the fully materialized set contents into webpack's object
@@ -124,7 +124,7 @@ Returns the value iterator, eagerly materializing pending merges first.
 ###### T
 
 `T`
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_3<number|T[]>}
 * Returns: {LazySet<T>}
 
 Restores a `LazySet` from serialized item data.
