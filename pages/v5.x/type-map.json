@@ -697,6 +697,7 @@
   "node.NodeTargetPlugin.constructor": "webpack/namespaces/node.md#constructor",
   "node.NodeTargetPlugin.constructor.NodeTargetPlugin": "webpack/namespaces/node.md#constructornodetargetplugin",
   "node.NodeTargetPlugin.type": "webpack/namespaces/node.md#type",
+  "node.NodeTargetPlugin.builtins": "webpack/namespaces/node.md#builtins",
   "node.NodeTargetPlugin.apply": "webpack/namespaces/node.md#apply",
   "node.NodeTemplatePlugin": "webpack/namespaces/node.md#nodetemplateplugin",
   "node.NodeTemplatePlugin.constructor": "webpack/namespaces/node.md#constructor",
