@@ -1581,6 +1581,7 @@ already present.
 ### Properties
 
 * `options` {CleanOptions}
+* `getCompilationHooks` {object}
 
 ### Methods
 
@@ -1590,11 +1591,6 @@ already present.
 * Returns: {void}
 
 Applies the plugin by registering its hooks on the compiler.
-
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {CleanPluginCompilationHooks}
 
 Returns the attached hooks.
 
@@ -2593,6 +2589,7 @@ Create a new define plugin
 ### Properties
 
 * `definitions` {Definitions}
+* `getCompilationHooks` {object}
 
 ### Methods
 
@@ -2602,11 +2599,6 @@ Create a new define plugin
 * Returns: {void}
 
 Applies the plugin by registering its hooks on the compiler.
-
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {DefinePluginHooks}
 
 Returns the attached hooks.
 
@@ -3518,6 +3510,7 @@ Updates the issuer using the provided value.
 * `useSimpleSourceMap` {boolean}
 * `useSourceMap` {boolean}
 * `warnings` {any}
+* `getCompilationHooks` {object}
 * `getExternalModuleNodeCommonjsInitFragment` {object}
 * `ModuleExternalInitFragment` {ModuleExternalInitFragment}
 
@@ -3918,11 +3911,6 @@ and properties.
 * Returns: {void}
 
 Updates the hash with the data contributed by this instance.
-
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {ExternalModuleHooks}
 
 Returns the attached hooks.
 
@@ -4523,6 +4511,7 @@ Adds the provided source to the init fragment.
 
 * `options` {object}
 * `chunkHasJs` {object}
+* `getCompilationHooks` {object}
 
 ### Methods
 
@@ -4591,11 +4580,6 @@ Updates hash with bootstrap.
 * Returns: {ChunkFilenameTemplate}
 
 Gets chunk filename template.
-
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {CompilationHooksJavascriptModulesPlugin}
 
 Returns the attached hooks.
 
