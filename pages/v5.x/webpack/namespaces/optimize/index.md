@@ -184,8 +184,6 @@ Creates an instance of RealContentHashPlugin.
 
 Applies the plugin by registering its hooks on the compiler.
 
-Returns the attached hooks.
-
 ***
 
 ## Class: `RuntimeChunkPlugin`

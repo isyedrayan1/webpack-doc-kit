@@ -63,8 +63,6 @@ Returns true, when the chunk has css.
 
 Gets chunk filename template.
 
-Returns the attached hooks.
-
 #### Static method: `renderModule(module, renderContext, hooks)`
 
 * `module` {CssModule}

@@ -1592,8 +1592,6 @@ already present.
 
 Applies the plugin by registering its hooks on the compiler.
 
-Returns the attached hooks.
-
 ***
 
 ## Class: `CodeGenerationResults`
@@ -2599,8 +2597,6 @@ Create a new define plugin
 * Returns: {void}
 
 Applies the plugin by registering its hooks on the compiler.
-
-Returns the attached hooks.
 
 #### Static method: `runtimeValue(fn[, options])`
 
@@ -3912,8 +3908,6 @@ and properties.
 
 Updates the hash with the data contributed by this instance.
 
-Returns the attached hooks.
-
 #### Static method: `getSourceBasicTypes(module)`
 
 > Stability: 0 - Deprecated: In webpack 6, call getSourceBasicTypes() directly on the module instance instead of using this static method.
@@ -4580,8 +4574,6 @@ Updates hash with bootstrap.
 * Returns: {ChunkFilenameTemplate}
 
 Gets chunk filename template.
-
-Returns the attached hooks.
 
 ***
 

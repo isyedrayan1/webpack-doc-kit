@@ -487,8 +487,6 @@ and properties.
 
 Updates the hash with the data contributed by this instance.
 
-Returns hooks.
-
 #### Static method: `getSourceBasicTypes(module)`
 
 > Stability: 0 - Deprecated: In webpack 6, call getSourceBasicTypes() directly on the module instance instead of using this static method.

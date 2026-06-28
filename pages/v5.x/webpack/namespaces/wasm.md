@@ -34,8 +34,6 @@ Applies the plugin by registering its hooks on the compiler.
 
 Renders the newly generated source from rendering.
 
-Returns the attached hooks.
-
 ***
 
 ## Class: `EnableWasmLoadingPlugin`
