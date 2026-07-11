@@ -2397,6 +2397,7 @@
   "ExternalModule.id": "globals.md#id",
   "ExternalModule.index": "globals.md#index",
   "ExternalModule.index2": "globals.md#index2",
+  "ExternalModule.interop": "globals.md#interop",
   "ExternalModule.issuer": "globals.md#issuer",
   "ExternalModule.isUsed": "globals.md#isused",
   "ExternalModule.isUsed.isUsed": "globals.md#isusedisused",
