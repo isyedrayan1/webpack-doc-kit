@@ -8771,12 +8771,6 @@ Plugin instance.
 
 ***
 
-## Type: `ExternalModuleBuildInfo`
-
-> **ExternalModuleBuildInfo** = {KnownBuildInfo|Record<string, any>|KnownExternalModuleBuildInfo}
-
-***
-
 ## Type: `Externals`
 
 > **Externals** = {string|RegExp|ExternalItemObjectKnown|ExternalItemObjectUnknown|object|object|ExternalItem[]}
