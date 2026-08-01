@@ -60,6 +60,7 @@
   "css.syntax.NodeType.Number": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#number",
   "css.syntax.NodeType.Percentage": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#percentage",
   "css.syntax.NodeType.QualifiedRule": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#qualifiedrule",
+  "css.syntax.NodeType.Raw": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#raw",
   "css.syntax.NodeType.RightCurlyBracket": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#rightcurlybracket",
   "css.syntax.NodeType.RightParenthesis": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#rightparenthesis",
   "css.syntax.NodeType.RightSquareBracket": "webpack/namespaces/css/namespaces/syntax/namespaces/NodeType.md#rightsquarebracket",
