@@ -1307,6 +1307,7 @@
   "RuntimeGlobals.getChunkScriptFilename": "webpack/namespaces/RuntimeGlobals.md#getchunkscriptfilename",
   "RuntimeGlobals.getChunkUpdateCssFilename": "webpack/namespaces/RuntimeGlobals.md#getchunkupdatecssfilename",
   "RuntimeGlobals.getChunkUpdateScriptFilename": "webpack/namespaces/RuntimeGlobals.md#getchunkupdatescriptfilename",
+  "RuntimeGlobals.getCssServerStyles": "webpack/namespaces/RuntimeGlobals.md#getcssserverstyles",
   "RuntimeGlobals.getFullHash": "webpack/namespaces/RuntimeGlobals.md#getfullhash",
   "RuntimeGlobals.getTrustedTypesPolicy": "webpack/namespaces/RuntimeGlobals.md#gettrustedtypespolicy",
   "RuntimeGlobals.getUpdateManifestFilename": "webpack/namespaces/RuntimeGlobals.md#getupdatemanifestfilename",
