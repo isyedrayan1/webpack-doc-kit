@@ -78,6 +78,18 @@
 
 ***
 
+## `concatenationWrap`
+
+> **concatenationWrap**: {"__webpack_require__.cw"}
+
+***
+
+## `constructRequire`
+
+> **constructRequire**: {"__webpack_require__.cr"}
+
+***
+
 ## `createFakeNamespaceObject`
 
 > **createFakeNamespaceObject**: {"__webpack_require__.t"}
