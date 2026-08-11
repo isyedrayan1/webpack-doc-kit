@@ -2059,6 +2059,7 @@
   "ChunkGraph": "globals.md#chunkgraph",
   "ChunkGraph.constructor": "globals.md#constructor",
   "ChunkGraph.constructor.ChunkGraph": "globals.md#constructorchunkgraph",
+  "ChunkGraph.buildTimeExecution": "globals.md#buildtimeexecution",
   "ChunkGraph.moduleGraph": "globals.md#modulegraph",
   "ChunkGraph.addChunkRuntimeRequirements": "globals.md#addchunkruntimerequirements",
   "ChunkGraph.addDependentHashModuleToChunk": "globals.md#adddependenthashmoduletochunk",
