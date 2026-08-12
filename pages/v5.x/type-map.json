@@ -159,6 +159,8 @@
   "css.syntax.rangeEqualsLowerCase.__type.__type": "webpack/namespaces/css/namespaces/syntax/index.md#type",
   "css.syntax.readToken": "webpack/namespaces/css/namespaces/syntax/index.md#readtoken",
   "css.syntax.readToken.__type.__type": "webpack/namespaces/css/namespaces/syntax/index.md#type",
+  "css.syntax.skipEscape": "webpack/namespaces/css/namespaces/syntax/index.md#skipescape",
+  "css.syntax.skipEscape.__type.__type": "webpack/namespaces/css/namespaces/syntax/index.md#type",
   "css.syntax.toLowerCaseIfNeeded": "webpack/namespaces/css/namespaces/syntax/index.md#tolowercaseifneeded",
   "css.syntax.toLowerCaseIfNeeded.__type.__type": "webpack/namespaces/css/namespaces/syntax/index.md#type",
   "css.syntax.TT_AT_KEYWORD": "webpack/namespaces/css/namespaces/syntax/index.md#tt-at-keyword",
