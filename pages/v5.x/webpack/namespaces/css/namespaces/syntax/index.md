@@ -105,7 +105,7 @@ never re-parses; all configuration is per-call.
 > Stability: 1 - Experimental
 
 * `map` {VisitorMap<object>}
-* Returns: {SourceProcessorClass<object, NodeSyntax, CssProcessOptions>}
+* Returns: {SourceProcessorClass<object, NodeSyntax, CssProcessOptions, object>}
 
 **`Experimental`**
 
@@ -400,7 +400,7 @@ already-fired comments are not re-fired (`_commentHigh`).
 > **printer**: {object}
 
 * `path` {object}
-* `writer` {PrintContext<object, NodeSyntax>}
+* `writer` {PrintContext<object, NodeSyntax, CssPrintOptions>}
 * Returns: {string}
 
 ***

@@ -102,7 +102,7 @@ never re-parses; all configuration is per-call.
 > Stability: 1 - Experimental
 
 * `map` {VisitorMap<object>}
-* Returns: {SourceProcessorClass<object, number, HtmlProcessOptions>}
+* Returns: {SourceProcessorClass<object, number, HtmlProcessOptions, object>}
 
 **`Experimental`**
 
@@ -285,7 +285,7 @@ A bucket is a function (= `{ enter }`) or `{ enter?, exit? }`.
 > **printer**: {object}
 
 * `path` {object}
-* `writer` {PrintContext<object, number>}
+* `writer` {PrintContext<object, number, HtmlPrintOptions>}
 * Returns: {string}
 
 ***
