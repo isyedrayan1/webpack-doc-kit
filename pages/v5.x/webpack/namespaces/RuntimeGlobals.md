@@ -162,12 +162,6 @@
 
 ***
 
-## `esmId`
-
-> **esmId**: {"__webpack_esm_id__"}
-
-***
-
 ## `esmIds`
 
 > **esmIds**: {"__webpack_esm_ids__"}

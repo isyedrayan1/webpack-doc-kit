@@ -1320,7 +1320,6 @@
   "RuntimeGlobals.ensureChunkHandlers": "webpack/namespaces/RuntimeGlobals.md#ensurechunkhandlers",
   "RuntimeGlobals.ensureChunkIncludeEntries": "webpack/namespaces/RuntimeGlobals.md#ensurechunkincludeentries",
   "RuntimeGlobals.entryModuleId": "webpack/namespaces/RuntimeGlobals.md#entrymoduleid",
-  "RuntimeGlobals.esmId": "webpack/namespaces/RuntimeGlobals.md#esmid",
   "RuntimeGlobals.esmIds": "webpack/namespaces/RuntimeGlobals.md#esmids",
   "RuntimeGlobals.esmModules": "webpack/namespaces/RuntimeGlobals.md#esmmodules",
   "RuntimeGlobals.esmRuntime": "webpack/namespaces/RuntimeGlobals.md#esmruntime",
