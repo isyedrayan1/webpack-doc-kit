@@ -1316,6 +1316,7 @@
   "RuntimeGlobals.deferredModuleAsyncTransitiveDependencies": "webpack/namespaces/RuntimeGlobals.md#deferredmoduleasynctransitivedependencies",
   "RuntimeGlobals.deferredModuleAsyncTransitiveDependenciesSymbol": "webpack/namespaces/RuntimeGlobals.md#deferredmoduleasynctransitivedependenciessymbol",
   "RuntimeGlobals.definePropertyGetters": "webpack/namespaces/RuntimeGlobals.md#definepropertygetters",
+  "RuntimeGlobals.definePropertyGettersFromArray": "webpack/namespaces/RuntimeGlobals.md#definepropertygettersfromarray",
   "RuntimeGlobals.ensureChunk": "webpack/namespaces/RuntimeGlobals.md#ensurechunk",
   "RuntimeGlobals.ensureChunkHandlers": "webpack/namespaces/RuntimeGlobals.md#ensurechunkhandlers",
   "RuntimeGlobals.ensureChunkIncludeEntries": "webpack/namespaces/RuntimeGlobals.md#ensurechunkincludeentries",
