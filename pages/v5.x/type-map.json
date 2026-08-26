@@ -622,6 +622,8 @@
   "html.syntax.A.__type.selfClosing": "webpack/namespaces/html/namespaces/syntax/index.md#selfclosing",
   "html.syntax.A.__type.skipChildren": "webpack/namespaces/html/namespaces/syntax/index.md#skipchildren",
   "html.syntax.A.__type.source": "webpack/namespaces/html/namespaces/syntax/index.md#source",
+  "html.syntax.A.__type.sourceClosed": "webpack/namespaces/html/namespaces/syntax/index.md#sourceclosed",
+  "html.syntax.A.__type.sourceSpanAt": "webpack/namespaces/html/namespaces/syntax/index.md#sourcespanat",
   "html.syntax.A.__type.start": "webpack/namespaces/html/namespaces/syntax/index.md#start",
   "html.syntax.A.__type.tagEnd": "webpack/namespaces/html/namespaces/syntax/index.md#tagend",
   "html.syntax.A.__type.tagName": "webpack/namespaces/html/namespaces/syntax/index.md#tagname",
