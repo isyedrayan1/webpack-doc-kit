@@ -2483,6 +2483,7 @@
   "ConcatenationScope.registerReplacedRequire": "globals.md#registerreplacedrequire",
   "ConcatenationScope.setRawExportMap": "globals.md#setrawexportmap",
   "ConcatenationScope.findModuleReferences": "globals.md#findmodulereferences",
+  "ConcatenationScope.isLeakedModuleReference": "globals.md#isleakedmodulereference",
   "ConcatenationScope.isModuleReference": "globals.md#ismodulereference",
   "ConcatenationScope.matchModuleReference": "globals.md#matchmodulereference",
   "ContextExclusionPlugin": "globals.md#contextexclusionplugin",
