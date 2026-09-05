@@ -15,54 +15,80 @@
 * `runtimeRequirements` {string[]}
 * Returns: {ConstDependency}
 
+Creates an instance of ConstDependency.
+
 ### Properties
 
-* `category` {string}
+* `category` {string} Returns a dependency category, typical categories are "commonjs", "amd", "esm".
 * `disconnect` {any}
 * `expression` {string}
-* `loc` {DependencyLocation}
+* `loc` {DependencyLocation} Returns location.
 * `module` {any}
 * `optional` {boolean}
 * `range` {number|Tuple<number, number>}
+* `referencedSourceType` {string} Returns the source type this dependency reads from the module it references:
+`javascript` for anything going through the module wrapper, `asset-url` for a
+bare url embedded into non-javascript output (css, html, a manifest).
 * `runtimeRequirements` {Set<string>}
-* `type` {string}
-* `weak` {boolean}
+* `type` {string} Returns a display name for the type of dependency.
 * `EXPORTS_OBJECT_REFERENCED` {string[][]}
+* `EXPORTS_OBJECT_REFERENCED_MANGLEABLE` {string[][]}
+* `LAZY_UNTIL_FALLBACK` {"*"}
+* `LAZY_UNTIL_ID` {"id"}
+* `LAZY_UNTIL_LOCAL` {"local"}
+* `LAZY_UNTIL_REQUEST` {"@"}
 * `NO_EXPORTS_REFERENCED` {string[][]}
 * `Template` {ConstDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+* `TRANSITIVE` {symbol}
 
 ### Methods
 
+#### `canConcatenate(concatenateCommonJsModules)`
+
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if this dependency can be concatenated
+
 #### `couldAffectReferencingModule()`
 
-* Returns: {boolean|TRANSITIVE}
+* Returns: {boolean|symbol}
+
+Could affect referencing module.
 
 #### `createIgnoredModule(context)`
 
 * `context` {string}
 * Returns: {Module}
 
+Creates an ignored module.
+
 #### `deserialize(__namedParameters)`
 
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_2}
 * Returns: {void}
+
+Restores this instance from the provided deserializer context.
 
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {false|object}
 
+Returns function to determine if the connection is active.
+
 #### `getContext()`
 
 * Returns: {string}
+
+Returns a request context.
 
 #### `getErrors(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns errors
+Returns errors.
 
 #### `getExports(moduleGraph)`
 
@@ -71,10 +97,30 @@ Returns errors
 
 Returns the exported names
 
+#### `getForwardId()`
+
+* Returns: {string|true}
+
+Returns the export name this dependency requests from its target module (lazy barrel optimization).
+
+#### `getLazyName()`
+
+* Returns: {string}
+
+Returns the export name for a `LAZY_UNTIL_LOCAL`/`LAZY_UNTIL_ID` classification (lazy barrel optimization).
+
+#### `getLazyUntil()`
+
+* Returns: {"*"|"local"|"id"|"@"}
+
+Returns how this dependency may be deferred when its parent module is side-effect-free (lazy barrel optimization).
+
 #### `getModuleEvaluationSideEffectsState(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {ConnectionState}
+
+Gets module evaluation side effects state.
 
 #### `getNumberOfIdOccurrences()`
 
@@ -103,17 +149,34 @@ Returns list of exports referenced by this dependency
 
 * Returns: {string}
 
+Returns an identifier to merge equal requests.
+
 #### `getWarnings(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns warnings
+Returns warnings.
+
+#### `isLazy()`
+
+* Returns: {boolean}
+
+Whether the lazy barrel currently defers creating this dependency's target module (lazy barrel optimization).
 
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_3}
 * Returns: {void}
+
+Serializes this instance into the provided serializer context.
+
+#### `setLazy(value)`
+
+* `value` {boolean}
+* Returns: {void}
+
+Sets whether the lazy barrel defers creating this dependency's target module (lazy barrel optimization).
 
 #### `setLoc(startLine, startColumn, endLine, endColumn)`
 
@@ -123,18 +186,55 @@ Returns warnings
 * `endColumn` {number}
 * Returns: {void}
 
+Updates loc using the provided start line.
+
+#### `setLocWithIndex(loc, index)`
+
+* `loc` {DependencyLocation}
+* `index` {number}
+* Returns: {void}
+
+Updates loc from a source location plus an explicit index, without
+materializing the `loc` object (keeps `get loc` lazy). Replaces the
+`dep.loc = Object.create(loc); dep.loc.index = i` pattern, which both
+allocated a copy and stored the index outside the serialized fields.
+
 #### `updateHash(hash, context)`
 
 * `hash` {Hash}
 * `context` {UpdateHashContextDependency}
 * Returns: {void}
 
-Update the hash
+Updates the hash with the data contributed by this instance.
+
+#### Static method: `canConcatenate(dependency, concatenateCommonJsModules)`
+
+* `dependency` {Dependency}
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if the dependency can be concatenated (scope hoisting).
+
+#### Static method: `compareLocations(a, b)`
+
+* `a` {Dependency}
+* `b` {Dependency}
+* Returns: {-1|0|1}
+
+Compares two dependencies by source location for sorting a module's
+`dependencies`, without materializing the `loc` objects (`get loc` caches
+its result, so comparing through it would retain a location object on every
+sorted dependency). These dependencies always carry a real source position,
+so only start (line, column) and the within-statement index are compared; a
+dependency without an index sorts after one that has an index at the same
+position.
 
 #### Static method: `isLowPriorityDependency(dependency)`
 
 * `dependency` {Dependency}
 * Returns: {boolean}
+
+Returns true if the dependency is a low priority dependency.
 
 ***
 
@@ -154,59 +254,86 @@ Update the hash
 * `attributes` {ImportAttributes}
 * Returns: {HarmonyImportDependency}
 
+Creates an instance of HarmonyImportDependency.
+
 ### Properties
 
 * `attributes` {ImportAttributes}
-* `category` {string}
+* `category` {string} Returns a dependency category, typical categories are "commonjs", "amd", "esm".
 * `disconnect` {any}
-* `loc` {DependencyLocation}
+* `loc` {DependencyLocation} Returns location.
 * `module` {any}
 * `optional` {boolean}
 * `phase` {ImportPhaseType}
 * `range` {Tuple<number, number>}
+* `referencedSourceType` {string} Returns the source type this dependency reads from the module it references:
+`javascript` for anything going through the module wrapper, `asset-url` for a
+bare url embedded into non-javascript output (css, html, a manifest).
 * `request` {string}
 * `sourceOrder` {number}
-* `type` {string}
+* `type` {string} Returns a display name for the type of dependency.
 * `userRequest` {string}
 * `weak` {boolean}
 * `ExportPresenceModes` {object}
 * `EXPORTS_OBJECT_REFERENCED` {string[][]}
+* `EXPORTS_OBJECT_REFERENCED_MANGLEABLE` {string[][]}
 * `getNonOptionalPart` {object}
+* `LAZY_UNTIL_FALLBACK` {"*"}
+* `LAZY_UNTIL_ID` {"id"}
+* `LAZY_UNTIL_LOCAL` {"local"}
+* `LAZY_UNTIL_REQUEST` {"@"}
 * `NO_EXPORTS_REFERENCED` {string[][]}
 * `Template` {HarmonyImportDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+* `TRANSITIVE` {symbol}
 
 ### Methods
 
+#### `canConcatenate(concatenateCommonJsModules)`
+
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if this dependency can be concatenated
+
 #### `couldAffectReferencingModule()`
 
-* Returns: {boolean|TRANSITIVE}
+* Returns: {boolean|symbol}
+
+Could affect referencing module.
 
 #### `createIgnoredModule(context)`
 
 * `context` {string}
 * Returns: {Module}
 
+Creates an ignored module.
+
 #### `deserialize(__namedParameters)`
 
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_2}
 * Returns: {void}
+
+Restores this instance from the provided deserializer context.
 
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {false|object}
 
+Returns function to determine if the connection is active.
+
 #### `getContext()`
 
 * Returns: {string}
+
+Returns a request context.
 
 #### `getErrors(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns errors
+Returns errors.
 
 #### `getExports(moduleGraph)`
 
@@ -215,16 +342,38 @@ Returns errors
 
 Returns the exported names
 
+#### `getForwardId()`
+
+* Returns: {string|true}
+
+Returns the export name this dependency requests from its target module (lazy barrel optimization).
+
 #### `getImportStatement(update, __namedParameters)`
 
 * `update` {boolean}
 * `__namedParameters` {DependencyTemplateContext}
 * Returns: {Tuple<string, string>}
 
+Gets import statement.
+
 #### `getImportVar(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {string}
+
+Returns name of the variable for the import.
+
+#### `getLazyName()`
+
+* Returns: {string}
+
+Returns the export name for a `LAZY_UNTIL_LOCAL`/`LAZY_UNTIL_ID` classification (lazy barrel optimization).
+
+#### `getLazyUntil()`
+
+* Returns: {"*"|"local"|"id"|"@"}
+
+Returns how this dependency may be deferred when its parent module is side-effect-free (lazy barrel optimization).
 
 #### `getLinkingErrors(moduleGraph, ids, additionalMessage)`
 
@@ -233,15 +382,21 @@ Returns the exported names
 * `additionalMessage` {string}
 * Returns: {WebpackError[]}
 
+Gets linking errors.
+
 #### `getModuleEvaluationSideEffectsState(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {ConnectionState}
 
+Gets module evaluation side effects state.
+
 #### `getModuleExports(__namedParameters)`
 
 * `__namedParameters` {DependencyTemplateContext}
 * Returns: {string}
+
+Gets module exports.
 
 #### `getNumberOfIdOccurrences()`
 
@@ -270,17 +425,34 @@ Returns list of exports referenced by this dependency
 
 * Returns: {string}
 
+Returns an identifier to merge equal requests.
+
 #### `getWarnings(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns warnings
+Returns warnings.
+
+#### `isLazy()`
+
+* Returns: {boolean}
+
+Whether the lazy barrel currently defers creating this dependency's target module (lazy barrel optimization).
 
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_3}
 * Returns: {void}
+
+Serializes this instance into the provided serializer context.
+
+#### `setLazy(value)`
+
+* `value` {boolean}
+* Returns: {void}
+
+Sets whether the lazy barrel defers creating this dependency's target module (lazy barrel optimization).
 
 #### `setLoc(startLine, startColumn, endLine, endColumn)`
 
@@ -290,18 +462,55 @@ Returns warnings
 * `endColumn` {number}
 * Returns: {void}
 
+Updates loc using the provided start line.
+
+#### `setLocWithIndex(loc, index)`
+
+* `loc` {DependencyLocation}
+* `index` {number}
+* Returns: {void}
+
+Updates loc from a source location plus an explicit index, without
+materializing the `loc` object (keeps `get loc` lazy). Replaces the
+`dep.loc = Object.create(loc); dep.loc.index = i` pattern, which both
+allocated a copy and stored the index outside the serialized fields.
+
 #### `updateHash(hash, context)`
 
 * `hash` {Hash}
 * `context` {UpdateHashContextDependency}
 * Returns: {void}
 
-Update the hash
+Updates the hash with the data contributed by this instance.
+
+#### Static method: `canConcatenate(dependency, concatenateCommonJsModules)`
+
+* `dependency` {Dependency}
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if the dependency can be concatenated (scope hoisting).
+
+#### Static method: `compareLocations(a, b)`
+
+* `a` {Dependency}
+* `b` {Dependency}
+* Returns: {-1|0|1}
+
+Compares two dependencies by source location for sorting a module's
+`dependencies`, without materializing the `loc` objects (`get loc` caches
+its result, so comparing through it would retain a location object on every
+sorted dependency). These dependencies always carry a real source position,
+so only start (line, column) and the within-statement index are compared; a
+dependency without an index sorts after one that has an index at the same
+position.
 
 #### Static method: `isLowPriorityDependency(dependency)`
 
 * `dependency` {Dependency}
 * Returns: {boolean}
+
+Returns true if the dependency is a low priority dependency.
 
 ***
 
@@ -323,55 +532,82 @@ Update the hash
 * `sourceOrder` {number}
 * Returns: {ModuleDependency}
 
+Creates an instance of ModuleDependency.
+
 ### Properties
 
-* `category` {string}
+* `category` {string} Returns a dependency category, typical categories are "commonjs", "amd", "esm".
 * `disconnect` {any}
-* `loc` {DependencyLocation}
+* `loc` {DependencyLocation} Returns location.
 * `module` {any}
 * `optional` {boolean}
 * `range` {Tuple<number, number>}
+* `referencedSourceType` {string} Returns the source type this dependency reads from the module it references:
+`javascript` for anything going through the module wrapper, `asset-url` for a
+bare url embedded into non-javascript output (css, html, a manifest).
 * `request` {string}
 * `sourceOrder` {number}
-* `type` {string}
+* `type` {string} Returns a display name for the type of dependency.
 * `userRequest` {string}
 * `weak` {boolean}
 * `EXPORTS_OBJECT_REFERENCED` {string[][]}
+* `EXPORTS_OBJECT_REFERENCED_MANGLEABLE` {string[][]}
+* `LAZY_UNTIL_FALLBACK` {"*"}
+* `LAZY_UNTIL_ID` {"id"}
+* `LAZY_UNTIL_LOCAL` {"local"}
+* `LAZY_UNTIL_REQUEST` {"@"}
 * `NO_EXPORTS_REFERENCED` {string[][]}
 * `Template` {DependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+* `TRANSITIVE` {symbol}
 
 ### Methods
 
+#### `canConcatenate(concatenateCommonJsModules)`
+
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if this dependency can be concatenated
+
 #### `couldAffectReferencingModule()`
 
-* Returns: {boolean|TRANSITIVE}
+* Returns: {boolean|symbol}
+
+Could affect referencing module.
 
 #### `createIgnoredModule(context)`
 
 * `context` {string}
 * Returns: {Module}
 
+Creates an ignored module.
+
 #### `deserialize(__namedParameters)`
 
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_2}
 * Returns: {void}
+
+Restores this instance from the provided deserializer context.
 
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {false|object}
 
+Returns function to determine if the connection is active.
+
 #### `getContext()`
 
 * Returns: {string}
+
+Returns a request context.
 
 #### `getErrors(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns errors
+Returns errors.
 
 #### `getExports(moduleGraph)`
 
@@ -380,10 +616,30 @@ Returns errors
 
 Returns the exported names
 
+#### `getForwardId()`
+
+* Returns: {string|true}
+
+Returns the export name this dependency requests from its target module (lazy barrel optimization).
+
+#### `getLazyName()`
+
+* Returns: {string}
+
+Returns the export name for a `LAZY_UNTIL_LOCAL`/`LAZY_UNTIL_ID` classification (lazy barrel optimization).
+
+#### `getLazyUntil()`
+
+* Returns: {"*"|"local"|"id"|"@"}
+
+Returns how this dependency may be deferred when its parent module is side-effect-free (lazy barrel optimization).
+
 #### `getModuleEvaluationSideEffectsState(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {ConnectionState}
+
+Gets module evaluation side effects state.
 
 #### `getNumberOfIdOccurrences()`
 
@@ -412,17 +668,34 @@ Returns list of exports referenced by this dependency
 
 * Returns: {string}
 
+Returns an identifier to merge equal requests.
+
 #### `getWarnings(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns warnings
+Returns warnings.
+
+#### `isLazy()`
+
+* Returns: {boolean}
+
+Whether the lazy barrel currently defers creating this dependency's target module (lazy barrel optimization).
 
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_3}
 * Returns: {void}
+
+Serializes this instance into the provided serializer context.
+
+#### `setLazy(value)`
+
+* `value` {boolean}
+* Returns: {void}
+
+Sets whether the lazy barrel defers creating this dependency's target module (lazy barrel optimization).
 
 #### `setLoc(startLine, startColumn, endLine, endColumn)`
 
@@ -432,18 +705,55 @@ Returns warnings
 * `endColumn` {number}
 * Returns: {void}
 
+Updates loc using the provided start line.
+
+#### `setLocWithIndex(loc, index)`
+
+* `loc` {DependencyLocation}
+* `index` {number}
+* Returns: {void}
+
+Updates loc from a source location plus an explicit index, without
+materializing the `loc` object (keeps `get loc` lazy). Replaces the
+`dep.loc = Object.create(loc); dep.loc.index = i` pattern, which both
+allocated a copy and stored the index outside the serialized fields.
+
 #### `updateHash(hash, context)`
 
 * `hash` {Hash}
 * `context` {UpdateHashContextDependency}
 * Returns: {void}
 
-Update the hash
+Updates the hash with the data contributed by this instance.
+
+#### Static method: `canConcatenate(dependency, concatenateCommonJsModules)`
+
+* `dependency` {Dependency}
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if the dependency can be concatenated (scope hoisting).
+
+#### Static method: `compareLocations(a, b)`
+
+* `a` {Dependency}
+* `b` {Dependency}
+* Returns: {-1|0|1}
+
+Compares two dependencies by source location for sorting a module's
+`dependencies`, without materializing the `loc` objects (`get loc` caches
+its result, so comparing through it would retain a location object on every
+sorted dependency). These dependencies always carry a real source position,
+so only start (line, column) and the within-statement index are compared; a
+dependency without an index sorts after one that has an index at the same
+position.
 
 #### Static method: `isLowPriorityDependency(dependency)`
 
 * `dependency` {Dependency}
 * Returns: {boolean}
+
+Returns true if the dependency is a low priority dependency.
 
 ***
 
@@ -465,49 +775,73 @@ Update the hash
 
 ### Properties
 
-* `category` {string}
+* `category` {string} Returns a dependency category, typical categories are "commonjs", "amd", "esm".
 * `disconnect` {any}
-* `loc` {DependencyLocation}
+* `loc` {DependencyLocation} Returns location.
 * `module` {any}
 * `optional` {boolean}
-* `type` {string}
-* `weak` {boolean}
+* `referencedSourceType` {string} Returns the source type this dependency reads from the module it references:
+`javascript` for anything going through the module wrapper, `asset-url` for a
+bare url embedded into non-javascript output (css, html, a manifest).
+* `type` {string} Returns a display name for the type of dependency.
 * `EXPORTS_OBJECT_REFERENCED` {string[][]}
+* `EXPORTS_OBJECT_REFERENCED_MANGLEABLE` {string[][]}
+* `LAZY_UNTIL_FALLBACK` {"*"}
+* `LAZY_UNTIL_ID` {"id"}
+* `LAZY_UNTIL_LOCAL` {"local"}
+* `LAZY_UNTIL_REQUEST` {"@"}
 * `NO_EXPORTS_REFERENCED` {string[][]}
 * `Template` {NullDependencyTemplate}
-* `TRANSITIVE` {TRANSITIVE}
+* `TRANSITIVE` {symbol}
 
 ### Methods
 
+#### `canConcatenate(concatenateCommonJsModules)`
+
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if this dependency can be concatenated
+
 #### `couldAffectReferencingModule()`
 
-* Returns: {boolean|TRANSITIVE}
+* Returns: {boolean|symbol}
+
+Could affect referencing module.
 
 #### `createIgnoredModule(context)`
 
 * `context` {string}
 * Returns: {Module}
 
+Creates an ignored module.
+
 #### `deserialize(__namedParameters)`
 
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_2}
 * Returns: {void}
+
+Restores this instance from the provided deserializer context.
 
 #### `getCondition(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {false|object}
 
+Returns function to determine if the connection is active.
+
 #### `getContext()`
 
 * Returns: {string}
+
+Returns a request context.
 
 #### `getErrors(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns errors
+Returns errors.
 
 #### `getExports(moduleGraph)`
 
@@ -516,10 +850,30 @@ Returns errors
 
 Returns the exported names
 
+#### `getForwardId()`
+
+* Returns: {string|true}
+
+Returns the export name this dependency requests from its target module (lazy barrel optimization).
+
+#### `getLazyName()`
+
+* Returns: {string}
+
+Returns the export name for a `LAZY_UNTIL_LOCAL`/`LAZY_UNTIL_ID` classification (lazy barrel optimization).
+
+#### `getLazyUntil()`
+
+* Returns: {"*"|"local"|"id"|"@"}
+
+Returns how this dependency may be deferred when its parent module is side-effect-free (lazy barrel optimization).
+
 #### `getModuleEvaluationSideEffectsState(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {ConnectionState}
+
+Gets module evaluation side effects state.
 
 #### `getNumberOfIdOccurrences()`
 
@@ -548,17 +902,34 @@ Returns list of exports referenced by this dependency
 
 * Returns: {string}
 
+Returns an identifier to merge equal requests.
+
 #### `getWarnings(moduleGraph)`
 
 * `moduleGraph` {ModuleGraph}
 * Returns: {WebpackError[]}
 
-Returns warnings
+Returns warnings.
+
+#### `isLazy()`
+
+* Returns: {boolean}
+
+Whether the lazy barrel currently defers creating this dependency's target module (lazy barrel optimization).
 
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_3}
 * Returns: {void}
+
+Serializes this instance into the provided serializer context.
+
+#### `setLazy(value)`
+
+* `value` {boolean}
+* Returns: {void}
+
+Sets whether the lazy barrel defers creating this dependency's target module (lazy barrel optimization).
 
 #### `setLoc(startLine, startColumn, endLine, endColumn)`
 
@@ -568,15 +939,52 @@ Returns warnings
 * `endColumn` {number}
 * Returns: {void}
 
+Updates loc using the provided start line.
+
+#### `setLocWithIndex(loc, index)`
+
+* `loc` {DependencyLocation}
+* `index` {number}
+* Returns: {void}
+
+Updates loc from a source location plus an explicit index, without
+materializing the `loc` object (keeps `get loc` lazy). Replaces the
+`dep.loc = Object.create(loc); dep.loc.index = i` pattern, which both
+allocated a copy and stored the index outside the serialized fields.
+
 #### `updateHash(hash, context)`
 
 * `hash` {Hash}
 * `context` {UpdateHashContextDependency}
 * Returns: {void}
 
-Update the hash
+Updates the hash with the data contributed by this instance.
+
+#### Static method: `canConcatenate(dependency, concatenateCommonJsModules)`
+
+* `dependency` {Dependency}
+* `concatenateCommonJsModules` {boolean}
+* Returns: {boolean}
+
+Returns true if the dependency can be concatenated (scope hoisting).
+
+#### Static method: `compareLocations(a, b)`
+
+* `a` {Dependency}
+* `b` {Dependency}
+* Returns: {-1|0|1}
+
+Compares two dependencies by source location for sorting a module's
+`dependencies`, without materializing the `loc` objects (`get loc` caches
+its result, so comparing through it would retain a location object on every
+sorted dependency). These dependencies always carry a real source position,
+so only start (line, column) and the within-statement index are compared; a
+dependency without an index sorts after one that has an index at the same
+position.
 
 #### Static method: `isLowPriorityDependency(dependency)`
 
 * `dependency` {Dependency}
 * Returns: {boolean}
+
+Returns true if the dependency is a low priority dependency.

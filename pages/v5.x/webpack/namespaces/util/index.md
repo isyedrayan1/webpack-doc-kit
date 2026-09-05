@@ -9,6 +9,10 @@
 
 ## Class: `LazySet`
 
+Like Set but with an addAll method to eventually add items from another iterable.
+Access methods make sure that all delayed operations are executed.
+Iteration methods deopts to normal Set performance until clear is called again (because of the chance of modifications during iteration).
+
 ### Type Parameters
 
 #### T
@@ -25,9 +29,12 @@
 * `iterable` {Iterable<T>}
 * Returns: {LazySet<T>}
 
+Seeds the set with an optional iterable while preparing internal queues for
+deferred merges.
+
 ### Properties
 
-* `size` {number}
+* `size` {number} Returns the number of items after applying any deferred merges.
 
 ### Methods
 
@@ -35,28 +42,43 @@
 
 * Returns: {SetIterator<T>}
 
+Returns the default iterator over values after forcing pending merges.
+
 #### `add(item)`
 
 * `item` {T}
 * Returns: {LazySet<T>}
+
+Adds a single item immediately to the concrete backing set.
 
 #### `addAll(iterable)`
 
 * `iterable` {LazySet<T>|Iterable<T, any, any>}
 * Returns: {LazySet<T>}
 
+Queues another iterable or lazy set for later merging so large bulk adds
+can stay cheap until the set is read.
+
 #### `clear()`
 
 * Returns: {void}
+
+Removes all items and clears every deferred merge queue.
 
 #### `delete(value)`
 
 * `value` {T}
 * Returns: {boolean}
 
+Deletes an item after first materializing any deferred additions that may
+contain it.
+
 #### `entries()`
 
 * Returns: {SetIterator<Tuple<T, T>>}
+
+Returns the set's entry iterator and permanently switches future
+operations to eager merge mode to preserve iterator correctness.
 
 #### `forEach(callbackFn, thisArg)`
 
@@ -67,31 +89,45 @@
 * `thisArg` {K}
 * Returns: {void}
 
+Iterates over every item after forcing pending merges and switching to
+eager mode for correctness during iteration.
+
 #### `has(item)`
 
 * `item` {T}
 * Returns: {boolean}
 
+Checks whether an item is present after applying any deferred merges.
+
 #### `keys()`
 
 * Returns: {SetIterator<T>}
 
+Returns the key iterator, eagerly materializing pending merges first.
+
 #### `serialize(__namedParameters)`
 
-* `__namedParameters` {ObjectSerializerContext}
+* `__namedParameters` {ObjectSerializerContextObjectMiddlewareObject_3<number|T[]>}
 * Returns: {void}
+
+Serializes the fully materialized set contents into webpack's object
+serialization stream.
 
 #### `values()`
 
 * Returns: {SetIterator<T>}
+
+Returns the value iterator, eagerly materializing pending merges first.
 
 #### Static method: `deserialize(__namedParameters)`
 
 ###### T
 
 `T`
-* `__namedParameters` {ObjectDeserializerContext}
+* `__namedParameters` {ObjectDeserializerContextObjectMiddlewareObject_2<number|T[]>}
 * Returns: {LazySet<T>}
+
+Restores a `LazySet` from serialized item data.
 
 ***
 

@@ -12,6 +12,12 @@
 
 ***
 
+## `analyzableChunkImport`
+
+> **analyzableChunkImport**: {"__webpack_require__.ei"}
+
+***
+
 ## `asyncModule`
 
 > **asyncModule**: {"__webpack_require__.a"}
@@ -27,6 +33,12 @@
 ## `asyncModuleExportSymbol`
 
 > **asyncModuleExportSymbol**: {"__webpack_require__.aE"}
+
+***
+
+## `asyncModuleGenerator`
+
+> **asyncModuleGenerator**: {"__webpack_require__.aG"}
 
 ***
 
@@ -48,9 +60,33 @@
 
 ***
 
+## `commonJsWrap`
+
+> **commonJsWrap**: {"__webpack_require__.cjs"}
+
+***
+
 ## `compatGetDefaultExport`
 
 > **compatGetDefaultExport**: {"__webpack_require__.n"}
+
+***
+
+## `compileWasm`
+
+> **compileWasm**: {"__webpack_require__.vs"}
+
+***
+
+## `concatenationWrap`
+
+> **concatenationWrap**: {"__webpack_require__.cw"}
+
+***
+
+## `constructRequire`
+
+> **constructRequire**: {"__webpack_require__.cr"}
 
 ***
 
@@ -78,12 +114,6 @@
 
 ***
 
-## `cssMergeStyleSheets`
-
-> **cssMergeStyleSheets**: {"__webpack_require__.mcs"}
-
-***
-
 ## `currentRemoteGetScope`
 
 > **currentRemoteGetScope**: {"__webpack_require__.R"}
@@ -108,6 +138,12 @@
 
 ***
 
+## `definePropertyGettersFromArray`
+
+> **definePropertyGettersFromArray**: {"__webpack_require__.d (array)"}
+
+***
+
 ## `ensureChunk`
 
 > **ensureChunk**: {"__webpack_require__.e"}
@@ -129,12 +165,6 @@
 ## `entryModuleId`
 
 > **entryModuleId**: {"__webpack_require__.s"}
-
-***
-
-## `esmId`
-
-> **esmId**: {"__webpack_esm_id__"}
 
 ***
 
@@ -192,6 +222,12 @@
 
 ***
 
+## `getCssServerStyles`
+
+> **getCssServerStyles**: {"__webpack_require__.cs"}
+
+***
+
 ## `getFullHash`
 
 > **getFullHash**: {"__webpack_require__.h"}
@@ -207,6 +243,12 @@
 ## `getUpdateManifestFilename`
 
 > **getUpdateManifestFilename**: {"__webpack_require__.hmrF"}
+
+***
+
+## `getWorkletBootstrap`
+
+> **getWorkletBootstrap**: {"__webpack_require__.wb"}
 
 ***
 
@@ -237,6 +279,18 @@
 ## `hasOwnProperty`
 
 > **hasOwnProperty**: {"__webpack_require__.o"}
+
+***
+
+## `hasSealedDeferredNamespace`
+
+> **hasSealedDeferredNamespace**: {"has sealed deferred namespace"}
+
+***
+
+## `hasSynthesizedDeferredNamespace`
+
+> **hasSynthesizedDeferredNamespace**: {"has synthesized deferred namespace"}
 
 ***
 
@@ -360,6 +414,12 @@
 
 ***
 
+## `prefetchAsset`
+
+> **prefetchAsset**: {"__webpack_require__.PA"}
+
+***
+
 ## `prefetchChunk`
 
 > **prefetchChunk**: {"__webpack_require__.E"}
@@ -369,6 +429,12 @@
 ## `prefetchChunkHandlers`
 
 > **prefetchChunkHandlers**: {"__webpack_require__.F"}
+
+***
+
+## `preloadAsset`
+
+> **preloadAsset**: {"__webpack_require__.LA"}
 
 ***
 
@@ -426,6 +492,12 @@
 
 ***
 
+## `setAnonymousDefaultName`
+
+> **setAnonymousDefaultName**: {"__webpack_require__.dn"}
+
+***
+
 ## `shareScopeMap`
 
 > **shareScopeMap**: {"__webpack_require__.S"}
@@ -435,6 +507,12 @@
 ## `startup`
 
 > **startup**: {"__webpack_require__.x"}
+
+***
+
+## `startupAssetHints`
+
+> **startupAssetHints**: {"__webpack_require__.SAH"}
 
 ***
 
@@ -495,3 +573,9 @@
 ## `wasmInstances`
 
 > **wasmInstances**: {"__webpack_require__.w"}
+
+***
+
+## `worker`
+
+> **worker**: {"__webpack_require__.wc"}

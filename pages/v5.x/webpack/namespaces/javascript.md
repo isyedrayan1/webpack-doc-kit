@@ -9,6 +9,8 @@
 * `type` {string}
 * Returns: {EnableChunkLoadingPlugin}
 
+Creates an instance of EnableChunkLoadingPlugin.
+
 ### Properties
 
 * `type` {string}
@@ -20,7 +22,7 @@
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 #### Static method: `checkEnabled(compiler, type)`
 
@@ -28,11 +30,15 @@ Apply the plugin
 * `type` {string}
 * Returns: {void}
 
+Checks enabled.
+
 #### Static method: `setEnabled(compiler, type)`
 
 * `compiler` {Compiler}
 * `type` {string}
 * Returns: {void}
+
+Updates enabled using the provided compiler.
 
 ***
 
@@ -50,23 +56,25 @@ Apply the plugin
 * `options` {object}
 * Returns: {JavascriptParser}
 
+Creates an instance of JavascriptParser.
+
 ### Properties
 
 * `comments` {CommentJavascriptParser[]}
-* `currentTagData` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* `currentTagData` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
 * `destructuringAssignmentProperties` {WeakMap<Expression, Set<DestructuringAssignmentProperty>>}
 * `hooks` {Readonly<object>}
 * `magicCommentContext` {Context}
 * `options` {object}
 * `prevStatement` {ClassDeclaration|MaybeNamedClassDeclaration|ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|FunctionDeclaration|MaybeNamedFunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration}
 * `scope` {ScopeInfo}
-* `semicolons` {Set<number>}
+* `semicolons` {Map<number, boolean>}
 * `sourceType` {"module"|"auto"|"script"}
 * `state` {JavascriptParserState}
 * `statementPath` {StatementPathItem[]}
-* `ALLOWED_MEMBER_TYPES_ALL` {3}
-* `ALLOWED_MEMBER_TYPES_CALL_EXPRESSION` {1}
-* `ALLOWED_MEMBER_TYPES_EXPRESSION` {2}
+* `ALLOWED_MEMBER_TYPES_ALL` {number}
+* `ALLOWED_MEMBER_TYPES_CALL_EXPRESSION` {number}
+* `ALLOWED_MEMBER_TYPES_EXPRESSION` {number}
 * `getImportAttributes` {object}
 * `VariableInfo` {VariableInfo}
 * `VariableInfoFlags` {Readonly<object>}
@@ -78,25 +86,35 @@ Apply the plugin
 * `statement` {ClassDeclaration|MaybeNamedClassDeclaration}
 * Returns: {void}
 
+Block pre walk class declaration.
+
 #### `blockPreWalkExportDefaultDeclaration(statement)`
 
 * `statement` {ExportDefaultDeclaration}
 * Returns: {void}
+
+Block pre walk export default declaration.
 
 #### `blockPreWalkExportNamedDeclaration(statement)`
 
 * `statement` {ExportNamedDeclaration}
 * Returns: {void}
 
+Block pre walk export named declaration.
+
 #### `blockPreWalkExpressionStatement(statement)`
 
 * `statement` {ExpressionStatement}
 * Returns: {void}
 
+Block pre walk expression statement.
+
 #### `blockPreWalkStatement(statement)`
 
 * `statement` {ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration}
 * Returns: {void}
+
+Block pre walk statement.
 
 #### `blockPreWalkStatements(statements)`
 
@@ -109,6 +127,8 @@ Block pre walking iterates the scope for block variable declarations
 
 * `statement` {VariableDeclaration}
 * Returns: {void}
+
+Block pre walk variable declaration.
 
 #### `callHooksForExpression(hookMap, expr, args)`
 
@@ -123,6 +143,8 @@ Block pre walking iterates the scope for block variable declarations
 * `expr` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * `args` {AsArray<T>}
 * Returns: {R}
+
+Call hooks for expression.
 
 #### `callHooksForExpressionWithFallback(hookMap, expr, fallback, defined, args)`
 
@@ -140,6 +162,8 @@ Block pre walking iterates the scope for block variable declarations
 * `args` {AsArray<T>}
 * Returns: {R}
 
+Call hooks for expression with fallback.
+
 #### `callHooksForInfo(hookMap, info, args)`
 
 ###### T
@@ -153,6 +177,8 @@ Block pre walking iterates the scope for block variable declarations
 * `info` {ExportedVariableInfo}
 * `args` {AsArray<T>}
 * Returns: {R}
+
+Call hooks for info.
 
 #### `callHooksForInfoWithFallback(hookMap, info, fallback, defined, args)`
 
@@ -170,6 +196,8 @@ Block pre walking iterates the scope for block variable declarations
 * `args` {AsArray<T>}
 * Returns: {R}
 
+Call hooks for info with fallback.
+
 #### `callHooksForName(hookMap, name, args)`
 
 ###### T
@@ -183,6 +211,8 @@ Block pre walking iterates the scope for block variable declarations
 * `name` {string}
 * `args` {AsArray<T>}
 * Returns: {R}
+
+Call hooks for name.
 
 #### `callHooksForNameWithFallback(hookMap, name, fallback, defined, args)`
 
@@ -200,20 +230,28 @@ Block pre walking iterates the scope for block variable declarations
 * `args` {AsArray<T>}
 * Returns: {R}
 
+Call hooks for name with fallback.
+
 #### `defineVariable(name)`
 
 * `name` {string}
 * Returns: {void}
+
+Processes the provided name.
 
 #### `destructuringAssignmentPropertiesFor(node)`
 
 * `node` {Expression}
 * Returns: {Set<DestructuringAssignmentProperty>}
 
+Destructuring assignment properties for.
+
 #### `detectMode(statements)`
 
 * `statements` {ClassDeclaration|FunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration|Directive[]}
 * Returns: {void}
+
+Processes the provided statement.
 
 #### `enterArrayPattern(pattern, onIdent)`
 
@@ -221,17 +259,23 @@ Block pre walking iterates the scope for block variable declarations
 * `onIdent` {object}
 * Returns: {void}
 
+Enter array pattern.
+
 #### `enterAssignmentPattern(pattern, onIdent)`
 
 * `pattern` {AssignmentPattern}
 * `onIdent` {object}
 * Returns: {void}
 
+Enter assignment pattern.
+
 #### `enterDeclaration(declaration, onIdent)`
 
-* `declaration` {Declaration}
+* `declaration` {DeclarationEstreeIndex}
 * `onIdent` {object}
 * Returns: {void}
+
+Processes the provided declaration.
 
 #### `enterDestructuringAssignment(pattern, expression)`
 
@@ -239,11 +283,15 @@ Block pre walking iterates the scope for block variable declarations
 * `expression` {Expression}
 * Returns: {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression}
 
+Enter destructuring assignment.
+
 #### `enterIdentifier(pattern, onIdent)`
 
 * `pattern` {Identifier}
 * `onIdent` {object}
 * Returns: {void}
+
+Processes the provided pattern.
 
 #### `enterObjectPattern(pattern, onIdent)`
 
@@ -251,11 +299,15 @@ Block pre walking iterates the scope for block variable declarations
 * `onIdent` {object}
 * Returns: {void}
 
+Enter object pattern.
+
 #### `enterPattern(pattern, onIdent)`
 
 * `pattern` {Property|Identifier|MemberExpression|ObjectPattern|ArrayPattern|RestElement|AssignmentPattern}
 * `onIdent` {object}
 * Returns: {void}
+
+Processes the provided pattern.
 
 #### `enterPatterns(patterns, onIdent)`
 
@@ -263,41 +315,68 @@ Block pre walking iterates the scope for block variable declarations
 * `onIdent` {object}
 * Returns: {void}
 
+Processes the provided pattern.
+
 #### `enterRestElement(pattern, onIdent)`
 
 * `pattern` {RestElement}
 * `onIdent` {object}
 * Returns: {void}
 
+Enter rest element.
+
 #### `evaluate(source)`
 
 * `source` {string}
 * Returns: {BasicEvaluatedExpression}
+
+Returns evaluation result.
 
 #### `evaluatedVariable(tagInfo)`
 
 * `tagInfo` {TagInfo}
 * Returns: {VariableInfo}
 
+Evaluated variable.
+
 #### `evaluateExpression(expression)`
 
 * `expression` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|PrivateIdentifier|SpreadElement|Super}
 * Returns: {BasicEvaluatedExpression}
+
+Evaluate expression.
 
 #### `extractMemberExpressionChain(expression)`
 
 * `expression` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * Returns: {object}
 
+Extract member expression chain.
+
 #### `getComments(range)`
 
 * `range` {Tuple<number, number>}
 * Returns: {CommentJavascriptParser[]}
 
+Returns comments in the range.
+
 #### `getFreeInfoFromVariable(varName)`
 
 * `varName` {string}
 * Returns: {object}
+
+Gets free info from variable.
+
+#### `getLocation(node)`
+
+* `node` {object}
+* Returns: {DependencyLocation}
+
+Returns the location of a node or comment, computed from its offsets so
+ASTs from parsers without location support work too. Falls back to the
+node's own `loc` only when no source text is available (preparsed ASTs).
+Offsets can only be mapped while parsing — callbacks deferred past the
+`parse()` call must take the location upfront.
 
 #### `getMemberExpressionInfo(expression, allowedTypes)`
 
@@ -305,37 +384,61 @@ Block pre walking iterates the scope for block variable declarations
 * `allowedTypes` {number}
 * Returns: {CallExpressionInfo|ExpressionExpressionInfo}
 
+Gets member expression info.
+
+#### `getMemberExpressionRoot(expression)`
+
+* `expression` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
+* Returns: {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
+
+Finds the root object of a member expression chain without allocating the
+member arrays. The traversal/break logic must stay in sync with
+`extractMemberExpressionChain`; it lets `getMemberExpressionInfo` reject
+unrecognized roots (~77% of calls) before paying for the arrays.
+
 #### `getNameForExpression(expression)`
 
 * `expression` {Expression}
 * Returns: {object}
+
+Gets name for expression.
 
 #### `getNameInfoFromVariable(varName)`
 
 * `varName` {string}
 * Returns: {object}
 
+Gets name info from variable.
+
 #### `getRenameIdentifier(expr)`
 
 * `expr` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|SpreadElement}
 * Returns: {string|VariableInfo}
 
+Gets rename identifier.
+
 #### `getTagData(name, tag)`
 
 * `name` {string}
 * `tag` {symbol}
-* Returns: {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* Returns: {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
+
+Returns tag data.
 
 #### `getVariableInfo(name)`
 
 * `name` {string}
 * Returns: {ExportedVariableInfo}
 
+Gets variable info.
+
 #### `inBlockScope(fn[, inExecutedPath])`
 
 * `fn` {object}
 * `inExecutedPath` {boolean}
 * Returns: {void}
+
+Processes the provided fn.
 
 #### `inClassScope(hasThis, params, fn)`
 
@@ -344,12 +447,16 @@ Block pre walking iterates the scope for block variable declarations
 * `fn` {object}
 * Returns: {void}
 
+Processes the provided has thi.
+
 #### `inFunctionScope(hasThis, params, fn)`
 
 * `hasThis` {boolean}
 * `params` {string|Identifier|MemberExpression|ObjectPattern|ArrayPattern|RestElement|AssignmentPattern[]}
 * `fn` {object}
 * Returns: {void}
+
+Processes the provided has thi.
 
 #### `inScope(params, fn)`
 
@@ -359,10 +466,14 @@ Block pre walking iterates the scope for block variable declarations
 * `fn` {object}
 * Returns: {void}
 
+Processes the provided param.
+
 #### `isAsiPosition(pos)`
 
 * `pos` {number}
 * Returns: {boolean}
+
+Checks whether this javascript parser is asi position.
 
 #### `isPure(expr, commentsStartPos)`
 
@@ -370,30 +481,42 @@ Block pre walking iterates the scope for block variable declarations
 * `commentsStartPos` {number}
 * Returns: {boolean}
 
+Checks whether this javascript parser is pure.
+
 #### `isStatementLevelExpression(expr)`
 
 * `expr` {Expression}
 * Returns: {boolean}
+
+Checks whether this javascript parser is statement level expression.
 
 #### `isVariableDefined(name)`
 
 * `name` {string}
 * Returns: {boolean}
 
+Checks whether this javascript parser is variable defined.
+
 #### `modulePreWalkExportAllDeclaration(statement)`
 
 * `statement` {ExportAllDeclaration}
 * Returns: {void}
+
+Module pre walk export all declaration.
 
 #### `modulePreWalkExportNamedDeclaration(statement)`
 
 * `statement` {ExportNamedDeclaration}
 * Returns: {void}
 
+Module pre walk export named declaration.
+
 #### `modulePreWalkImportDeclaration(statement)`
 
 * `statement` {ImportDeclaration}
 * Returns: {void}
+
+Module pre walk import declaration.
 
 #### `modulePreWalkStatements(statements)`
 
@@ -408,70 +531,98 @@ Module pre walking iterates the scope for import entries
 * `state` {ParserState}
 * Returns: {ParserState}
 
+Parses the provided source and updates the parser state.
+
 #### `parseCalculatedString(expression)`
 
 * `expression` {Expression}
 * Returns: {CalculatedStringResult}
+
+Parses calculated string.
 
 #### `parseCommentOptions(range)`
 
 * `range` {Tuple<number, number>}
 * Returns: {object}
 
+Parses comment options.
+
 #### `parseString(expression)`
 
 * `expression` {Expression}
 * Returns: {string}
+
+Returns parsed string.
 
 #### `preWalkAssignmentExpression(expression)`
 
 * `expression` {AssignmentExpression}
 * Returns: {void}
 
+Pre walk assignment expression.
+
 #### `preWalkBlockStatement(statement)`
 
 * `statement` {BlockStatement}
 * Returns: {void}
+
+Pre walk block statement.
 
 #### `preWalkCatchClause(catchClause)`
 
 * `catchClause` {CatchClause}
 * Returns: {void}
 
+Pre walk catch clause.
+
 #### `preWalkDoWhileStatement(statement)`
 
 * `statement` {DoWhileStatement}
 * Returns: {void}
+
+Pre walk do while statement.
 
 #### `preWalkForInStatement(statement)`
 
 * `statement` {ForInStatement}
 * Returns: {void}
 
+Pre walk for in statement.
+
 #### `preWalkForOfStatement(statement)`
 
 * `statement` {ForOfStatement}
 * Returns: {void}
+
+Pre walk for of statement.
 
 #### `preWalkForStatement(statement)`
 
 * `statement` {ForStatement}
 * Returns: {void}
 
+Pre walk for statement.
+
 #### `preWalkFunctionDeclaration(statement)`
 
 * `statement` {FunctionDeclaration|MaybeNamedFunctionDeclaration}
 * Returns: {void}
+
+Pre walk function declaration.
 
 #### `preWalkIfStatement(statement)`
 
 * `statement` {IfStatement}
 * Returns: {void}
 
+Pre walk if statement.
+
 #### `preWalkLabeledStatement(statement)`
 
 * `statement` {LabeledStatement}
 * Returns: {void}
+
+Pre walk labeled statement.
 
 #### `preWalkStatement(statement)`
 
@@ -492,40 +643,56 @@ Pre walking iterates the scope for variable declarations
 * `switchCases` {SwitchCase[]}
 * Returns: {void}
 
+Pre walk switch cases.
+
 #### `preWalkSwitchStatement(statement)`
 
 * `statement` {SwitchStatement}
 * Returns: {void}
+
+Pre walk switch statement.
 
 #### `preWalkTryStatement(statement)`
 
 * `statement` {TryStatement}
 * Returns: {void}
 
+Pre walk try statement.
+
 #### `preWalkVariableDeclaration(statement)`
 
 * `statement` {VariableDeclaration}
 * Returns: {void}
+
+Pre walk variable declaration.
 
 #### `preWalkVariableDeclarator(declarator)`
 
 * `declarator` {VariableDeclarator}
 * Returns: {void}
 
+Pre walk variable declarator.
+
 #### `preWalkWhileStatement(statement)`
 
 * `statement` {WhileStatement}
 * Returns: {void}
+
+Pre walk while statement.
 
 #### `preWalkWithStatement(statement)`
 
 * `statement` {WithStatement}
 * Returns: {void}
 
+Pre walk with statement.
+
 #### `setAsiPosition(pos)`
 
 * `pos` {number}
 * Returns: {void}
+
+Updates asi position using the provided po.
 
 #### `setVariable(name, variableInfo)`
 
@@ -533,188 +700,283 @@ Pre walking iterates the scope for variable declarations
 * `variableInfo` {ExportedVariableInfo}
 * Returns: {void}
 
+Updates variable using the provided name.
+
+#### `sourceMayContainIdentifier(range, identifier)`
+
+* `range` {Tuple<number, number>}
+* `identifier` {string}
+* Returns: {boolean}
+
+Reports whether `identifier` may occur as a word in the source text of
+`range`. A conservative pre-filter for expensive AST scans: `false` means
+it certainly does not occur, while a match inside a comment or a string
+yields `true`. Also `true` when no source text is available (preparsed
+AST), so callers must stay correct without the filter.
+
 #### `tagVariable(name, tag[, data][, flags])`
 
 * `name` {string}
 * `tag` {symbol}
-* `data` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings|HarmonySpecifierGuards}
+* `data` {Record<string, any>|TopLevelSymbol|HarmonySettings|ImportSettings|CommonJsImportSettings|CompatibilitySettings}
 * `flags` {0|1|2|4}
 * Returns: {void}
+
+Processes the provided name.
 
 #### `undefineVariable(name)`
 
 * `name` {string}
 * Returns: {void}
 
+Processes the provided name.
+
 #### `unsetAsiPosition(pos)`
 
 * `pos` {number}
 * Returns: {void}
+
+Unset asi position.
 
 #### `walkArrayExpression(expression)`
 
 * `expression` {ArrayExpression}
 * Returns: {void}
 
+Walk array expression.
+
 #### `walkArrayPattern(pattern)`
 
 * `pattern` {ArrayPattern}
 * Returns: {void}
+
+Walk array pattern.
 
 #### `walkArrowFunctionExpression(expression)`
 
 * `expression` {ArrowFunctionExpression}
 * Returns: {void}
 
+Walk arrow function expression.
+
 #### `walkAssignmentExpression(expression)`
 
 * `expression` {AssignmentExpression}
 * Returns: {void}
+
+Walk assignment expression.
 
 #### `walkAssignmentPattern(pattern)`
 
 * `pattern` {AssignmentPattern}
 * Returns: {void}
 
+Walk assignment pattern.
+
 #### `walkAwaitExpression(expression)`
 
 * `expression` {AwaitExpression}
 * Returns: {void}
+
+Walk await expression.
 
 #### `walkBinaryExpression(expression)`
 
 * `expression` {BinaryExpression}
 * Returns: {void}
 
+Walk binary expression.
+
 #### `walkBlockStatement(statement)`
 
 * `statement` {BlockStatement|StaticBlock}
 * Returns: {void}
+
+Walk block statement.
 
 #### `walkCallExpression(expression)`
 
 * `expression` {CallExpression}
 * Returns: {void}
 
+Walk call expression.
+
 #### `walkCatchClause(catchClause)`
 
 * `catchClause` {CatchClause}
 * Returns: {void}
+
+Processes the provided catch clause.
 
 #### `walkChainExpression(expression)`
 
 * `expression` {ChainExpression}
 * Returns: {void}
 
+Walk chain expression.
+
 #### `walkClass(classy)`
 
 * `classy` {ClassDeclaration|MaybeNamedClassDeclaration|ClassExpression}
 * Returns: {void}
+
+Processes the provided classy.
 
 #### `walkClassDeclaration(statement)`
 
 * `statement` {ClassDeclaration|MaybeNamedClassDeclaration}
 * Returns: {void}
 
+Walk class declaration.
+
 #### `walkClassExpression(expression)`
 
 * `expression` {ClassExpression}
 * Returns: {void}
+
+Walk class expression.
 
 #### `walkConditionalExpression(expression)`
 
 * `expression` {ConditionalExpression}
 * Returns: {void}
 
+Walk conditional expression.
+
 #### `walkDoWhileStatement(statement)`
 
 * `statement` {DoWhileStatement}
 * Returns: {void}
+
+Walk do while statement.
 
 #### `walkExportDefaultDeclaration(statement)`
 
 * `statement` {ExportDefaultDeclaration}
 * Returns: {void}
 
+Walk export default declaration.
+
 #### `walkExportNamedDeclaration(statement)`
 
 * `statement` {ExportNamedDeclaration}
 * Returns: {void}
+
+Walk export named declaration.
 
 #### `walkExpression(expression)`
 
 * `expression` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|PrivateIdentifier|SpreadElement|Super}
 * Returns: {void}
 
+Processes the provided expression.
+
 #### `walkExpressions(expressions)`
 
 * `expressions` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|SpreadElement[]}
 * Returns: {void}
+
+Processes the provided expression.
 
 #### `walkExpressionStatement(statement)`
 
 * `statement` {ExpressionStatement}
 * Returns: {void}
 
+Walk expression statement.
+
 #### `walkForInStatement(statement)`
 
 * `statement` {ForInStatement}
 * Returns: {void}
+
+Walk for in statement.
 
 #### `walkForOfStatement(statement)`
 
 * `statement` {ForOfStatement}
 * Returns: {void}
 
+Walk for of statement.
+
 #### `walkForStatement(statement)`
 
 * `statement` {ForStatement}
 * Returns: {void}
+
+Walk for statement.
 
 #### `walkFunctionDeclaration(statement)`
 
 * `statement` {FunctionDeclaration|MaybeNamedFunctionDeclaration}
 * Returns: {void}
 
+Walk function declaration.
+
 #### `walkFunctionExpression(expression)`
 
 * `expression` {FunctionExpression}
 * Returns: {void}
+
+Walk function expression.
+
+#### `walkGuardedBranch(frame, walk)`
+
+* `frame` {object}
+* `walk` {object}
+* Returns: {void}
+
+Walks a conditional branch with its guard frame (if any) pushed onto the
+parser-state guard stack for the duration of the branch body.
 
 #### `walkIdentifier(expression)`
 
 * `expression` {Identifier}
 * Returns: {void}
 
+Processes the provided expression.
+
 #### `walkIfStatement(statement)`
 
 * `statement` {IfStatement}
 * Returns: {void}
+
+Processes the provided statement.
 
 #### `walkImportExpression(expression)`
 
 * `expression` {ImportExpressionJavascriptParser}
 * Returns: {void}
 
+Walk import expression.
+
 #### `walkLabeledStatement(statement)`
 
 * `statement` {LabeledStatement}
 * Returns: {void}
+
+Walk labeled statement.
 
 #### `walkLeftRightExpression(expression)`
 
 * `expression` {BinaryExpression|LogicalExpression}
 * Returns: {void}
 
+Walk left right expression.
+
 #### `walkLogicalExpression(expression)`
 
 * `expression` {LogicalExpression}
 * Returns: {void}
 
+Walk logical expression.
+
 #### `walkMemberExpression(expression)`
 
 * `expression` {MemberExpression}
 * Returns: {void}
+
+Walk member expression.
 
 #### `walkMemberExpressionWithExpressionName(expression, name, rootInfo, members, onUnhandled)`
 
@@ -728,10 +990,14 @@ Pre walking iterates the scope for variable declarations
 * `onUnhandled` {object}
 * Returns: {void}
 
+Walk member expression with expression name.
+
 #### `walkMetaProperty(metaProperty)`
 
 * `metaProperty` {MetaProperty}
 * Returns: {void}
+
+Walk meta property.
 
 #### `walkNestedStatement(statement)`
 
@@ -747,50 +1013,70 @@ This enforces the nested statement to never be in ASI position.
 * `expression` {NewExpression}
 * Returns: {void}
 
+Walk new expression.
+
 #### `walkObjectExpression(expression)`
 
 * `expression` {ObjectExpression}
 * Returns: {void}
+
+Walk object expression.
 
 #### `walkObjectPattern(pattern)`
 
 * `pattern` {ObjectPattern}
 * Returns: {void}
 
+Walk object pattern.
+
 #### `walkPattern(pattern)`
 
 * `pattern` {Pattern}
 * Returns: {void}
+
+Processes the provided pattern.
 
 #### `walkProperty(prop)`
 
 * `prop` {Property|SpreadElement}
 * Returns: {void}
 
+Processes the provided prop.
+
 #### `walkRestElement(pattern)`
 
 * `pattern` {RestElement}
 * Returns: {void}
+
+Processes the provided pattern.
 
 #### `walkReturnStatement(statement)`
 
 * `statement` {ReturnStatement}
 * Returns: {void}
 
+Walk return statement.
+
 #### `walkSequenceExpression(expression)`
 
 * `expression` {SequenceExpression}
 * Returns: {void}
+
+Walk sequence expression.
 
 #### `walkSpreadElement(expression)`
 
 * `expression` {SpreadElement}
 * Returns: {void}
 
+Walk spread element.
+
 #### `walkStatement(statement)`
 
 * `statement` {ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration}
 * Returns: {void}
+
+Processes the provided statement.
 
 #### `walkStatements(statements)`
 
@@ -804,72 +1090,102 @@ Walking iterates the statements and expressions and processes them
 * `switchCases` {SwitchCase[]}
 * Returns: {void}
 
+Processes the provided switch case.
+
 #### `walkSwitchStatement(statement)`
 
 * `statement` {SwitchStatement}
 * Returns: {void}
+
+Walk switch statement.
 
 #### `walkTaggedTemplateExpression(expression)`
 
 * `expression` {TaggedTemplateExpression}
 * Returns: {void}
 
+Walk tagged template expression.
+
 #### `walkTemplateLiteral(expression)`
 
 * `expression` {TemplateLiteral}
 * Returns: {void}
+
+Walk template literal.
 
 #### `walkTerminatingStatement(statement)`
 
 * `statement` {ReturnStatement|ThrowStatement}
 * Returns: {void}
 
+Walk terminating statement.
+
 #### `walkThisExpression(expression)`
 
 * `expression` {ThisExpression}
 * Returns: {void}
+
+Walk this expression.
 
 #### `walkThrowStatement(statement)`
 
 * `statement` {ThrowStatement}
 * Returns: {void}
 
+Walk throw statement.
+
 #### `walkTryStatement(statement)`
 
 * `statement` {TryStatement}
 * Returns: {void}
+
+Walk try statement.
 
 #### `walkUnaryExpression(expression)`
 
 * `expression` {UnaryExpression}
 * Returns: {void}
 
+Walk unary expression.
+
 #### `walkUpdateExpression(expression)`
 
 * `expression` {UpdateExpression}
 * Returns: {void}
+
+Walk update expression.
 
 #### `walkVariableDeclaration(statement)`
 
 * `statement` {VariableDeclaration}
 * Returns: {void}
 
+Walk variable declaration.
+
 #### `walkWhileStatement(statement)`
 
 * `statement` {WhileStatement}
 * Returns: {void}
+
+Walk while statement.
 
 #### `walkWithStatement(statement)`
 
 * `statement` {WithStatement}
 * Returns: {void}
 
+Walk with statement.
+
 #### `walkYieldExpression(expression)`
 
 * `expression` {YieldExpression}
 * Returns: {void}
 
+Walk yield expression.
+
 #### Static method: `extend(plugins)`
 
 * `plugins` {object[]}
 * Returns: {JavascriptParser}
+
+Returns parser.

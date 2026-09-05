@@ -4,10 +4,15 @@
 
 ### Constructors
 
-#### `new ElectronTargetPlugin([context])`
+#### `new ElectronTargetPlugin([context][, type])`
 
 * `context` {"main"|"preload"|"renderer"}
+* `type` {"asset"|"module"|"asset-url"|"css-import"|"promise"|"import"|"commonjs"|"jsonp"|"this"|"var"|"global"|"assign"|"window"|"self"|"commonjs2"|"commonjs-module"|"commonjs-static"|"amd"|"amd-require"|"amd-async"|"umd"|"umd2"|"system"|"module-import"|"script"|"node-commonjs"|"css-url"}
 * Returns: {ElectronTargetPlugin}
+
+### Properties
+
+* `type` {ExternalsType}
 
 ### Methods
 
@@ -16,4 +21,4 @@
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
