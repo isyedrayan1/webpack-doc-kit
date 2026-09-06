@@ -679,6 +679,7 @@
   "html.syntax.escapeAttribute.__type.__type": "webpack/namespaces/html/namespaces/syntax/index.md#type",
   "html.syntax.escapeText": "webpack/namespaces/html/namespaces/syntax/index.md#escapetext",
   "html.syntax.escapeText.__type.__type": "webpack/namespaces/html/namespaces/syntax/index.md#type",
+  "html.syntax.EVENT_HANDLER": "webpack/namespaces/html/namespaces/syntax/index.md#event-handler",
   "html.syntax.isAsciiWhitespace": "webpack/namespaces/html/namespaces/syntax/index.md#isasciiwhitespace",
   "html.syntax.isAsciiWhitespace.__type.__type": "webpack/namespaces/html/namespaces/syntax/index.md#type",
   "html.syntax.metaTag": "webpack/namespaces/html/namespaces/syntax/index.md#metatag",
