@@ -264,6 +264,12 @@
 
 ***
 
+## `hasChunkPriority`
+
+> **hasChunkPriority**: {"has chunk priority"}
+
+***
+
 ## `hasCssModules`
 
 > **hasCssModules**: {"has css modules"}
@@ -501,6 +507,12 @@
 ## `shareScopeMap`
 
 > **shareScopeMap**: {"__webpack_require__.S"}
+
+***
+
+## `specNamespaceObject`
+
+> **specNamespaceObject**: {"__webpack_require__.ns"}
 
 ***
 
