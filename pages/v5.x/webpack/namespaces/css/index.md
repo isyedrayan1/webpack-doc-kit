@@ -1,5 +1,9 @@
 # css
 
+## Namespaces
+
+- [syntax](namespaces/syntax/index.md)
+
 ## Class: `CssModulesPlugin`
 
 ### Constructors
@@ -8,6 +12,10 @@
 
 * Returns: {CssModulesPlugin}
 
+### Properties
+
+* `getCompilationHooks` {object}
+
 ### Methods
 
 #### `apply(compiler)`
@@ -15,7 +23,7 @@
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 #### `getModulesInOrder(chunk, modules, compilation)`
 
@@ -24,6 +32,8 @@ Apply the plugin
 * `compilation` {Compilation}
 * Returns: {Module[]}
 
+Gets modules in order.
+
 #### `getOrderedChunkCssModules(chunk, chunkGraph, compilation)`
 
 * `chunk` {Chunk}
@@ -31,11 +41,15 @@ Apply the plugin
 * `compilation` {Compilation}
 * Returns: {CssModule[]}
 
+Gets ordered chunk css modules.
+
 #### `renderChunk(__namedParameters, hooks)`
 
 * `__namedParameters` {RenderContextCssModulesPlugin}
-* `hooks` {CompilationHooksCssModulesPlugin}
+* `hooks` {object}
 * Returns: {Source}
+
+Renders generated source.
 
 #### Static method: `chunkHasCss(chunk, chunkGraph)`
 
@@ -43,20 +57,21 @@ Apply the plugin
 * `chunkGraph` {ChunkGraph}
 * Returns: {boolean}
 
+Returns true, when the chunk has css.
+
 #### Static method: `getChunkFilenameTemplate(chunk, outputOptions)`
 
 * `chunk` {Chunk}
 * `outputOptions` {OutputNormalizedWithDefaults}
-* Returns: {TemplatePath}
+* Returns: {ChunkFilenameTemplate}
 
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {CompilationHooksCssModulesPlugin}
+Gets chunk filename template.
 
 #### Static method: `renderModule(module, renderContext, hooks)`
 
 * `module` {CssModule}
 * `renderContext` {ChunkRenderContextCssModulesPlugin}
-* `hooks` {CompilationHooksCssModulesPlugin}
+* `hooks` {object}
 * Returns: {Source}
+
+Renders css module source.

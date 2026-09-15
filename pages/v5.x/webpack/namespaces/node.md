@@ -9,6 +9,8 @@
 * `options` {NodeEnvironmentPluginOptions}
 * Returns: {NodeEnvironmentPlugin}
 
+Creates an instance of NodeEnvironmentPlugin.
+
 ### Properties
 
 * `options` {NodeEnvironmentPluginOptions}
@@ -20,7 +22,7 @@
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -39,7 +41,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -52,9 +54,12 @@ Apply the plugin
 * `type` {ExternalsType}
 * Returns: {NodeTargetPlugin}
 
+Creates an instance of NodeTargetPlugin.
+
 ### Properties
 
 * `type` {ExternalsType}
+* `builtins` {string|RegExp[]}
 
 ### Methods
 
@@ -63,7 +68,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -76,6 +81,8 @@ Apply the plugin
 * `options` {NodeTemplatePluginOptions}
 * Returns: {NodeTemplatePlugin}
 
+Creates an instance of NodeTemplatePlugin.
+
 ### Methods
 
 #### `apply(compiler)`
@@ -83,7 +90,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -96,6 +103,8 @@ Apply the plugin
 * `__namedParameters` {ReadFileCompileAsyncWasmPluginOptions}
 * Returns: {ReadFileCompileAsyncWasmPlugin}
 
+Creates an instance of ReadFileCompileAsyncWasmPlugin.
+
 ### Methods
 
 #### `apply(compiler)`
@@ -103,7 +112,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -116,6 +125,8 @@ Apply the plugin
 * `options` {ReadFileCompileWasmPluginOptions}
 * Returns: {ReadFileCompileWasmPlugin}
 
+Creates an instance of ReadFileCompileWasmPlugin.
+
 ### Properties
 
 * `options` {ReadFileCompileWasmPluginOptions}
@@ -127,4 +138,4 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
