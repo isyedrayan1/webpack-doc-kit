@@ -285,8 +285,6 @@ Processes the provided declaration.
 
 Enter destructuring assignment.
 
-Enter destructuring assignment.
-
 #### `enterIdentifier(pattern, onIdent)`
 
 * `pattern` {Identifier}

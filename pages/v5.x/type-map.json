@@ -2870,6 +2870,7 @@
   "Generator.getTypes": "globals.md#gettypes",
   "Generator.getTypesDependOnIncomingConnections": "globals.md#gettypesdependonincomingconnections",
   "Generator.updateHash": "globals.md#updatehash",
+  "Generator.buildErrorMessage": "globals.md#builderrormessage",
   "Generator.byType": "globals.md#bytype",
   "Generator.throwBuildErrorCode": "globals.md#throwbuilderrorcode",
   "HotModuleReplacementPlugin": "globals.md#hotmodulereplacementplugin",
