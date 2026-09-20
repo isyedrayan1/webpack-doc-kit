@@ -1728,6 +1728,8 @@
   "util.serialization.NOT_SERIALIZABLE": "webpack/namespaces/util/namespaces/serialization.md#not-serializable",
   "util.serialization.register": "webpack/namespaces/util/namespaces/serialization.md#register",
   "util.serialization.register.__type.__type": "webpack/namespaces/util/namespaces/serialization.md#type",
+  "util.serialization.registerLegacyRequest": "webpack/namespaces/util/namespaces/serialization.md#registerlegacyrequest",
+  "util.serialization.registerLegacyRequest.__type.__type": "webpack/namespaces/util/namespaces/serialization.md#type",
   "util.serialization.registerLoader": "webpack/namespaces/util/namespaces/serialization.md#registerloader",
   "util.serialization.registerLoader.__type.__type": "webpack/namespaces/util/namespaces/serialization.md#type",
   "util.serialization.registerNotSerializable": "webpack/namespaces/util/namespaces/serialization.md#registernotserializable",
