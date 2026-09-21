@@ -1,5 +1,9 @@
 # javascript
 
+## Namespaces
+
+- [syntax](namespaces/syntax/index.md)
+
 ## Class: `EnableChunkLoadingPlugin`
 
 ### Constructors
@@ -66,10 +70,10 @@ Creates an instance of JavascriptParser.
 * `hooks` {Readonly<object>}
 * `magicCommentContext` {Context}
 * `options` {object}
-* `prevStatement` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration}
+* `prevStatement` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration}
 * `scope` {ScopeInfo}
 * `semicolons` {Map<number, boolean>}
-* `sourceType` {"module"|"auto"|"script"}
+* `sourceType` {"module"|"script"|"auto"}
 * `state` {JavascriptParserState}
 * `statementPath` {StatementPathItem[]}
 * `ALLOWED_MEMBER_TYPES_ALL` {number}
@@ -143,7 +147,7 @@ Block pre walk variable declaration.
 
 `R`
 * `hookMap` {HookMap<SyncBailHook<T, R, UnsetAdditionalOptions>>}
-* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|Super}
+* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * `args` {AsArray<T>}
 * Returns: {R}
 
@@ -159,7 +163,7 @@ Call hooks for expression.
 
 `R`
 * `hookMap` {HookMap<SyncBailHook<T, R, UnsetAdditionalOptions>>}
-* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|Super}
+* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * `fallback` {object}
 * `defined` {object}
 * `args` {AsArray<T>}
@@ -284,7 +288,9 @@ Processes the provided declaration.
 
 * `pattern` {Pattern}
 * `expression` {ExpressionEstreeIndex}
-* Returns: {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression}
+* Returns: {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression}
+
+Enter destructuring assignment.
 
 Enter destructuring assignment.
 
@@ -344,14 +350,14 @@ Evaluated variable.
 
 #### `evaluateExpression(expression)`
 
-* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|PrivateIdentifier|SpreadElement|Super}
+* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|PrivateIdentifier|SpreadElement|Super}
 * Returns: {BasicEvaluatedExpression}
 
 Evaluate expression.
 
 #### `extractMemberExpressionChain(expression)`
 
-* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|Super}
+* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * Returns: {object}
 
 Extract member expression chain.
@@ -370,6 +376,15 @@ before it that whitespace alone separates from it and from each other.
 * Returns: {CommentJavascriptParser[]}
 
 Returns comments in the range.
+
+#### `getDirective(statement)`
+
+* `statement` {ClassDeclaration|FunctionDeclaration|ImportDeclaration|ExportNamedDeclaration|ExportDefaultDeclaration|ExportAllDeclaration|ExpressionStatement|BlockStatement|StaticBlock|EmptyStatement|DebuggerStatement|WithStatement|ReturnStatement|LabeledStatement|BreakStatement|ContinueStatement|IfStatement|SwitchStatement|ThrowStatement|TryStatement|WhileStatement|DoWhileStatement|ForStatement|ForInStatement|ForOfStatement|VariableDeclaration|Directive}
+* Returns: {string}
+
+The directive a statement spells, or `undefined` when it is not one. An
+AST webpack did not parse may leave the metadata off a directive, so the
+spelling is recovered from the literal itself there.
 
 #### `getFreeInfoFromVariable(varName)`
 
@@ -391,7 +406,7 @@ Offsets can only be mapped while parsing — callbacks deferred past the
 
 #### `getMemberExpressionInfo(expression, allowedTypes)`
 
-* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|Super}
+* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 * `allowedTypes` {number}
 * Returns: {CallExpressionInfo|ExpressionExpressionInfo}
 
@@ -399,8 +414,8 @@ Gets member expression info.
 
 #### `getMemberExpressionRoot(expression)`
 
-* `expression` {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
-* Returns: {ClassExpression|Identifier|SimpleLiteral|RegExpLiteral|BigIntLiteral|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ConditionalExpression|FunctionExpression|ImportExpression|LogicalExpression|MemberExpression|MetaProperty|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
+* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
+* Returns: {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|Super}
 
 Finds the root object of a member expression chain without allocating the
 member arrays. The traversal/break logic must stay in sync with
@@ -423,7 +438,7 @@ Gets name info from variable.
 
 #### `getRenameIdentifier(expr)`
 
-* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|SpreadElement}
+* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|SpreadElement}
 * Returns: {string|VariableInfo}
 
 Gets rename identifier.
@@ -488,7 +503,7 @@ Checks whether this javascript parser is asi position.
 
 #### `isPure(expr, commentsStartPos)`
 
-* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|PrivateIdentifier|ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|VariableDeclaration}
+* `expr` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|PrivateIdentifier|ClassDeclaration|MaybeNamedClassDeclaration|FunctionDeclaration|MaybeNamedFunctionDeclaration|VariableDeclaration}
 * `commentsStartPos` {number}
 * Returns: {boolean}
 
@@ -909,14 +924,14 @@ Walk export named declaration.
 
 #### `walkExpression(expression)`
 
-* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|PrivateIdentifier|SpreadElement|Super}
+* `expression` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|PrivateIdentifier|SpreadElement|Super}
 * Returns: {void}
 
 Processes the provided expression.
 
 #### `walkExpressions(expressions)`
 
-* `expressions` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|MemberExpression|FunctionExpression|ClassExpression|ObjectExpression|ArrayExpression|AssignmentExpression|ChainExpression|SequenceExpression|ArrowFunctionExpression|ConditionalExpression|LogicalExpression|BinaryExpression|UpdateExpression|UnaryExpression|SimpleCallExpression|NewExpression|TaggedTemplateExpression|ThisExpression|TemplateLiteral|YieldExpression|AwaitExpression|SpreadElement[]}
+* `expressions` {Identifier|MetaProperty|SimpleLiteral|RegExpLiteral|BigIntLiteral|ImportExpression|ArrayExpression|ArrowFunctionExpression|AssignmentExpression|AwaitExpression|BinaryExpression|SimpleCallExpression|NewExpression|ChainExpression|ClassExpression|ConditionalExpression|FunctionExpression|LogicalExpression|MemberExpression|ObjectExpression|SequenceExpression|TaggedTemplateExpression|TemplateLiteral|ThisExpression|UnaryExpression|UpdateExpression|YieldExpression|SpreadElement[]}
 * Returns: {void}
 
 Processes the provided expression.
