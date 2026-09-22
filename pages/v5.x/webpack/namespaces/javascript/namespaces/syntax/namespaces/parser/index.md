@@ -123,7 +123,7 @@ acorn source: https://github.com/acornjs/acorn/blob/8.18.0/acorn/src/state.js
 
 #### `[iterator]()`
 
-* Returns: {Iterator<TokenSyntaxParser>}
+* Returns: {Iterator<TokenSyntaxParserClass>}
 
 #### `adaptDirectivePrologue(statements)`
 
@@ -365,7 +365,7 @@ was already declared there.
 
 #### `getToken()`
 
-* Returns: {TokenSyntaxParser}
+* Returns: {TokenSyntaxParserClass}
 
 #### `getTokenFromCode(code)`
 
@@ -1454,7 +1454,7 @@ A token as `options.onToken` receives one.
 #### `new Token([p])`
 
 * `p` {any}
-* Returns: {TokenSyntaxParser}
+* Returns: {TokenSyntaxParserClass}
 
 ### Properties
 
@@ -1569,7 +1569,7 @@ tokenizer fast paths, import attributes and import phases (with acorn's
 
 #### `[iterator]()`
 
-* Returns: {Iterator<TokenSyntaxParser>}
+* Returns: {Iterator<TokenSyntaxParserClass>}
 
 #### `adaptDirectivePrologue(statements)`
 
@@ -1811,7 +1811,7 @@ was already declared there.
 
 #### `getToken()`
 
-* Returns: {TokenSyntaxParser}
+* Returns: {TokenSyntaxParserClass}
 
 #### `getTokenFromCode(code)`
 
