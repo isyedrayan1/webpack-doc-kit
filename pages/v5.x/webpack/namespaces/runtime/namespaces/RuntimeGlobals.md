@@ -1,10 +1,4 @@
-# ~~RuntimeGlobals~~
-
-The symbols a runtime module may declare a requirement on.
-
-## Deprecated
-
-use `runtime.RuntimeGlobals` — TODO in the next major release: remove
+# RuntimeGlobals
 
 ## `amdDefine`
 
@@ -15,12 +9,6 @@ use `runtime.RuntimeGlobals` — TODO in the next major release: remove
 ## `amdOptions`
 
 > **amdOptions**: {"__webpack_require__.amdO"}
-
-***
-
-## `analyzableChunkImport`
-
-> **analyzableChunkImport**: {"__webpack_require__.ei"}
 
 ***
 
@@ -63,12 +51,6 @@ use `runtime.RuntimeGlobals` — TODO in the next major release: remove
 ## `chunkName`
 
 > **chunkName**: {"__webpack_require__.cn"}
-
-***
-
-## `commonJsWrap`
-
-> **commonJsWrap**: {"__webpack_require__.cjs"}
 
 ***
 

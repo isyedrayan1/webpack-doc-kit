@@ -68,6 +68,16 @@ Returns true, when the chunk has css.
 
 Gets chunk filename template.
 
+#### Static method: `getCssChunksInCascadeOrder(chunks, group, chunkGraph)`
+
+* `chunks` {Iterable<Chunk>}
+* `group` {ChunkGroup}
+* `chunkGraph` {ChunkGraph}
+* Returns: {Chunk[]}
+
+The css-carrying chunks of `chunks`, in the order their rules cascade —
+the order a `<link rel="stylesheet">` per chunk has to be written in.
+
 #### Static method: `renderModule(module, renderContext, hooks)`
 
 * `module` {CssModule}

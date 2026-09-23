@@ -3,6 +3,7 @@
 ## Namespaces
 
 - [InnerGraph](namespaces/InnerGraph.md)
+- [OptimizationStages](namespaces/OptimizationStages.md)
 
 ## Class: `AggressiveMergingPlugin`
 

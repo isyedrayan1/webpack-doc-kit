@@ -1,5 +1,9 @@
 # runtime
 
+## Namespaces
+
+- [RuntimeGlobals](namespaces/RuntimeGlobals.md)
+
 ## Class: `GetChunkFilenameRuntimeModule`
 
 ### Extends
