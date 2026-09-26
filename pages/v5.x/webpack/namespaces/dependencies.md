@@ -256,8 +256,6 @@ Returns true if the dependency is a low priority dependency.
 
 Creates an instance of HarmonyImportDependency.
 
-Creates an instance of HarmonyImportDependency.
-
 ### Properties
 
 * `attributes` {ImportAttributes}
