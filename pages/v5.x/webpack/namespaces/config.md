@@ -6,7 +6,19 @@
 
 * `options` {WebpackOptionsNormalized}
 * `compilerIndex` {number}
-* Returns: {ResolvedOptions}
+* Returns: {ResolvedOptionsDefaults}
+
+***
+
+## `defineConfig`
+
+> `const` **defineConfig**: {object}
+
+#### T
+
+`T` *extends* {DefineConfigInput}
+* `config` {T}
+* Returns: {T}
 
 ***
 
@@ -16,3 +28,14 @@
 
 * `config` {Configuration}
 * Returns: {WebpackOptionsNormalized}
+
+***
+
+## `validateSchema`
+
+> `const` **validateSchema**: {object}
+
+* `schema` {Parameters<validateFunction>}
+* `options` {Parameters<validateFunction>}
+* `validationConfiguration` {ValidationErrorConfiguration}
+* Returns: {void}
