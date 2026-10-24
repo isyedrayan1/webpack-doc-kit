@@ -9,6 +9,8 @@
 * `options` {ContainerPluginOptions}
 * Returns: {ContainerPlugin}
 
+Creates an instance of ContainerPlugin.
+
 ### Properties
 
 * `options` {ContainerPluginOptions}
@@ -20,7 +22,7 @@
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -33,6 +35,8 @@ Apply the plugin
 * `options` {ContainerReferencePluginOptions}
 * Returns: {ContainerReferencePlugin}
 
+Creates an instance of ContainerReferencePlugin.
+
 ### Properties
 
 * `options` {ContainerReferencePluginOptions}
@@ -44,7 +48,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
@@ -57,9 +61,12 @@ Apply the plugin
 * `options` {ModuleFederationPluginOptions}
 * Returns: {ModuleFederationPlugin}
 
+Creates an instance of ModuleFederationPlugin.
+
 ### Properties
 
 * `options` {ModuleFederationPluginOptions}
+* `getCompilationHooks` {object}
 
 ### Methods
 
@@ -68,14 +75,7 @@ Apply the plugin
 * `compiler` {Compiler}
 * Returns: {void}
 
-Apply the plugin
-
-#### Static method: `getCompilationHooks(compilation)`
-
-* `compilation` {Compilation}
-* Returns: {CompilationHooksModuleFederationPlugin}
-
-Get the compilation hooks associated with this plugin.
+Applies the plugin by registering its hooks on the compiler.
 
 ***
 
