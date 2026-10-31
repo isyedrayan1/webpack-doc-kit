@@ -1,0 +1,593 @@
+# RuntimeGlobals
+
+## `amdDefine`
+
+> **amdDefine**: {"__webpack_require__.amdD"}
+
+***
+
+## `amdOptions`
+
+> **amdOptions**: {"__webpack_require__.amdO"}
+
+***
+
+## `asyncModule`
+
+> **asyncModule**: {"__webpack_require__.a"}
+
+***
+
+## `asyncModuleDoneSymbol`
+
+> **asyncModuleDoneSymbol**: {"__webpack_require__.aD"}
+
+***
+
+## `asyncModuleExportSymbol`
+
+> **asyncModuleExportSymbol**: {"__webpack_require__.aE"}
+
+***
+
+## `asyncModuleGenerator`
+
+> **asyncModuleGenerator**: {"__webpack_require__.aG"}
+
+***
+
+## `baseURI`
+
+> **baseURI**: {"__webpack_require__.b"}
+
+***
+
+## `chunkCallback`
+
+> **chunkCallback**: {"webpackChunk"}
+
+***
+
+## `chunkName`
+
+> **chunkName**: {"__webpack_require__.cn"}
+
+***
+
+## `compatGetDefaultExport`
+
+> **compatGetDefaultExport**: {"__webpack_require__.n"}
+
+***
+
+## `compileWasm`
+
+> **compileWasm**: {"__webpack_require__.vs"}
+
+***
+
+## `concatenationWrap`
+
+> **concatenationWrap**: {"__webpack_require__.cw"}
+
+***
+
+## `constructRequire`
+
+> **constructRequire**: {"__webpack_require__.cr"}
+
+***
+
+## `createFakeNamespaceObject`
+
+> **createFakeNamespaceObject**: {"__webpack_require__.t"}
+
+***
+
+## `createScript`
+
+> **createScript**: {"__webpack_require__.ts"}
+
+***
+
+## `createScriptUrl`
+
+> **createScriptUrl**: {"__webpack_require__.tu"}
+
+***
+
+## `cssInjectStyle`
+
+> **cssInjectStyle**: {"__webpack_require__.is"}
+
+***
+
+## `currentRemoteGetScope`
+
+> **currentRemoteGetScope**: {"__webpack_require__.R"}
+
+***
+
+## `deferredModuleAsyncTransitiveDependencies`
+
+> **deferredModuleAsyncTransitiveDependencies**: {"__webpack_require__.zT"}
+
+***
+
+## `deferredModuleAsyncTransitiveDependenciesSymbol`
+
+> **deferredModuleAsyncTransitiveDependenciesSymbol**: {"__webpack_require__.zS"}
+
+***
+
+## `definePropertyGetters`
+
+> **definePropertyGetters**: {"__webpack_require__.d"}
+
+***
+
+## `definePropertyGettersFromArray`
+
+> **definePropertyGettersFromArray**: {"__webpack_require__.d (array)"}
+
+***
+
+## `ensureChunk`
+
+> **ensureChunk**: {"__webpack_require__.e"}
+
+***
+
+## `ensureChunkHandlers`
+
+> **ensureChunkHandlers**: {"__webpack_require__.f"}
+
+***
+
+## `ensureChunkIncludeEntries`
+
+> **ensureChunkIncludeEntries**: {"__webpack_require__.f (include entries)"}
+
+***
+
+## `entryModuleId`
+
+> **entryModuleId**: {"__webpack_require__.s"}
+
+***
+
+## `esmIds`
+
+> **esmIds**: {"__webpack_esm_ids__"}
+
+***
+
+## `esmModules`
+
+> **esmModules**: {"__webpack_esm_modules__"}
+
+***
+
+## `esmRuntime`
+
+> **esmRuntime**: {"__webpack_esm_runtime__"}
+
+***
+
+## `exports`
+
+> **exports**: {"__webpack_exports__"}
+
+***
+
+## `externalInstallChunk`
+
+> **externalInstallChunk**: {"__webpack_require__.C"}
+
+***
+
+## `getChunkCssFilename`
+
+> **getChunkCssFilename**: {"__webpack_require__.k"}
+
+***
+
+## `getChunkScriptFilename`
+
+> **getChunkScriptFilename**: {"__webpack_require__.u"}
+
+***
+
+## `getChunkUpdateCssFilename`
+
+> **getChunkUpdateCssFilename**: {"__webpack_require__.hk"}
+
+***
+
+## `getChunkUpdateScriptFilename`
+
+> **getChunkUpdateScriptFilename**: {"__webpack_require__.hu"}
+
+***
+
+## `getCssServerStyles`
+
+> **getCssServerStyles**: {"__webpack_require__.cs"}
+
+***
+
+## `getFullHash`
+
+> **getFullHash**: {"__webpack_require__.h"}
+
+***
+
+## `getTrustedTypesPolicy`
+
+> **getTrustedTypesPolicy**: {"__webpack_require__.tt"}
+
+***
+
+## `getUpdateManifestFilename`
+
+> **getUpdateManifestFilename**: {"__webpack_require__.hmrF"}
+
+***
+
+## `getWorkletBootstrap`
+
+> **getWorkletBootstrap**: {"__webpack_require__.wb"}
+
+***
+
+## `global`
+
+> **global**: {"__webpack_require__.g"}
+
+***
+
+## `harmonyModuleDecorator`
+
+> **harmonyModuleDecorator**: {"__webpack_require__.hmd"}
+
+***
+
+## `hasChunkPriority`
+
+> **hasChunkPriority**: {"has chunk priority"}
+
+***
+
+## `hasCssModules`
+
+> **hasCssModules**: {"has css modules"}
+
+***
+
+## `hasFetchPriority`
+
+> **hasFetchPriority**: {"has fetch priority"}
+
+***
+
+## `hasOwnProperty`
+
+> **hasOwnProperty**: {"__webpack_require__.o"}
+
+***
+
+## `hasSealedDeferredNamespace`
+
+> **hasSealedDeferredNamespace**: {"has sealed deferred namespace"}
+
+***
+
+## `hasServerRenderedStylesheets`
+
+> **hasServerRenderedStylesheets**: {"has server rendered stylesheets"}
+
+***
+
+## `hasSynthesizedDeferredNamespace`
+
+> **hasSynthesizedDeferredNamespace**: {"has synthesized deferred namespace"}
+
+***
+
+## `hmrDownloadManifest`
+
+> **hmrDownloadManifest**: {"__webpack_require__.hmrM"}
+
+***
+
+## `hmrDownloadUpdateHandlers`
+
+> **hmrDownloadUpdateHandlers**: {"__webpack_require__.hmrC"}
+
+***
+
+## `hmrInvalidateModuleHandlers`
+
+> **hmrInvalidateModuleHandlers**: {"__webpack_require__.hmrI"}
+
+***
+
+## `hmrModuleData`
+
+> **hmrModuleData**: {"__webpack_require__.hmrD"}
+
+***
+
+## `hmrRuntimeStatePrefix`
+
+> **hmrRuntimeStatePrefix**: {"__webpack_require__.hmrS"}
+
+***
+
+## `initializeSharing`
+
+> **initializeSharing**: {"__webpack_require__.I"}
+
+***
+
+## `instantiateWasm`
+
+> **instantiateWasm**: {"__webpack_require__.v"}
+
+***
+
+## `interceptModuleExecution`
+
+> **interceptModuleExecution**: {"__webpack_require__.i"}
+
+***
+
+## `loadScript`
+
+> **loadScript**: {"__webpack_require__.l"}
+
+***
+
+## `makeDeferredNamespaceObject`
+
+> **makeDeferredNamespaceObject**: {"__webpack_require__.z"}
+
+***
+
+## `makeNamespaceObject`
+
+> **makeNamespaceObject**: {"__webpack_require__.r"}
+
+***
+
+## `makeOptimizedDeferredNamespaceObject`
+
+> **makeOptimizedDeferredNamespaceObject**: {"__webpack_require__.zO"}
+
+***
+
+## `module`
+
+> **module**: {"module"}
+
+***
+
+## `moduleCache`
+
+> **moduleCache**: {"__webpack_require__.c"}
+
+***
+
+## `moduleFactories`
+
+> **moduleFactories**: {"__webpack_require__.m"}
+
+***
+
+## `moduleFactoriesAddOnly`
+
+> **moduleFactoriesAddOnly**: {"__webpack_require__.m (add only)"}
+
+***
+
+## `moduleId`
+
+> **moduleId**: {"module.id"}
+
+***
+
+## `moduleLoaded`
+
+> **moduleLoaded**: {"module.loaded"}
+
+***
+
+## `nodeModuleDecorator`
+
+> **nodeModuleDecorator**: {"__webpack_require__.nmd"}
+
+***
+
+## `onChunksLoaded`
+
+> **onChunksLoaded**: {"__webpack_require__.O"}
+
+***
+
+## `prefetchAsset`
+
+> **prefetchAsset**: {"__webpack_require__.PA"}
+
+***
+
+## `prefetchChunk`
+
+> **prefetchChunk**: {"__webpack_require__.E"}
+
+***
+
+## `prefetchChunkHandlers`
+
+> **prefetchChunkHandlers**: {"__webpack_require__.F"}
+
+***
+
+## `preloadAsset`
+
+> **preloadAsset**: {"__webpack_require__.LA"}
+
+***
+
+## `preloadChunk`
+
+> **preloadChunk**: {"__webpack_require__.G"}
+
+***
+
+## `preloadChunkHandlers`
+
+> **preloadChunkHandlers**: {"__webpack_require__.H"}
+
+***
+
+## `publicPath`
+
+> **publicPath**: {"__webpack_require__.p"}
+
+***
+
+## `relativeUrl`
+
+> **relativeUrl**: {"__webpack_require__.U"}
+
+***
+
+## `require`
+
+> **require**: {"__webpack_require__"}
+
+***
+
+## `requireScope`
+
+> **requireScope**: {"__webpack_require__.*"}
+
+***
+
+## `returnExportsFromRuntime`
+
+> **returnExportsFromRuntime**: {"return-exports-from-runtime"}
+
+***
+
+## `runtimeId`
+
+> **runtimeId**: {"__webpack_require__.j"}
+
+***
+
+## `scriptNonce`
+
+> **scriptNonce**: {"__webpack_require__.nc"}
+
+***
+
+## `setAnonymousDefaultName`
+
+> **setAnonymousDefaultName**: {"__webpack_require__.dn"}
+
+***
+
+## `shareScopeMap`
+
+> **shareScopeMap**: {"__webpack_require__.S"}
+
+***
+
+## `specNamespaceObject`
+
+> **specNamespaceObject**: {"__webpack_require__.ns"}
+
+***
+
+## `startup`
+
+> **startup**: {"__webpack_require__.x"}
+
+***
+
+## `startupAssetHints`
+
+> **startupAssetHints**: {"__webpack_require__.SAH"}
+
+***
+
+## `startupEntrypoint`
+
+> **startupEntrypoint**: {"__webpack_require__.X"}
+
+***
+
+## `startupNoDefault`
+
+> **startupNoDefault**: {"__webpack_require__.x (no default handler)"}
+
+Describes how this item operation behaves.
+
+### Deprecated
+
+creating a default startup function with the entry modules
+
+***
+
+## `startupOnlyAfter`
+
+> **startupOnlyAfter**: {"__webpack_require__.x (only after)"}
+
+***
+
+## `startupOnlyBefore`
+
+> **startupOnlyBefore**: {"__webpack_require__.x (only before)"}
+
+***
+
+## `system`
+
+> **system**: {"__webpack_require__.System"}
+
+***
+
+## `systemContext`
+
+> **systemContext**: {"__webpack_require__.y"}
+
+***
+
+## `thisAsExports`
+
+> **thisAsExports**: {"top-level-this-exports"}
+
+***
+
+## `toBinary`
+
+> **toBinary**: {"__webpack_require__.tb"}
+
+***
+
+## `uncaughtErrorHandler`
+
+> **uncaughtErrorHandler**: {"__webpack_require__.oe"}
+
+***
+
+## `wasmInstances`
+
+> **wasmInstances**: {"__webpack_require__.w"}
+
+***
+
+## `worker`
+
+> **worker**: {"__webpack_require__.wc"}
