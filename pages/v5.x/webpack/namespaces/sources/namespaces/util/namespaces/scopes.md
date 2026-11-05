@@ -1,0 +1,5 @@
+# scopes
+
+## `addScopesToSourceMap`
+
+> **addScopesToSourceMap**: {any}
